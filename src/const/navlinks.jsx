@@ -1,22 +1,38 @@
 export const NavLinks = [
     {
-        name: "Products",
-        link: "/products"
+        id: 1,
+        name: "Home",
+        link: "/",
+        submenu: [
+            {
+                name: "Products",
+                link: "/products",
+            },
+        ]
     },
     {
-        name: "Industries",
+        id: 2,
+        name: "About Us",
         link: "#"
     },
     {
-        name: "Box by Material",
-        link: "#box-by-material"
+        id: 3,
+        name: "Product By Industry",
+        link: "/categories"
     },
     {
-        name: "Shapes & Styles",
-        link: "#shapes-and-style"
+        id: 4,
+        name: "Brand Finishes",
+        link: "#"
     },
     {
-        name: "Contact Us",
-        link: "/contact-us"
+        id: 5,
+        name: "Box By Style",
+        link: "#"
+    },
+    {
+        id: 6,
+        name: "Custom Printed Box",
+        link: "#"
     },
 ]

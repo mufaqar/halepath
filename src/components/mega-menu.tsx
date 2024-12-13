@@ -39,7 +39,7 @@ const MegaMenu = ({ setMegaMenu, categories }: any) => {
                     >
                       <div>
                         <Image
-                          src={item.icon.asset.url}
+                          src={item?.icon?.asset?.url}
                           alt="delivery"
                           width={40}    
                           height={40}

@@ -11,7 +11,7 @@
 }
 
 .container{
-  max-width: 1536px;
+  max-width: 1440px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,12 +50,12 @@ h5,
 h6,
 p,
 li {
-  font-family: 'EffraMedium';
+  font-family: 'PoppinsRegular';
 }
 
 a,
 span {
-  font-family: 'EffraMedium';
+  font-family: 'PoppinsRegular';
 }
 
 body,

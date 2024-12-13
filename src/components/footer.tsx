@@ -1,142 +1,246 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP, FaTwitter } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 function Footer() {
   return (
-    <footer className='pt-20 relative'>
-      <div className='container mx-auto px-4 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 md:gap-x-7 gap-x-0 md:gap-y-0 gap-y-7'>
+    <footer className='pt-14 pb-4 relative'>
+      <div className='container mx-auto px-4 grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 justify-between gap-7'>
         <div>
-          <Link href="/" className='inline-block'>
-            <Image src="/images/logo.png" alt='logo' width={190} height={42} />
-          </Link>
-          <ul className='flex gap-2 mt-5'>
-            <li>
-              <Link href="#" className='inline-block bg-[#CACACA] hover:bg-secondary hover:border-secondary border border-[#CACACA] p-2.5 rounded text-white'>
-                <FaLinkedinIn />
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className='inline-block bg-[#CACACA] hover:bg-secondary hover:border-secondary border border-[#CACACA] p-2.5 rounded text-white'>
-                <FaFacebookF />
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className='inline-block bg-[#CACACA] hover:bg-secondary hover:border-secondary border border-[#CACACA] p-2.5 rounded text-white'>
-                <FaInstagram />
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className='inline-block bg-[#CACACA] hover:bg-secondary hover:border-secondary border border-[#CACACA] p-2.5 rounded text-white'>
-                <FaTwitter />
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className='inline-block bg-[#CACACA] hover:bg-secondary hover:border-secondary border border-[#CACACA] p-2.5 rounded text-white'>
-                <FaPinterestP />
-              </Link>
-            </li>
-          </ul>
-          <Link href="#" className='bg-[#2B4FB9] hover:bg-secondary px-8 py-4 text-sm font-semibold text-white rounded-[5px] inline-block mt-5'>
-            Get a Free Quote
-          </Link>
-        </div>
-        <div>
-          <h6 className='md:text-2xl text-xl font-medium mb-5'>
-            Customers
+          <h6 className='text-2xl font-semibold text-title_Clr mb-6'>
+            Company
+            <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
           </h6>
-          <ul className='grid gap-2'>
+          <ul className='flex flex-col gap-2.5'>
             <li>
-              <Link href="/about-us" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
+              <Link href="/" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/contact-us" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
-                Contact Us
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Category
               </Link>
             </li>
             <li>
-              <Link href="/terms-and-conditions" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
-                Terms and Conditions
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Products
               </Link>
             </li>
             <li>
-              <Link href="/privacy-policy" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
-                Privacy Policy
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Testimonials
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                FAQ's
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Contact
               </Link>
             </li>
           </ul>
         </div>
         <div>
-          <h6 className='md:text-2xl text-xl font-medium mb-5'>
-            Contact Us
+          <h6 className='text-2xl font-semibold text-title_Clr mb-6'>
+            Products Packaging
+            <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
           </h6>
-          <ul className='grid gap-2'>
+          <ul className='flex flex-col gap-2.5'>
             <li>
-              <Link href="tel:(888) 908-3029" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
-                (888) 908-3029
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Mailer Boxes
               </Link>
             </li>
             <li>
-              <Link href="mailto:info@elitecustomboxes.com" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
-                info@elitecustomboxes.com
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Rigid Boxes
               </Link>
             </li>
             <li>
-              <span className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
-                520 N Veterans Pkwy Addison, IL
-                60101 United States
-              </span>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Kraft Boxes
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Cardboard Boxes
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Products Boxes
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Boxes
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Sustainable Packaging
+              </Link>
             </li>
           </ul>
         </div>
         <div>
-          <h6 className='md:text-2xl text-xl font-medium mb-5'>
-            Help
+          <h6 className='text-2xl font-semibold text-title_Clr mb-6'>
+            Packaging Style
+            <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
           </h6>
-          <ul className='grid gap-2'>
+          <ul className='flex flex-col gap-2.5'>
             <li>
-              <Link href="#" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
-                How to Order
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Sleeve & Tray
               </Link>
             </li>
             <li>
-              <Link href="#" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
-                FAQ
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Die Cut Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
-                Dieline Templates
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Cigerate Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
-                Box Styles
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Child Resistance Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
-                How to Measure a Box
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Window Boxes
               </Link>
             </li>
             <li>
-              <Link href="/blogs" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
-                Blog
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Gable Boxes
               </Link>
             </li>
           </ul>
         </div>
-        <div className='lg:col-span-3'>
-          <Image src="/images/payments.png" alt="payments" width={461} height={56} className='ml-auto' />
+        <div>
+          <h6 className='text-2xl font-semibold text-title_Clr mb-6'>
+            Inspiration
+            <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
+          </h6>
+          <ul className='flex flex-col gap-2.5'>
+            <li>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Blogs
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Client Success Stories
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h6 className='text-2xl font-semibold text-title_Clr mb-6'>
+            Contact
+            <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
+          </h6>
+          <ul className='flex flex-col gap-2.5'>
+            <li>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                866-225-2112
+              </Link>
+            </li>
+            <li>
+              <Link href="mailto:info@halepathpack.com" target='_blank' className='text-base font-normal text-title_Clr flex items-center gap-2'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                info@halepathpack.com
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
-      <div className='container mx-auto px-4 py-5 mt-10 border-t border-[#86868624]'>
-        <p className='text-base font-normal text-[#666666] text-center'>
-          © 2023 logo. All Rights Reserved
-        </p>
+      <div className='container mx-auto px-4 flex md:flex-row flex-col md:items-center justify-between gap-7 mt-7'>
+        <div>
+          <h6 className='text-base font-semibold text-title_Clr mb-6'>
+            Where We’re Trusted
+          </h6>
+          <div className='flex gap-5 items-center'>
+            <Image src="/images/google-reviws.png" alt='google-reviws' width={117} height={46} className='md:w-full w-1/3' />
+            <Image src="/images/trustpilot.png" alt='trustpilot' width={117} height={59} className='md:w-full w-1/3' />
+            <Image src="/images/bbb.png" alt='bbb' width={163} height={34} className='md:w-full w-1/3' />
+            <Image src="/images/reviews-io.png" alt='reviews-io' width={131} height={53} className='md:w-full w-1/3' />
+          </div>
+        </div>
+        <div>
+          <h6 className='text-base font-semibold text-title_Clr mb-6'>
+            Our Logistics Partners
+          </h6>
+          <div className='flex justify-end items-end'>
+            <Image src="/images/fedex.png" alt='fedex' width={430} height={57} />
+          </div>
+        </div>
+      </div>
+      <div className='container mx-auto px-4 flex md:flex-row flex-col md:items-center justify-between gap-7 mt-7'>
+        <div className='flex gap-5 items-center'>
+          <Link href="/" className='inline-flex'>
+            <Image src="/images/logo.png" alt='logo' width={93} height={98} />
+          </Link>
+          <ul className='flex items-center gap-5'>
+            <li>
+              <Link href="#" className='text-2xl inline-flex text-[#9C9C9C] hover:text-primary'>
+                <FaFacebookF />
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className='text-2xl inline-flex text-[#9C9C9C] hover:text-primary'>
+                <FaInstagram />
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className='text-2xl inline-flex text-[#9C9C9C] hover:text-primary'>
+                <FaTwitter />
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className='flex justify-end items-end'>
+          <p className='md:text-lg text-sm font-normal text-title_Clr'>
+            Copyright 2024 Hale Path Packaging © All Rights Reserved
+          </p>
+        </div>
       </div>
     </footer>
   )

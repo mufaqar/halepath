@@ -23,7 +23,7 @@ function Packaging_Style({ data }: any) {
                                 title={category?.name}
                                 content={category?.excerpt}
                                 slug= {category?.slug}
-                                img={urlForImage(category?.image.asset._ref).width(306).url()}
+                                img={urlForImage(category?.image?.asset._ref).width(306).url()}
                             />
                         ))
                     }
