@@ -75,7 +75,7 @@ function Header() {
               <Image src="/images/logo.png" alt='logo' width={93} height={98} />
             </Link>
           </div>
-          <nav className='lg:w-[60%] w-1/2 flex items-center justify-center'>
+          <nav className='lg:w-[61%] w-1/2 flex items-center justify-end'>
             <div className='menu_icon text-3xl lg:hidden block w-fit ml-auto'
               onClick={() => setOpenNav(!openNav)}>
               {openNav ? (<IoMdClose />) : (<FaBars />)}
@@ -94,7 +94,7 @@ function Header() {
               })}
             </ul>
           </nav>
-          <div className='lg:w-[25%] lg:flex gap-5 justify-between hidden'>
+          <div className='lg:w-[24%] lg:flex gap-5 justify-end hidden'>
             <Link href="#" className='bg-transparent hover:bg-primary px-5 py-4 text-base uppercase font-medium text-primary hover:text-white rounded-full border-2 border-primary'>
               Contact Us
             </Link>
