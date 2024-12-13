@@ -1,5 +1,3 @@
-import { Inter } from 'next/font/google'
-import MainBanner from '@/components/home/main'
 import Packaging_Style from '@/components/home/packaging-style'
 import HowIt_work from '@/components/home/howit-work'
 import Packing_Design from '@/components/home/packing-design'
@@ -8,19 +6,20 @@ import Testimonials from '@/components/home/testimonials'
 import Faqs from '@/components/home/faqs'
 import Get_Qoute from '@/components/home/get-qoute'
 import { client } from '../../sanity/lib/client'
-import {Qcategories, Qfaqs, Qproducts, Qtestimonials} from '../../sanity/queries'
-const inter = Inter({ subsets: ['latin'] })
-export default function Home({testimonialsRes, faqRes, categoriesRes, productsRes}:any) {
-  const fproduct = productsRes?.filter((item:any)=>item.featured === true)
+import { Qcategories, Qfaqs, Qproducts, Qtestimonials } from '../../sanity/queries'
+import MainSlider from '@/components/home/mainSlider'
+
+export default function Home({ testimonialsRes, faqRes, categoriesRes, productsRes }: any) {
+  const fproduct = productsRes?.filter((item: any) => item.featured === true)
   return (
     <main className={``} >
-      <MainBanner />
-      <Packaging_Style data={categoriesRes}/>
+      <MainSlider />
+      <Packaging_Style data={categoriesRes} />
       <HowIt_work />
-      <Packing_Design data={fproduct} title="Custom Packaging Boxes" content="Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques."/>
+      <Packing_Design data={fproduct} title="Custom Packaging Boxes" content="Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques." />
       <Why_ChooseUs />
-      <Testimonials data={testimonialsRes}/>
-      <Faqs data={faqRes}/>
+      <Testimonials data={testimonialsRes} />
+      <Faqs data={faqRes} />
       <section className='py-16 max_content'>
         <div className='container mx-auto px-4'>
           <div className='max-h-[350px] h-full overflow-y-scroll '>
