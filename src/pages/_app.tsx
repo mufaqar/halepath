@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: any) {
   const {asPath} = useRouter()
   return <>
     <Head>
-      <title>Packhoop</title>
+      <title>Hale Path Packaging</title>
     </Head>
     {!asPath.includes('studio') && <Header />}
     <Component {...pageProps} />
