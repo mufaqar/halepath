@@ -26,9 +26,7 @@ const TestimonialAndFaq = () => {
                 {[1, 2, 3, 4].map((item, idx) => (
                   <div className="px-1 pb-4" key={idx}>
                     <div
-                      className="p-8 bg-white mt-10 border shadow rounded-[19px]"
-                      key={idx}
-                    >
+                      className="p-8 bg-white mt-10 border shadow rounded-[19px]" >
                       <Image
                         src="/images/about-page/qoute-icon.png"
                         alt=""
