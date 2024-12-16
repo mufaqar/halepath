@@ -1,23 +1,15 @@
-"use client";
-import PageBanner from "@/components/page-banner";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import Slider from "react-slick";
-import { IoIosArrowDown } from "react-icons/io";
 import { FaStar } from "react-icons/fa6";
 import { HiMiniArrowLongRight, HiMiniArrowLongLeft } from "react-icons/hi2";
+import Instagram from "@/components/instagram/instagram";
+import Faqs from "@/components/faqs/faqs";
+import SliderFull from "@/components/slider/slider-full";
 
 const AboutUs = () => {
-  const [openFaq, setOpenFaq] = useState<any>(null);
   const slider = React.useRef<any>(null);
-
-  const handleFAQ = (id: number) => {
-    if (openFaq === id) {
-      return setOpenFaq(null);
-    }
-    setOpenFaq(id);
-  };
 
   return (
     <>
@@ -152,42 +144,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="about">
-        <Slider {...settings}>
-          {[1, 2, 3, 4, 5].map((item, idx) => (
-            <div className="!grid md:grid-cols-2" key={idx}>
-              <figure className="">
-                <Image
-                  src="/images/about-page/slider.png"
-                  alt=""
-                  className="w-full object-cover h-full"
-                  width={1023}
-                  height={772}
-                />
-              </figure>
-              <div className="slider_bg bg-cover bg-no-repeat flex justify-center md:items-center flex-col px-10 md:px-5 pb-14 md:pb-10 py-10 p-5">
-                <div>
-                  <h6 className="text-[#1C2E42] font-semibold text-xl">
-                    Hale Path Packaging
-                  </h6>
-                  <h2 className="font-semibold xl:text-[100px] text-[50px] leading-[60px] lg:text-[70px] lg:leading-[80px] xl:leading-[105px]">
-                    Good
-                    <br /> Quality <br /> Packaging
-                  </h2>
-                  <div className="flex mt-5">
-                    <Link
-                      href="#"
-                      className="bg-[#1C2E42] text-white px-[35px] rounded-full font-medium text-[17px] py-[14px]"
-                    >
-                      Learn more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </section>
+      <SliderFull/>
 
       <section className="py-[60px] bg-[#F5F5F5]">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-6">
@@ -265,63 +222,12 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
-          <div className="pt-8">
-            <h2 className="text-2xl lg:text-[43px] font-semibold leading-normal">
-              Frequently Asked <span className="text-[#47AFC3]">Questions</span>
-            </h2>
-            <div className="mt-10">
-              {[1, 2, 3, 4, 5]?.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="border shadow rounded-[10px] w-full mb-1 bg-white"
-                >
-                  <button
-                    onClick={() => handleFAQ(idx)}
-                    className="px-6 py-6 w-full text-[#1C1C1C] text-left text-xl flex items-center gap-4 justify-between"
-                  >
-                    Lorem Ipsum is simply dummy text of the printing?
-                    <IoIosArrowDown className="text-2xl" />
-                  </button>
-                  <div
-                    className={`transition-all duration-200 ${
-                      openFaq === idx
-                        ? "max-h-[300px] h-full"
-                        : "h-0 overflow-hidden"
-                    }`}
-                  >
-                    <p className="text-lg px-6 text-[#1C1C1C] pb-6">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Labore explicabo, est tempora tenetur dolorem a dolore
-                      ullam officiis animi atque?
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <Faqs/>
         </div>
       </section>
 
       {/* Instagram  */}
-      <section className="bg-[#EAF6F9] pt-14 px-4">
-        <h2 className="text-3xl sm:text-[43px] lg:leading-[50px] mt-5 font-semibold leading-normal text-center">Instagram Posts</h2>
-        <div className="mt-9 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          <div className="">
-            <Image
-              src="/images/about-page/i1.png"
-              alt=""
-              width={399}
-              height={399}
-              className="w-full h-full"
-            />
-          </div>
-          {[1, 2, 3, 4].map((item, idx) => (
-            <div className="">
-              <Image src={`/images/about-page/o${idx+1}.png`} alt="" className="w-full h-full" width={399} height={399} />
-            </div>
-          ))}
-        </div>
-      </section>
+     <Instagram/>
 
     </>
   );
@@ -329,14 +235,6 @@ const AboutUs = () => {
 
 export default AboutUs;
 
-var settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-};
 
 var tsettings = {
   dots: false,
