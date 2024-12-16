@@ -11,7 +11,7 @@ import React from 'react'
 import { urlForImage } from '../../../sanity/lib/image'
 import Head from 'next/head'
 import DesignBox from '@/components/home/designBox'
-
+import ImageCarousel from "../../components/image-crousel/ImageCarousel"
 
 export default function Product({ productRes, faqRes, relatedProducts }: any) {
     return (
@@ -71,6 +71,7 @@ export default function Product({ productRes, faqRes, relatedProducts }: any) {
                     </div>
                 </section>
             </main>
+            
         </>
     )
 }
