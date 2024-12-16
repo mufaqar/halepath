@@ -181,3 +181,31 @@ html {
 .desc_content a {
   text-decoration: underline;
 }
+
+.about_bg{
+  background-image: url('../../public/images/about-page/bg.png');
+}
+.offerbg{
+  background-image: url('../../public/images/about-page/offer-bg.png');
+}
+
+.slider_bg{
+  background-image: url('../../public/images/about-page/slider-bg.svg');
+}
+.about .slick-dots{
+  bottom: 1rem;
+}
+.about .slick-dots li button{
+  background: #a6a6a6;
+  border-radius: 100%;
+  width: 14px;
+  height: 14px;
+}
+
+.about .slick-dots li button:before{
+  content: '';
+}
+
+.about .slick-dots li.slick-active button{
+  background: #f1f1f1;
+}
