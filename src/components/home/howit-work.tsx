@@ -1,34 +1,49 @@
+import Link from 'next/link'
 import React from 'react'
-import ServiceBox from './serviceBox'
 
 function HowIt_work() {
     return (
-        <section className='py-16 bg-[#F7F7F7]'>
-            <div className='container mx-auto px-4'>
+        <section className='py-10 md:px-4 px-4'>
+            <div className='container mx-auto md:p-14 p-8 bg-secondary flex md:flex-row flex-col gap-7 justify-between items-center rounded-[19px]'>
                 <div>
-                    <h2 className='md:text-4xl text-3xl font-semibold text-title_Clr text-center'>
-                        How it works
+                    <h2 className='md:text-4xl text-2xl font-normal text-white mb-10'>
+                        Globally Expertise Delivered Locally
                     </h2>
-                    <p className='text-lg font-normal text-txt_Clr text-center max-w-[880px] mx-auto mt-5'>
-                        Select a packaging style, quantity, and choose from custom or stock sizes – then start designing your custom boxes. Add customization options like images, text, and any color your brand requires. As you design you'll see an instant quote so you know exactly what your final order will come to.
-                    </p>
+                    <Link href="#" className='bg-primary hover:bg-white px-9 py-3 text-lg font-medium text-white hover:text-primary rounded-full border-2 border-primary flex items-center gap-2 w-fit'>
+                        See All Products
+                    </Link>
                 </div>
-                <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-7 mt-10'>
-                    <ServiceBox
-                        title="Tiny minimums. No maximums."
-                        content="No matter the size of your custom packaging order, you'll get the best boxes at prices to match."
-                        img="/images/tiny.png"
-                    />
-                    <ServiceBox
-                        title="Instant quotes"
-                        content="Pick your style, design your boxes, and get an instant quote."
-                        img="/images/qoutes.png"
-                    />
-                    <ServiceBox
-                        title="Fast turnarounds"
-                        content="Eligible orders may ship within 10 days or less with priority turnaround options."
-                        img="/images/turns.png"
-                    />
+                <div className='flex md:flex-row flex-col gap-7 justify-between'>
+                    <div>
+                        <span className="block border-b-2 border-primary max-w-[61px] w-full"></span>
+                        <h3 className='md:text-5xl text-3xl font-bold text-white my-6'>
+                            35
+                        </h3>
+                        <p className='text-lg font-normal text-white'>
+                            Lorem Ipsum
+                            Lorem Ipsum
+                        </p>
+                    </div>
+                    <div>
+                        <span className="block border-b-2 border-primary max-w-[61px] w-full"></span>
+                        <h3 className='md:text-5xl text-3xl font-bold text-white my-6'>
+                            35,000
+                        </h3>
+                        <p className='text-lg font-normal text-white'>
+                            Lorem Ipsum
+                            Lorem Ipsum
+                        </p>
+                    </div>
+                    <div>
+                        <span className="block border-b-2 border-primary max-w-[61px] w-full"></span>
+                        <h3 className='md:text-5xl text-3xl font-bold text-white my-6'>
+                            350
+                        </h3>
+                        <p className='text-lg font-normal text-white'>
+                            Lorem Ipsum
+                            Lorem Ipsum
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

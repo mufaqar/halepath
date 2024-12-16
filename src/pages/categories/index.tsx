@@ -19,7 +19,7 @@ const Products = ({ categoriesRes }: any) => {
                 key={i}
                 title={category?.name}
                 slug={category?.slug}
-                img={urlForImage(category?.image.asset._ref).width(306).url()} />
+                img={urlForImage(category?.image?.asset?._ref).width(306).url()} />
             ))}
           </div>
         </div>
