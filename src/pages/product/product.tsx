@@ -1,4 +1,3 @@
-import Choose_Us from '@/components/category/choose-us'
 import ContentBox from '@/components/category/contentBox'
 import Cta from '@/components/category/cta'
 import Cat_Faqs from '@/components/category/faqs'
@@ -6,7 +5,6 @@ import Get_Started from '@/components/category/get-started'
 import Order_Process from '@/components/category/order-process'
 import Technical_Specs from '@/components/category/technical-specs'
 import Banner from '@/components/products/banner'
-import Qoute_Sec from '@/components/products/qoute-sec'
 import React from 'react'
 import { urlForImage } from '../../../sanity/lib/image'
 import Head from 'next/head'
@@ -71,6 +69,7 @@ export default function Product({ productRes, faqRes, relatedProducts }: any) {
                     </div>
                 </section>
             </main>
+            
         </>
     )
 }
