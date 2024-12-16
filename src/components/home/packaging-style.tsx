@@ -1,33 +1,68 @@
 import React from 'react'
 import PackingBox from './packingBox'
 import { urlForImage } from '../../../sanity/lib/image'
+import Slider from 'react-slick'
 
 function Packaging_Style({ data }: any) {
-
+    const settings = {
+        dots: false,
+        arrows: false,
+        className: "center",
+        centerMode: true,
+        infinite: true,
+        centerPadding: "60px",
+        slidesToShow: 4,
+        speed: 500,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    }
     return (
-        <section id="box-by-material" className='py-16'>
+        <section id="box-by-material" className='py-16 bg-[#EAF6F9]'>
             <div className='container mx-auto px-4'>
                 <div>
-                    <h2 className='md:text-4xl text-3xl font-semibold text-title_Clr text-center'>
-                        Select Your Custom Packaging Style
+                    <h2 className="md:text-5xl text-3xl font-semibold text-title_Clr text-center">
+                        Explore Our Custom Printing and Packaging Design
                     </h2>
-                    <p className='text-lg font-normal text-txt_Clr text-center max-w-[800px] mx-auto mt-5'>
-                        Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques.
+                    <p className='text-lg font-normal text-txt_Clr text-center md:w-5/6 mx-auto mt-5'>
+                        Start designing unique boxes with different styles, sizes, and choices. Custom rigid boxes or Kraft boxes for retail products and many more?We can help, Custom printing and packaging services ideas abound.
                     </p>
                 </div>
-                <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 mt-10'>
+                <Slider {...settings}>
                     {
-                        data.slice(0,4).map((category: any, i: number) => (
+                        [0, 1, 2, 3, 4, 5, 6].map((category: any, i: number) => (
                             <PackingBox
                                 key={i}
                                 title={category?.name}
                                 content={category?.excerpt}
-                                slug= {category?.slug}
+                                slug={category?.slug}
                                 img={urlForImage(category?.image?.asset._ref).width(306).url()}
                             />
                         ))
                     }
-                </div>
+                </Slider>
             </div>
         </section>
     )
