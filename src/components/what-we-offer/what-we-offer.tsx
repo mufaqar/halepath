@@ -17,7 +17,7 @@ const WhatWeOffer = () => {
       <div className="container mx-auto px-4">
         <div className="p-6 bg-white grid grid-cols-1 gap-5 xl:gap-2 sm:grid-cols-2 xl:grid-cols-4 mb-32 -mt-48 border">
           {[1, 2, 3, 4].map((item, idx) => (
-            <div>
+            <div key={idx}>
               <Image
                 src={`/images/about-page/o${idx + 1}.png`}
                 alt=""

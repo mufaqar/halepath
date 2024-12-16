@@ -18,7 +18,7 @@ const Instagram = () => {
           />
         </div>
         {[1, 2, 3, 4].map((item:any, idx) => (
-          <div className="">
+          <div className="" key={idx}>
             <Image
               src={`/images/about-page/o${idx + 1}.png`}
               alt=""
