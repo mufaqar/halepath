@@ -41,7 +41,7 @@ const TestimonialAndFaq = () => {
                       </p>
                       <div className="mt-2 flex gap-1">
                         {[1, 2, 3, 4, 5]?.map((item, idx) => (
-                          <FaStar className="text-[#FFAE00]" size={16} />
+                          <FaStar className="text-[#FFAE00]" size={16} key={idx} />
                         ))}
                       </div>
                       <div className="mt-5 flex gap-2 items-center">
