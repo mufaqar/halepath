@@ -37,7 +37,7 @@ const TestimonialAndFaq = () => {
                         Lorem ipsum dolor sit amet. Qui ducimus beatae quo
                         galisum architecto 33 magnam quos. Quo ducimus ipsum et
                         atque voluptatem est beatae fugit. Sit odit obcaecati
-                        cum maiores Quis.
+                       
                       </p>
                       <div className="mt-2 flex gap-1">
                         {[1, 2, 3, 4, 5]?.map((item, idx) => (
