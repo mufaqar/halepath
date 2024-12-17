@@ -5,14 +5,12 @@ import { TbTruckDelivery } from "react-icons/tb";
 
 const IconBox = ({ title, img, slug }: any) => {
     return (
-        <div>
-            <Link href={`/${slug?.current}`} className='text-base font-medium text-title_Clr flex flex-col items-center gap-4 py-9 rounded bg-[#FDFDFD] shadow-[0px_3px_2px_0px_rgb(23,43,77,8%)] hover:shadow-[0px_8px_5px_0px_rgb(23,43,77,8%)]'>
+        <div className='py-9 rounded-[8px] bg-[#F5F5F5] shadow-[0px_2px_4px_-2px_rgb(23,43,77,8%)]'>
+            <Link href={`/${slug?.current}`} className='text-base font-medium text-title_Clr flex flex-col items-center gap-1'>
                 <div>
-                    <span className='text-6xl'>
-                        <TbTruckDelivery />
-                    </span>
+                    <Image src={img} alt='' width={64} height={64}/>
                 </div>
-                <span> {title}</span>
+                <p>{title}</p>
             </Link>
         </div>
     )

@@ -7,23 +7,26 @@ import IconBox from '@/components/category/icon-box';
 import PageBanner from '@/components/page-banner';
 
 const Products = ({ categoriesRes }: any) => {
+  console.log("🚀 ~ Products ~ categoriesRes:", categoriesRes)
   return (
     <>
-      <PageBanner title="Custom packaging solutions for every industry."
+      <PageBanner title="All Categories"
         content="Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques." />
-      <section>
-        <div className='container mx-auto px-4 mt-16'>
+      <section className='mb-14'>
+        <div className='container mx-auto px-4 pt-5'>
           <div className='grid lg:grid-cols-6 md:grid-cols-4 grid-cols-1 gap-7 mt-6'>
             {categoriesRes.map((category: any, i: number) => (
               <IconBox
                 key={i}
                 title={category?.name}
                 slug={category?.slug}
-                img={urlForImage(category?.image?.asset?._ref).width(306).url()} />
+                img={urlForImage(category?.icon?.asset?._ref).url()} />
             ))}
           </div>
         </div>
-      </section></>
+      </section>
+      
+    </>
   )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 const PageBanner = ({ title, content }: any) => {
     return (
-        <section className='py-16 bg-[#F7F7F7]' id="shapes-and-style">
+        <section className='pt-14' id="shapes-and-style">
             <div className='container mx-auto px-4'>
                 <div>
                     <h2 className='md:text-4xl text-3xl font-semibold text-title_Clr text-center'>

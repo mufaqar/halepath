@@ -17,8 +17,8 @@ const Faqs = ({col}:any) => {
       </h2>
       <div className={`mt-10 grid gap-1 ${col === 2 && "grid-cols-2"}`}>
         {[1, 2, 3, 4, 5]?.map((item, idx) => (
-          <div
-            key={idx}
+          <div key={idx}>
+            <div
             className="border shadow rounded-[10px] w-full bg-white"
           >
             <button
@@ -39,6 +39,7 @@ const Faqs = ({col}:any) => {
                 animi atque?
               </p>
             </div>
+          </div>
           </div>
         ))}
       </div>
