@@ -1,15 +1,4 @@
-import Banner from "@/components/category/banner";
-import Choose_Us from "@/components/category/choose-us";
-import ContentBox from "@/components/category/contentBox";
-import Cta from "@/components/category/cta";
-import Cat_Faqs from "@/components/category/faqs";
-import Get_Started from "@/components/category/get-started";
-import Order_Process from "@/components/category/order-process";
-import Technical_Specs from "@/components/category/technical-specs";
-import DesignBox from "@/components/home/designBox";
 import React from "react";
-import { useRouter } from "next/router";
-import { urlForImage } from "../../../sanity/lib/image";
 import Head from "next/head";
 import Image from "next/image";
 import Qoute_Form from "@/components/category/qoute-form";
@@ -21,7 +10,6 @@ import OurCapabilities from "@/components/category/our-capabilities";
 import Faqs from "@/components/faqs/faqs";
 
 export default function Category({ categoryRes, productsRes, faqRes }: any) {
-  console.log("🚀 ~ Category ~ productsRes:", productsRes);
   const slider = React.useRef<any>(null);
 
   return (
@@ -226,7 +214,7 @@ export default function Category({ categoryRes, productsRes, faqRes }: any) {
           <Faqs col={2} />
         </div>
       </section>
-      
+
     </>
   );
 }
