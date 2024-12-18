@@ -23,7 +23,7 @@ const Featured_Posts = ({ data }) => {
                     </Link>
                 </h4>
                 <p>
-                    <Link href={`blogs/${data?.slug?.current}`} className='text-base font-normal text-secondary inline-flex items-center gap-3'>
+                    <Link href={`blog/${data?.slug?.current}`} className='text-base font-normal text-secondary inline-flex items-center gap-3'>
                         Read More <FaArrowRightLong />
                     </Link>
                 </p>
