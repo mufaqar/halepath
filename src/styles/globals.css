@@ -232,3 +232,12 @@ html {
   color: #53B6C9;
   font-size: 10px;
 }
+.before_line{
+  @apply md:before:block before:hidden before:content-[""] before:absolute before:h-full before:w-0 before:top-[92px] left-1/2 before:border-l before:border-dashed before:border-primary
+}
+ul.career_list li{
+  padding-left: 10px;
+}
+ul.career_list li::marker {
+  content: '✔';
+  }
