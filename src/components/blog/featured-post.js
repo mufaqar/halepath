@@ -18,7 +18,7 @@ const Featured_Posts = ({ data }) => {
                     Knowledge Base {data?.category}
                 </p>
                 <h4>
-                    <Link href={`blogs/${data?.slug?.current}`} className='md:text-xl text-lg font-bold text-black inline-flex my-5'>
+                    <Link href={`blog/${data?.slug?.current}`} className='md:text-xl text-lg font-bold text-black inline-flex my-5'>
                         A Guide to Cannabis Seed Packaging: Everything You Need to Know
                     </Link>
                 </h4>
