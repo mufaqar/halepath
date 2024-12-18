@@ -34,7 +34,7 @@ const BlogDetails = ({ blog }) => {
       <section className='pb-14'>
         <div className='container mx-auto px-4'>
           <h2 className='md:text-[29px] md:leading-normal text-lg font-bold text-title_Clr text-center mb-4'>
-            Most Popular Blogs
+            Most Popular Blog
           </h2>
           <div className="grid md:grid-cols-3 grid-cols-1 md:gap-[30px] gap-7">
             {[1, 2, 3]?.map((item, idx) => {

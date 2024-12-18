@@ -249,8 +249,10 @@ export default Qoute_Form;
 
 const UploadButton = ({ onUpload }: any) => {
   // Trigger file input when button is clicked
+  
   const handleButtonClick = () => {
-    document.getElementById("fileInput").click();
+    const fileInput = document.getElementById("fileInput") as HTMLInputElement;
+    fileInput.click();
   };
 
   const handleFileChange = (e: any) => {
