@@ -3,23 +3,30 @@ import Slider from "react-slick";
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import Image from 'next/image';
 import Link from 'next/link';
-import {convertTimestamp} from '@/utils'
+import { convertTimestamp } from '@/utils'
+import { FaArrowRightLong } from 'react-icons/fa6';
 
 const Featured_Posts = ({ data }) => {
-
+    console.log(data)
     return (
-        <div className='shadow-[0px_8px_5px_0px_rgb(23,43,77,8%)] hover:shadow-[0px_3px_2px_0px_rgb(23,43,77,8%)] rounded-lg'>
-            <div>
-                <Image src={data?.image?.asset?.url} alt='make-product' width={793} height={472} className='w-full h-full object-cover rounded-t-lg' />
+        <div className='shadow-[-1px_3px_10px_0px_rgba(0,0,0,0.06)]'>
+            <div className='h-[264px]'>
+                <Image src="/images/blog/blog5.png" alt='Featured' width={480} height={264} className='w-full h-full object-cover object-center' />
             </div>
-            <div className='p-4'>
-                <Link href={`/blogs/${data?.slug?.current}`} className='md:text-2xl text-base font-medium text-title_Clr block w-fit'>
-                    {data?.title}
-                </Link>
-                <p className='md:text-base text-sm font-medium text-txt_Clr'>
-                    {convertTimestamp(data?._createdAt)}
+            <div className='md:p-7 p-5'>
+                <p className='text-sm font-semibold text-secondary/80 bg-[#F1F5F9] px-2 py-1 rounded-lg w-fit'>
+                    Knowledge Base {data?.category}
                 </p>
-                <p className='mt-2 text-gray-500 font-light'>{data?.excerpt}</p>
+                <h4>
+                    <Link href={`blogs/${data?.slug?.current}`} className='md:text-xl text-lg font-bold text-black inline-flex my-5'>
+                        A Guide to Cannabis Seed Packaging: Everything You Need to Know
+                    </Link>
+                </h4>
+                <p>
+                    <Link href={`blogs/${data?.slug?.current}`} className='text-base font-normal text-secondary inline-flex items-center gap-3'>
+                        Read More <FaArrowRightLong />
+                    </Link>
+                </p>
             </div>
         </div>
     )

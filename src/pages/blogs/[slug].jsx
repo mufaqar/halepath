@@ -2,46 +2,47 @@ import React from 'react'
 import { client } from '../../../sanity/lib/client';
 import { QSingleBlog } from '../../../sanity/queries'
 import Image from 'next/image';
+import Featured_Posts from "@/components/blog/featured-post";
 import { convertTimestamp } from '@/utils'
 // import { PortableText } from '@portabletext/react';
 const BlockContent = require('@sanity/block-content-to-react')
-import { FaFacebook } from "react-icons/fa6";
-import Link from 'next/link';
-import { FaXTwitter } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-
 
 const BlogDetails = ({ blog }) => {
-  console.log("🚀 ~ BlogDetails ~ blog:", blog)
   return (
     <>
-    <section className='bg-gray-100 text-center text-4xl py-32'>
-      <h2>Blog</h2>
-    </section>
-    <div className='max-w-[1180px] my-20 mx-auto px-4'>
-      <Image src={blog?.image?.asset?.url} alt='make-product' width={793} height={472} className='w-full object-cover rounded-lg' />
-      <div className='flex items-center my-8 gap-3'>
-        <p className='bg-secondary text-white p-2 rounded-lg'> {convertTimestamp(blog?._createdAt)}</p>
-        <h2 className='text-3xl capitalize'>{blog?.title}</h2>
-      </div>
-      <div className='desc_content my-4'>
-        <BlockContent
-          blocks={blog?.content}
-          projectId="byl8ndcu"
-          dataset="production"
-        />      
+      <section className='pt-14'>
+        <div className='container mx-auto px-4'>
+          <h1 className='md:text-[51px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-4'>
+            Our Best Boxes
+          </h1>
+          <div className='max-w-[1054px] max-h-[454px] mx-auto '>
+            <Image src="/images/blog/featured.png" alt='featured' width={1050} height={454} className='object-cover object-center rounded-[19px] mx-auto' />
+          </div>
         </div>
-        <div>
-          <h2 className='text-3xl capitalize'>Share this post</h2>
-          <ul className="text-3xl flex gap-4 mt-3">
-            <li className='hover:text-secondary hover:scale-105'><Link href={``}><FaFacebook /></Link></li>
-            <li className='hover:text-secondary hover:scale-105'><Link href={``}><FaXTwitter /></Link></li>
-            <li className='hover:text-secondary hover:scale-105'><Link href={``}><FaLinkedin /></Link></li>
-            <li className='hover:text-secondary hover:scale-105'><Link href={``}><FaInstagram /></Link></li>
-          </ul>
+      </section>
+      <section className='pt-6 pb-14'>
+        <div className='container mx-auto px-4'>
+          <div className='desc_content my-4'>
+            <BlockContent
+              blocks={blog?.content}
+              projectId="byl8ndcu"
+              dataset="production"
+            />
+          </div>
         </div>
-    </div>
+      </section>
+      <section className='pb-14'>
+        <div className='container mx-auto px-4'>
+          <h2 className='md:text-[29px] md:leading-normal text-lg font-bold text-title_Clr text-center mb-4'>
+            Most Popular Blogs
+          </h2>
+          <div className="grid md:grid-cols-3 grid-cols-1 md:gap-[30px] gap-7">
+            {[1, 2, 3]?.map((item, idx) => {
+              return <Featured_Posts key={idx} data={item} />;
+            })}
+          </div>
+        </div>
+      </section>
     </>
   )
 }
