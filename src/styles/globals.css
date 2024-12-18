@@ -10,7 +10,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-.container{
+.container {
   max-width: 1440px;
 }
 
@@ -144,16 +144,16 @@ html {
 .desc_content h4 {
   font-size: 24px;
   line-height: 30.72px;
-  color: #2A4CFF;
+  color: #1c1c1c;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .desc_content p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 24.89px;
-  color: #000;
-  font-weight: 300;
+  color: #1c1c1c;
+  font-weight: 400;
   margin-bottom: 20px;
 }
 
@@ -162,9 +162,9 @@ html {
 }
 
 .desc_content ul {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 24.89px;
-  color: #000;
+  color: #1c1c1c;
   font-weight: 300;
   margin-bottom: 20px;
   list-style-type: disc;
@@ -172,63 +172,84 @@ html {
 }
 
 .desc_content ol {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 24.89px;
-  color: #000;
+  color: #1c1c1c;
   font-weight: 300;
   margin-bottom: 20px;
 }
+
 .desc_content a {
   text-decoration: underline;
 }
 
-.about_bg{
+.about_bg {
   background-image: url('../../public/images/about-page/bg.png');
 }
-.offerbg{
+
+.offerbg {
   background-image: url('../../public/images/about-page/offer-bg.png');
 }
 
-.slider_bg{
+.slider_bg {
   background-image: url('../../public/images/about-page/slider-bg.svg');
 }
-.about .slick-dots{
+
+.about .slick-dots {
   bottom: 1rem;
 }
-.about .slick-dots li button{
+
+.about .slick-dots li button {
   background: #a6a6a6;
   border-radius: 100%;
   width: 14px;
   height: 14px;
 }
 
-.about .slick-dots li button:before{
+.about .slick-dots li button:before {
   content: '';
 }
 
-.about .slick-dots li.slick-active button{
+.about .slick-dots li.slick-active button {
   background: #f1f1f1;
 }
-  .Main_slider .slick-dots {
+
+.Main_slider .slick-dots {
   bottom: 0px;
 }
-.Main_slider .slick-dots li button:before{
+
+.Main_slider .slick-dots li button:before {
   opacity: .75;
   color: #fff;
   font-size: 10px;
 }
-.Main_slider .slick-dots li.slick-active button:before{
+
+.Main_slider .slick-dots li.slick-active button:before {
   opacity: 1;
   color: #fff;
   font-size: 10px;
 }
-.slider-container .slick-dots li button:before{
+
+.slider-container .slick-dots li button:before {
   opacity: .75;
   color: #9c9c9c;
   font-size: 10px;
 }
-.slider-container .slick-dots li.slick-active button:before{
+
+.slider-container .slick-dots li.slick-active button:before {
   opacity: 1;
   color: #53B6C9;
   font-size: 10px;
+}
+
+.before_line {
+  @apply md:before:block before:hidden before:content-[""] before:absolute before:h-full before:w-0 before:top-[92px] left-1/2 before:border-l before:border-dashed before:border-primary
+}
+
+ul.career_list li {
+  padding-left: 10px;
+}
+
+ul.career_list li::marker {
+  content: '✔';
 }

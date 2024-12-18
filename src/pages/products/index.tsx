@@ -19,13 +19,34 @@ const Products = ({ productsRes }: any) => {
         title="All Products"
         content="Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques."
       />
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 grid-cols-1 md:gap-[30px] gap-7">
+            <div className='shadow-[0px_0px_5px_0px_rgba(0,0,0,0.39)]'>
+              <div className='h-[333px] '>
+                <Image src="/images/product/product1.png" alt='Featured' width={344} height={344} className='w-full h-full object-cover object-center' />
+              </div>
+              <div className='md:p-6 p-5'>
+                <h4>
+                  <Link href="#" className='md:text-xl text-lg font-bold text-black inline-flex my-5'>
+                    Lorem Ipsum
+                  </Link>
+                </h4>
+                <p className="text-sm font-normal text-title_Clr">
+                  lorem ipsum lorem ipsum. lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {formattedData.map((item, idx) => (
         <section key={idx} className={`py-10 mb-6 ${idx % 2 !== 0 && ""}`}>
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center gap-5">
-              <h2 className="md:text-2xl text-2xl font-semibold text-title_Clr">
+              {/* <h2 className="md:text-2xl text-2xl font-semibold text-title_Clr">
                 {item.categoryName}
-              </h2>
+              </h2> */}
               {/* <Link
                 href={item.categorySlug}
                 className="bg-primary hover:bg-secondary md:px-8 px-6 md:py-4 py-2 text-sm font-semibold text-white rounded-[5px]"
@@ -33,7 +54,7 @@ const Products = ({ productsRes }: any) => {
                 View All
               </Link> */}
             </div>
-            <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-4 mt-6">
+            {/* <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-4 mt-6">
               {item?.products?.slice(0, 4)?.map((product: any, i: number) => (
                 <Link
                   href={`/${product.slug?.current}`}
@@ -42,7 +63,7 @@ const Products = ({ productsRes }: any) => {
                 >
                   <div className="bg-[#ffffff] rounded-xl max-h-[260px]">
                     <Image
-                      src={urlForImage(product?.image.asset._ref)
+                      src={urlForImage(product?.image?.asset._ref)
                         .width(306)
                         .url()}
                       alt={product.title}
@@ -70,7 +91,7 @@ const Products = ({ productsRes }: any) => {
                 View All
                 <IoIosArrowForward />
               </Link>
-            </div>
+            </div> */}
           </div>
         </section>
       ))}

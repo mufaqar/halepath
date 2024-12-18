@@ -20,19 +20,19 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/about-us" className='text-base font-normal text-title_Clr flex items-center gap-2'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/categories" className='text-base font-normal text-title_Clr flex items-center gap-2'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Category
+                Product By Industry
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/products" className='text-base font-normal text-title_Clr flex items-center gap-2'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Products
               </Link>
@@ -50,7 +50,7 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/contact" className='text-base font-normal text-title_Clr flex items-center gap-2'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Contact
               </Link>
@@ -158,9 +158,9 @@ function Footer() {
           </h6>
           <ul className='flex flex-col gap-2.5'>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/blog" className='text-base font-normal text-title_Clr flex items-center gap-2'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Blogs
+                Blog
               </Link>
             </li>
             <li>
@@ -178,7 +178,7 @@ function Footer() {
           </h6>
           <ul className='flex flex-col gap-2.5'>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="tel:866-225-2112" className='text-base font-normal text-title_Clr flex items-center gap-2'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 866-225-2112
               </Link>

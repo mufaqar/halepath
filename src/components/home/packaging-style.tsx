@@ -41,9 +41,9 @@ function Packaging_Style({ data }: any) {
     }
     return (
         <section id="box-by-material" className='py-16 bg-[#EAF6F9]'>
-            <div className='container mx-auto px-4'>
+            <div className='px-4'>
                 <div>
-                    <h2 className="md:text-5xl text-3xl font-semibold text-title_Clr text-center">
+                    <h2 className="md:text-[51px] md:leading-normal text-3xl font-semibold text-title_Clr text-center">
                         Explore Our Custom Printing and Packaging Design
                     </h2>
                     <p className='text-lg font-normal text-txt_Clr text-center md:w-5/6 mx-auto mt-5'>

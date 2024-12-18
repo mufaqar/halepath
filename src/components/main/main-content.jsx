@@ -32,18 +32,15 @@ const MainContent = () => {
                                 height={467}
                             />
                         </figure>
-                        <div className="flex justify-center mt-5">
-                            <Link
-                                href="#"
-                                className="bg-[#1C2E42] text-white px-[35px] rounded-full font-medium text-[17px] py-[14px]"
-                            >
+                        <div>
+                            <Link href="#" className='bg-secondary hover:bg-white px-9 py-3 text-lg font-medium text-white hover:text-secondary rounded-full border-2 border-secondary flex items-center gap-2 mt-5 w-fit mx-auto'>
                                 About Us
                             </Link>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <div className="border-l-[4px] pl-10 text-xl md:text-[25px]  xl:text-[29px] leading-normal relative">
+                    <div className="border-l-[4px] pl-10 md:text-[29px] md:leading-tight text-lg font-normal text-title_Clr relative">
                         <p className="mb-2">
                             Lorem Ipsum is simply dummy text of the printing and typesetting
                             industry. Lorem Ipsum has been the industry's standard dummy text

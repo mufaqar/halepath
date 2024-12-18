@@ -43,7 +43,7 @@ export default function CategorySlider() {
   };
   return (
     <section className="bg-[#F5F5F5] py-20">
-      <h2 className="md:text-5xl text-3xl font-bold text-title_Clr text-center mb-14">
+      <h2 className="md:text-[51px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-14">
         Our Latest Category
       </h2>
       <div className="slider-container">
