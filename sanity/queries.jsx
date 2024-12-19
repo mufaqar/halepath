@@ -2,7 +2,52 @@ export const Qtestimonials = `*[ _type == "testimonial"]`;
 
 export const Qfaqs = `*[ _type == "faqs"]`;
 
-export const Qcategories = `*[ _type == "categories"]`;
+export const Qcategories = `*[ _type == "categories"]{
+     feature_image{
+          asset->{
+               url
+          }
+     },
+     name,
+     metatitle,
+     metadescription,
+     slug,
+     icon{
+          asset->{
+               url
+          }
+     },
+     excerpt,
+     image{
+          asset->{
+               url
+          }
+     },
+     content,
+     grid[]{
+          image{
+               asset->{
+                    url
+               }
+          },
+          title,
+          info,
+          button_link
+     },
+     Our_capabilities[]{
+          image{
+          asset->{
+               url
+          }
+     },
+          title,
+
+     },
+     faqs[]->{
+          question,
+          answer
+     }
+}`;
 
 export const Qproducts = `*[ _type == "products"]{
      title,
@@ -14,7 +59,7 @@ export const Qproducts = `*[ _type == "products"]{
      excerpt,
      content,
      featured,
-     categories[] ->{
+     categories[]->{
           name,
           slug
      },
@@ -23,20 +68,49 @@ export const Qproducts = `*[ _type == "products"]{
 
 
 export const QSingleCategory = ` *[ _type == "categories" && slug.current == $slug ][0]{
+    feature_image{
+          asset->{
+               url
+          }
+     },
      name,
      metatitle,
      metadescription,
-     metatags,
      slug,
-     icon,
+     icon{
+          asset->{
+               url
+          }
+     },
      excerpt,
-     image,
-     secound_title,
+     image{
+          asset->{
+               url
+          }
+     },
      content,
-     grid,
-     orderprocess[]->{
+     grid[]{
+          image{
+               asset->{
+                    url
+               }
+          },
           title,
-          detail
+          info,
+          button_link
+     },
+     Our_capabilities[]{
+          image{
+          asset->{
+               url
+          }
+     },
+          title,
+
+     },
+     faqs[]->{
+          question,
+          answer
      }
 }`;
 
