@@ -50,6 +50,6 @@ const steps = [
     {
         id: 4,
         title: "Delivery",
-        description: "",
+        description: "Lpsum is simply dummy text of the printing and typesetting is industry. Lorem Ipsum has been.",
     },
 ];
