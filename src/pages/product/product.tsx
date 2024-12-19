@@ -1,14 +1,12 @@
 import ContentBox from '@/components/category/contentBox'
-import Cta from '@/components/category/cta'
-import Cat_Faqs from '@/components/category/faqs'
 import Get_Started from '@/components/category/get-started'
-import Order_Process from '@/components/category/order-process'
-import Technical_Specs from '@/components/category/technical-specs'
 import Banner from '@/components/products/banner'
 import React from 'react'
 import { urlForImage } from '../../../sanity/lib/image'
 import Head from 'next/head'
-import DesignBox from '@/components/home/designBox'
+import OurCapabilities from '@/components/category/our-capabilities'
+import Faqs from '@/components/faqs/faqs'
+import CenterSlider from '@/components/slider/center-slider'
 
 
 export default function Product({ productRes, faqRes, relatedProducts }: any) {
@@ -43,33 +41,93 @@ export default function Product({ productRes, faqRes, relatedProducts }: any) {
                         }
                     </div>
                 </section>
-                <Cta />
-                <Technical_Specs mailerbox={productRes?.mailerbox} />
-                <Cat_Faqs faqRes={faqRes} />
-                <Order_Process data={productRes?.orderprocess} />
-                <section className='py-16'>
-                    <div className='container mx-auto px-4'>
-                        <div>
-                            <h2 className='md:text-4xl text-3xl font-semibold text-title_Clr'>
-                                Related Products
-                            </h2>
-                        </div>
-                        <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 mt-10'>
-                            {
-                                relatedProducts?.map((product: any, i: number) => (
-                                    <DesignBox
-                                        key={i}
-                                        slug={product.slug}
-                                        title={product.title}
-                                        img={urlForImage(product?.image?.asset?._ref).width(306)?.url()}
-                                    />
-                                ))
-                            }
-                        </div>
+                <section className='pt-16'>
+                    <h2 className="font-extrabold md:text-4xl text-2xl text-center text-title_Clr mb-5">
+                        Learn More About Custom Retail Boxes
+                    </h2>
+                    <div className="container px-3 mx-auto mt-5 overflow-y-scroll max_content max-h-[812px]">
+                        <h2 className="md:text-[29px] md:leading-normal text-xl font-bold text-title_Clr">
+                            Lorem ipsum dolor
+                        </h2>
+                        <p className="text-xl font-normal mt-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit elittellus,
+                            luctus nec ullamc mattis pulvinar dapibus cras risus dui euismo et
+                            sapien molestie sollicitudin sodale dolor aliquam nec sagittis felis
+                            pellentesque ultricies. Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit elittellus, luctus nec ullamc mattis pulvinar
+                            dapibus cras risus dui euismo et sapien molestie sollicitudin sodale
+                            dolor aliquam nec sagittis felis pellentesque ultricies.{" "}
+                        </p>
+                        <p className="text-xl font-normal mt-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit elittellus,
+                            luctus nec ullamc mattis pulvinar dapibus cras risus dui euismo et
+                            sapien molestie sollicitudin sodale dolor aliquam nec sagittis felis
+                            pellentesque ultricies. Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit elittellus, luctus nec ullamc mattis pulvinar
+                            dapibus cras risus dui euismo et sapien molestie sollicitudin sodale
+                            dolor aliquam nec sagittis felis pellentesque ultricies.{" "}
+                        </p>
+                        <h2 className="md:text-[29px] md:leading-normal text-xl font-bold text-title_Clr mt-7">
+                            Lorem ipsum dolor
+                        </h2>
+                        <p className="text-xl font-normal mt-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit elittellus,
+                            luctus nec ullamc mattis pulvinar dapibus cras risus dui euismo et
+                            sapien molestie sollicitudin sodale dolor aliquam nec sagittis felis
+                            pellentesque ultricies. Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit elittellus, luctus nec ullamc mattis pulvinar
+                            dapibus cras risus dui euismo et sapien molestie sollicitudin sodale
+                            dolor aliquam nec sagittis felis pellentesque ultricies.{" "}
+                        </p>
+                        <p className="text-xl font-normal mt-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit elittellus,
+                            luctus nec ullamc mattis pulvinar dapibus cras risus dui euismo et
+                            sapien molestie sollicitudin sodale dolor aliquam nec sagittis felis
+                            pellentesque ultricies. Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit elittellus, luctus nec ullamc mattis pulvinar
+                            dapibus cras risus dui euismo et sapien molestie sollicitudin sodale
+                            dolor aliquam nec sagittis felis pellentesque ultricies.{" "}
+                        </p>
+                        <h2 className="md:text-[29px] md:leading-normal text-xl font-bold text-title_Clr mt-7">
+                            Lorem ipsum dolor
+                        </h2>
+                        <p className="text-xl font-normal mt-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit elittellus,
+                            luctus nec ullamc mattis pulvinar dapibus cras risus dui euismo et
+                            sapien molestie sollicitudin sodale dolor aliquam nec sagittis felis
+                            pellentesque ultricies. Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit elittellus, luctus nec ullamc mattis pulvinar
+                            dapibus cras risus dui euismo et sapien molestie sollicitudin sodale
+                            dolor aliquam nec sagittis felis pellentesque ultricies.{" "}
+                        </p>
+                        <p className="text-xl font-normal mt-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit elittellus,
+                            luctus nec ullamc mattis pulvinar dapibus cras risus dui euismo et
+                            sapien molestie sollicitudin sodale dolor aliquam nec sagittis felis
+                            pellentesque ultricies. Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit elittellus, luctus nec ullamc mattis pulvinar
+                            dapibus cras risus dui euismo et sapien molestie sollicitudin sodale
+                            dolor aliquam nec sagittis felis pellentesque ultricies.{" "}
+                        </p>
                     </div>
                 </section>
+                <OurCapabilities />
+
+                <section className="bg-[#F5F5F5] py-20 mt-28">
+                    <div className="container mx-auto px-3 text-center">
+                        <Faqs col={2} />
+                    </div>
+                </section>
+                <section className="mt-20">
+                    <div className="container mx-auto px-4">
+                        <h2 className="md:text-[51px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-4">
+                            Related Products
+                        </h2>
+                    </div>
+                    <CenterSlider />
+                </section>
             </main>
-            
+
         </>
     )
 }
