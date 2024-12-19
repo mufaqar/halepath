@@ -2,7 +2,7 @@ import React from 'react'
 import { client } from '../../sanity/lib/client';
 import { QSingleCategory, QSingleProducts, Qfaqs, Qproducts } from '../../sanity/queries';
 import Product from './product/product';
-import Category from './category';
+import Category from './categories/category';
 import { useRouter } from 'next/router';
 
 const Slug = ({ productRes, categoryRes, productsRes, faqRes }: any) => {
