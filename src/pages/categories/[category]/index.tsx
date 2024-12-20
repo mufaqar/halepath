@@ -4,15 +4,13 @@ import Image from "next/image";
 import Qoute_Form from "@/components/category/qoute-form";
 import CenterSlider from "@/components/slider/center-slider";
 import Link from "next/link";
-import Slider from "react-slick";
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import OurCapabilities from "@/components/category/our-capabilities";
 import Faqs from "@/components/faqs/faqs";
 import { client } from "../../../../sanity/lib/client";
 import { Qproducts, QSingleCategory } from "../../../../sanity/queries";
+import { PortableText } from "@portabletext/react";
 
 export default function Category({ categoryRes, productsRes }: any) {
-  console.log("🚀 ~ Category ~ productsRes:", categoryRes);
   const slider = React.useRef<any>(null);
 
   return (
@@ -71,7 +69,11 @@ export default function Category({ categoryRes, productsRes }: any) {
 
       {categoryRes?.grid?.map((item: any, idx: number) => (
         <section className="my-20" key={idx}>
-          <div className={`container md:flex items-center gap-5 md:gap-0 mx-auto px-3 ${idx%2 === 0 && "flex-row-reverse"}`}>
+          <div
+            className={`container md:flex items-center gap-5 md:gap-0 mx-auto px-3 ${
+              idx % 2 === 0 && "flex-row-reverse"
+            }`}
+          >
             <figure className="md:w-1/2">
               <Image
                 src={item?.image?.asset?.url}
@@ -84,9 +86,7 @@ export default function Category({ categoryRes, productsRes }: any) {
               <h4 className="text-[#111827] mt-5 md:mt-0 font-bold text-3xl text-center md:text-left mb-4">
                 {item.title}
               </h4>
-              <p className="mb-7 text-center md:text-left">
-               {item.info}
-              </p>
+              <p className="mb-7 text-center md:text-left">{item.info}</p>
               <Link
                 href={item?.button_link}
                 className="py-[9px] px-[41px] text-white bg-[#1C2E42] rounded-md"
@@ -98,11 +98,20 @@ export default function Category({ categoryRes, productsRes }: any) {
         </section>
       ))}
 
-      <OurCapabilities data={categoryRes?.Our_capabilities}/>
+      <section className="pt-16">
+        <h2 className="font-extrabold md:text-4xl text-2xl text-center text-title_Clr mb-5">
+          Learn More About Custom Retail Boxes
+        </h2>
+        <div className="container px-3 desc_content mx-auto mt-5 overflow-y-scroll max_content max-h-[812px]">
+          <PortableText value={categoryRes?.content} />
+        </div>
+      </section>
+
+      <OurCapabilities data={categoryRes?.Our_capabilities} />
 
       <section className="bg-[#F5F5F5] py-20 mt-28">
         <div className="container mx-auto px-3 text-center">
-          <Faqs col={2} data={categoryRes?.faqs}/>
+          <Faqs col={2} data={categoryRes?.faqs} />
         </div>
       </section>
     </>

@@ -116,9 +116,12 @@ export const QSingleCategory = ` *[ _type == "categories" && slug.current == $sl
 
 export const QSingleProducts = ` *[ _type == "products" && slug.current == $slug ][0]{
      title,
-     secound_title,
      _createdAt,
-     image,
+     image->{
+          asset{
+               url
+          }
+     },
      gallery,
      slug,
      excerpt,
@@ -127,17 +130,32 @@ export const QSingleProducts = ` *[ _type == "products" && slug.current == $slug
           name,
           slug
      },
-     grid,
-     mailerbox,
-     orderprocess[]->{
+     grid[]{
+          image{
+               asset->{
+                    url
+               }
+          },
           title,
-          detail
+          info,
+          button_link
+     },
+     Our_capabilities[]{
+          image{
+               asset->{
+                    url
+               }
+          },
+          title
+     },
+      faqs[]->{
+          question,
+          answer
      },
      _createdAt,
      _updatedAt,
      metatitle,
      metadescription,
-     metatags
 }`;
 
 

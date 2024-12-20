@@ -34,7 +34,11 @@ export const products = {
       type: "text",
       title: "Meta Description",
     },
-    
+    {
+      name: "image",
+      type: "image",
+      title: "Image",
+    },
     {
       name: "gallery",
       type: "array",
@@ -100,6 +104,7 @@ export const products = {
         },
       ],
     },
+    
     {
       title: "Grid",
       name: "grid",

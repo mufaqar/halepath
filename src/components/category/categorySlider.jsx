@@ -5,7 +5,6 @@ import { FaChevronRight } from 'react-icons/fa'
 import Image from "next/image";
 
 export default function CategorySlider({ categoriesRes }) {
-  console.log("🚀 ~ CategorySlider ~ categoriesRes:", categoriesRes)
   const settings = {
     dots: false,
     arrows: false,

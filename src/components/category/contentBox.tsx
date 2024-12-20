@@ -5,7 +5,7 @@ import { FaCircleArrowRight } from 'react-icons/fa6'
 
 function ContentBox({ Cstm_class, img, title, list }: any) {
     return (
-        <div className={`flex lg:gap-24 gap-7 ${Cstm_class}`}>
+        <div className={`flex lg:gap-24 items-center gap-7 ${Cstm_class}`}>
             <div className='lg:w-1/2 w-full'>
                 <Image src={img} alt='feature' width={580} height={440} className='w-full' />
             </div>

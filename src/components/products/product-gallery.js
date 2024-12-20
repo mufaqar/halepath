@@ -42,7 +42,7 @@ const Product_Gallery = ({data}) => {
               onClick={() => {
                 slider1?.slickGoTo(idx)
               }}>
-              <Image src={urlForImage(item?.asset?._ref).width(534)?.url()} alt={item.alt} width={435} height={365} className='w-full h-full object-cover rounded-[21px]' />
+              <Image src={urlForImage(item?.asset?._ref).width(534)?.url()} alt={item?.alt} width={435} height={365} className='w-full h-full object-cover rounded-[21px]' />
             </div>
           ))}
         </Slider>
@@ -54,7 +54,7 @@ const Product_Gallery = ({data}) => {
               onClick={() => {
                 slider1?.slickGoTo(idx)
               }}>
-              <Image src={urlForImage(item?.asset?._ref).width(154)?.url()} alt={item.alt} width={154} height={131} className='w-full object-cover h-full' />
+              <Image src={urlForImage(item?.asset?._ref).width(154)?.url()} alt={item?.alt} width={154} height={131} className='w-full object-cover h-full' />
               {currentSlide}
             </div>
           ))}

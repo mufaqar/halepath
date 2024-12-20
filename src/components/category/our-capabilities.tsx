@@ -4,7 +4,7 @@ import React from "react";
 
 const OurCapabilities = ({data}:any) => {
   return (
-    <section className="container mx-auto px-3 mt-20 md:mt-48">
+    <section className="container mx-auto px-3 mt-20">
       <h3 className="text-[#111827] font-bold text-2xl">Our Capabilities</h3>
       <div className="mt-12 grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-9 gap-2">
         {data?.map((item: any, idx: number) => (
