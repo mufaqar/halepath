@@ -1,23 +1,24 @@
 import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
+import { urlForImage } from "../../../sanity/lib/image";
 
-const CenterSlider = () => {
+const CenterSlider = ({data}:any) => {
   return (
     <section className="mt-10 overflow-x-hidden">
       <Slider {...settings}>
-        {[1, 2, 3, 4, 4, 5, 6]?.map((item, idx) => (
+        {data?.map((item:any, idx:number) => (
           <div key={idx} className="">
             <figure>
               <Image
-                src="/images/about-page/o1.png"
+                src={urlForImage(item?.gallery[0]?.asset?._ref)?.url()}
                 alt=""
                 width={363}
                 height={369}
                 className="w-full"
               />
             </figure>
-            <h4 className="text-xl text-center mt-6">Lorem Ipsum</h4>
+            <h4 className="text-xl text-center mt-6">{item?.title}</h4>
           </div>
         ))}
       </Slider>

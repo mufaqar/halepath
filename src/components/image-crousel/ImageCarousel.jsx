@@ -9,8 +9,9 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { urlForImage } from '../../../sanity/lib/image';
 
-const ImageCarousel = () => {
+const ImageCarousel = ({data}) => {
   const images = [
     '/images/about-page/slider.png',
     '/images/about-page/slider.png',
@@ -34,7 +35,7 @@ const ImageCarousel = () => {
         coverflowEffect={{
           rotate: 0, // Disable rotation
           stretch: 0, // No extra space between slides
-          depth: 100, // Control perspective depth
+          depth: 200, // Control perspective depth
           modifier: 1, // Effect intensity
           slideShadows: false, // No shadows
         }}
@@ -42,11 +43,11 @@ const ImageCarousel = () => {
         modules={[EffectCoverflow, Navigation]}
         style={{ width: '100%', height: '480px' }}
       >
-        {images.map((src, index) => (
+        {data?.map((src, index) => (
           <SwiperSlide key={index}>
             <figure className=''>
               <img
-                src={src}
+                src={urlForImage(src?.asset?._ref)?.url()}
                 alt={`Slide ${index + 1}`}
                 style={{
                   width: '100%',

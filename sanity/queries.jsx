@@ -179,9 +179,7 @@ export const Qblogs = `*[ _type == "blogs"]{
           }
      },
      slug,
-     excerpt,
-     content,
-     category->{
+     Category->{
           name,
           slug
      }
