@@ -25,6 +25,7 @@ const Product_Gallery = ({data}) => {
     lazyLoad: true,
     asNavFor: ".slider-nav",
     focusOnSelect: true,
+    arrows:false,
   };
 
   return (
@@ -36,24 +37,24 @@ const Product_Gallery = ({data}) => {
         >
           {data?.gallery?.map((item, idx) => (
             <div
-              key={item.id}
-              className={currentSlide === idx ? "active" : null}
+              key={idx}
+              className={`${currentSlide === idx ? "active" : null} rounded-[21px] h-[435px]`}
               onClick={() => {
                 slider1?.slickGoTo(idx)
               }}>
-              <Image src={urlForImage(item?.asset?._ref).width(534)?.url()} alt={item.alt} width={435} height={365} className='w-full md:h-[480px] object-contain' />
+              <Image src={urlForImage(item?.asset?._ref).width(534)?.url()} alt={item.alt} width={435} height={365} className='w-full h-full object-cover rounded-[21px]' />
             </div>
           ))}
         </Slider>
         <div className="thumb-wrapper">
           {data?.gallery?.map((item, idx) => (
             <div
-              key={item.id}
-              className={currentSlide === idx ? "active" : null}
+              key={idx}
+              className={`${currentSlide === idx ? "active" : null} h-[131px]`}
               onClick={() => {
                 slider1?.slickGoTo(idx)
               }}>
-              <Image src={urlForImage(item?.asset?._ref).width(534)?.url()} alt={item.alt} width={180} height={180} className='w-full object-cover h-full' />
+              <Image src={urlForImage(item?.asset?._ref).width(154)?.url()} alt={item.alt} width={154} height={131} className='w-full object-cover h-full' />
               {currentSlide}
             </div>
           ))}

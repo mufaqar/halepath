@@ -13,6 +13,14 @@ import Link from 'next/link'
 import CategorySlider from '@/components/category/categorySlider'
 import ProductSlider from '@/components/home/productSlider'
 import Brands from '@/components/home/brands'
+import BannerPageMiddel from '@/components/banner/banner'
+import WhatWeOffer from '@/components/what-we-offer/what-we-offer'
+import SliderFull from '@/components/slider/slider-full'
+import TestimonialAndFaq from '@/components/testimonial/testimonial-and-faq'
+import Instagram from '@/components/instagram/instagram'
+import WhatWeDo from '@/components/home/what-we-do'
+import Career from '@/components/home/career'
+import MainContent from '@/components/main/main-content'
 
 export default function Home({ testimonialsRes, faqRes, categoriesRes, productsRes }: any) {
   const fproduct = productsRes?.filter((item: any) => item.featured === true)
@@ -108,7 +116,7 @@ export default function Home({ testimonialsRes, faqRes, categoriesRes, productsR
           }} />
       <HowIt_work />
       <Brands />
-      {/* Corrugated Packaging */}
+      <BannerPageMiddel />
       <ProductSlider title={undefined}
         settings={
           {
@@ -149,30 +157,13 @@ export default function Home({ testimonialsRes, faqRes, categoriesRes, productsR
             ]
           }} />
       <Get_Qoute />
+      <WhatWeOffer />
+      <SliderFull />
       <Packaging_Style data={categoriesRes} />
-      <Packing_Design data={fproduct} title="Custom Packaging Boxes" content="Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques." />
-      <Why_ChooseUs />
-      <Testimonials data={testimonialsRes} />
-      <Faqs data={faqRes} />
-      <section className='py-16 max_content'>
-        <div className='container mx-auto px-4'>
-          <div className='max-h-[350px] h-full overflow-y-scroll '>
-            <h2 className='md:text-4xl text-3xl font-semibold text-title_Clr'>
-              Why Custom Packaging Essential for Your Business
-            </h2>
-            <p className='text-lg font-normal text-txt_Clr mt-5 text-justify'>
-              We live in a fast-paced world where advancements in technology have allowed people to make informed decisions and better choices. Today, nearly everyone uses a smartphone or laptop to know about consumer products and all other details that will help them make best buying decision. In the business sector, due to significant competition, there is a clear shift from product-centric to a customer-centric approach. Another reason for the shift is ambitious entrepreneurs and small-businessmen running their own brands to better serve the customers.
-            </p>
-            <p className='text-lg font-normal text-txt_Clr mt-5 text-justify'>
-              We all know the famous 4 Ps of marketing (Product, Price, Place, and Promotion). However, another P that has been added to the mix is Packaging. According to research studies, an average consumer takes less than 20 seconds to make a buying decision. Also, almost 72% of the population says that their buying decision is influenced by the packaging design.
-            </p>
-            <p className='text-lg font-normal text-txt_Clr mt-5 text-justify'>
-              The first thing that allows the average consumer to make the purchase decision is none other than the ‘packaging of the product. People usually buy from brands there are familiar with, such as startups, and business companies have to think out of the box to make an impression on potential customers.
-            </p>
-          </div>
-        </div>
-      </section>
-
+      <WhatWeDo />
+      <TestimonialAndFaq />
+      <Career />
+      <Instagram />
     </main>
   )
 }

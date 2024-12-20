@@ -11,10 +11,10 @@ export default function ProductSlider({ title, settings }) {
         <span> Our Products </span>
         <span className="block border-b-2 border-title_Clr max-w-[61px] w-full"></span>
       </h4>}
-      {title && <h2 className="md:text-5xl text-3xl font-bold text-title_Clr text-center mb-14">
+      {title && <h2 className="md:text-[51px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-14">
         Our Latest Products
       </h2>}
-      <div className="slider-container">
+      <div className="slider-container px-4">
         <Slider {...settings}>
           {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map((item, idx) => {
             return <div key={idx} className="w-fit p-4">

@@ -87,9 +87,9 @@ function Header() {
                     {item?.name}
                   </Link>
                   {item?.submenu && <span><BsChevronDown className="ml-1 inline-block text-sm font-normal text-title_Clr group-hover:text-primary" /></span>}
-                  {item?.submenu && <div onMouseLeave={() => setMegaMenu(null)} className={`${megaMenu === item?.id ? "block container md:px-10 left-1/2 md:-translate-x-1/2 md:absolute top-40 static z-50 " : "hidden"}`}>
+                  {/* {item?.submenu && <div onMouseLeave={() => setMegaMenu(null)} className={`${megaMenu === item?.id ? "block container md:px-10 left-1/2 md:-translate-x-1/2 md:absolute top-40 static z-50 " : "hidden"}`}>
                     <MegaMenu setMegaMenu={setMegaMenu} categories={categories} />
-                  </div>}
+                  </div>} */}
                 </li>
               })}
             </ul>

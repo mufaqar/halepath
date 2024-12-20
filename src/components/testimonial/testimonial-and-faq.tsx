@@ -12,7 +12,7 @@ const TestimonialAndFaq = () => {
     <section className="py-[60px] bg-[#F5F5F5]">
       <div className="container mx-auto px-4 grid md:grid-cols-2 gap-6">
         <div>
-          <div className="max-w-[470px] mx-auto">
+          <div className="md:max-w-[470px] max-w-[350px] mx-auto">
             <h6 className="text-[#1C2E42] font-semibold flex gap-2 items-center">
               Testimonials
               <div className="h-[3px] bg-[#1C2E42] w-16" />

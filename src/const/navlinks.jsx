@@ -23,7 +23,7 @@ export const NavLinks = [
     {
         id: 4,
         name: "Brand Finishes",
-        link: "#"
+        link: "/bran-finishes"
     },
     {
         id: 5,
@@ -33,6 +33,6 @@ export const NavLinks = [
     {
         id: 6,
         name: "Custom Printed Box",
-        link: "#"
+        link: "/custom-print-box"
     },
 ]
