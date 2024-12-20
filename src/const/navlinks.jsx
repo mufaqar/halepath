@@ -3,12 +3,6 @@ export const NavLinks = [
         id: 1,
         name: "Home",
         link: "/",
-        submenu: [
-            {
-                name: "Products",
-                link: "/products",
-            },
-        ]
     },
     {
         id: 2,
@@ -18,21 +12,45 @@ export const NavLinks = [
     {
         id: 3,
         name: "Product By Industry",
-        link: "/categories"
+        link: "/categories",
+        submenu: [
+            {
+                name: "Product By Industry",
+                link: "/categories",
+            },
+        ]
     },
     {
         id: 4,
         name: "Brand Finishes",
-        link: "/bran-finishes"
+        link: "/brand-finishes",
+        submenu: [
+            {
+                name: "Brand Finishes",
+                link: "/brand-finishes",
+            },
+        ]
     },
     {
         id: 5,
         name: "Box By Style",
-        link: "#"
+        link: "#",
+        submenu: [
+            {
+                name: "Box By Style",
+                link: "#",
+            },
+        ]
     },
     {
         id: 6,
         name: "Custom Printed Box",
-        link: "/custom-print-box"
+        link: "/custom-print-box",
+        submenu: [
+            {
+                name: "Custom Printed Box",
+                link: "/custom-print-box",
+            },
+        ]
     },
 ]

@@ -80,7 +80,7 @@ function Header() {
               onClick={() => setOpenNav(!openNav)}>
               {openNav ? (<IoMdClose />) : (<FaBars />)}
             </div>
-            <ul className={`lg:gap-6 gap-5 lg:items-center lg:justify-between lg:static lg:flex-row flex-col lg:px-0 lg:py-0 px-4 py-8 lg:bg-transparent ${openNav === true ? "flex absolute left-0 right-0 top-16 bg-white" : "lg:flex hidden"}`}>
+            <ul className={`lg:gap-4 gap-4 lg:items-center lg:justify-between lg:static lg:flex-row flex-col lg:px-0 lg:py-0 px-4 py-8 lg:bg-transparent ${openNav === true ? "flex absolute left-0 right-0 top-16 bg-white" : "lg:flex hidden"}`}>
               {NavLinks?.map((item, idx) => {
                 return <li key={idx} ref={menuRef} onMouseEnter={() => setMegaMenu(item?.id)} onClick={() => setMegaMenu(null)} className='cursor-pointer group'>
                   <Link href={`${item?.link}`} className='text-base font-medium text-title_Clr group-hover:text-primary'>
@@ -95,10 +95,10 @@ function Header() {
             </ul>
           </nav>
           <div className='lg:w-[24%] lg:flex gap-5 justify-end hidden'>
-            <Link href="#" className='bg-transparent hover:bg-primary px-5 py-4 text-base uppercase font-medium text-primary hover:text-white rounded-full border-2 border-primary'>
+            <Link href="/contact-us" className='bg-transparent hover:bg-primary px-5 py-4 text-base uppercase font-medium text-primary hover:text-white rounded-full border-2 border-primary'>
               Contact Us
             </Link>
-            <Link href="/get-qoute" className='bg-primary hover:bg-transparent px-5 py-4 text-base uppercase font-medium text-white hover:text-primary rounded-full border-2 border-primary'>
+            <Link href="/contact-us" className='bg-primary hover:bg-transparent px-5 py-4 text-base uppercase font-medium text-white hover:text-primary rounded-full border-2 border-primary'>
               Get a Quote
             </Link>
           </div>

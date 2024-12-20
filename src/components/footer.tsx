@@ -38,19 +38,19 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/about-us#testimonials" className='text-base font-normal text-title_Clr flex items-center gap-2'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Testimonials
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/about-us#faqs" className='text-base font-normal text-title_Clr flex items-center gap-2'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 FAQ's
               </Link>
             </li>
             <li>
-              <Link href="/contact" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/contact-us" className='text-base font-normal text-title_Clr flex items-center gap-2'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Contact
               </Link>

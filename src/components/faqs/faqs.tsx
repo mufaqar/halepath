@@ -11,7 +11,7 @@ const Faqs = ({col}:any) => {
   };
 
   return (
-    <div className="pt-8">
+    <div id="faqs" className="pt-8">
       <h2 className="text-2xl lg:text-[43px] font-semibold leading-normal">
         Frequently Asked <span className="text-[#47AFC3]">Questions</span>
       </h2>
