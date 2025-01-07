@@ -15,17 +15,17 @@ const WhatWeOffer = () => {
     </div>
     <div className="offerbg bg-cover bg-no-repeat mt-60 border border-black">
       <div className="container mx-auto px-4">
-        <div className="p-6 bg-white grid grid-cols-1 gap-5 xl:gap-2 sm:grid-cols-2 xl:grid-cols-4 mb-32 -mt-48 border">
+        <div className="p-6 bg-white grid grid-cols-1 pb-24 gap-5 xl:gap-2 sm:grid-cols-2 xl:grid-cols-4 mb-32 -mt-48 border">
           {[1, 2, 3, 4].map((item, idx) => (
-            <div key={idx}>
+            <div key={idx} className='relative'>
               <Image
                 src={`/images/about-page/o${idx + 1}.png`}
                 alt=""
-                width={344}
+                width={344} 
                 className="w-full"
                 height={344}
               />
-              <div className="px-4 -mt-14 z-10 relative">
+              <div className="px-4 absolute -bottom-28 left-4 right-4 z-10">
                 <div className="border bg-white p-3 px-5">
                   <h5 className="flex group cursor-pointer md:text-xl lg:text-2xl font-medium justify-between border-b-[3px] py-3 pt-1 border-black">
                     Packaging
