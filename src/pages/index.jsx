@@ -22,8 +22,8 @@ import WhatWeDo from '@/components/home/what-we-do'
 import Career from '@/components/home/career'
 import MainContent from '@/components/main/main-content'
 
-export default function Home({ testimonialsRes, faqRes, categoriesRes, productsRes }: any) {
-  const fproduct = productsRes?.filter((item: any) => item.featured === true)
+export default function Home({ testimonialsRes, faqRes, categoriesRes, productsRes }) {
+  const fproduct = productsRes?.filter((item) => item.featured === true)
   return (
     <main className={``} >
       <MainSlider />
@@ -76,7 +76,7 @@ export default function Home({ testimonialsRes, faqRes, categoriesRes, productsR
           </div>
         </div>
       </section>
-      <ProductSlider title="Our Latest Products"
+      <ProductSlider productsRes={productsRes} title="Our Latest Products"
         settings={
           {
             dots: true,
@@ -117,7 +117,7 @@ export default function Home({ testimonialsRes, faqRes, categoriesRes, productsR
       <HowIt_work />
       <Brands />
       <BannerPageMiddel />
-      <ProductSlider title={undefined}
+      <ProductSlider productsRes={productsRes} title={undefined}
         settings={
           {
             dots: false,

@@ -53,8 +53,16 @@ export const Qproducts = `*[ _type == "products"]{
      title,
      secound_title,
      _createdAt,
-     image,
-     gallery,
+     image{
+          asset->{
+               url
+          }
+     },
+     gallery[]{
+          asset->{
+               url
+          }
+     },
      slug,
      excerpt,
      content,

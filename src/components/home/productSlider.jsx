@@ -2,8 +2,10 @@ import Slider from "react-slick";
 import Link from 'next/link'
 import React from 'react'
 import Image from "next/image";
+import { urlForImage } from "../../../sanity/lib/image"
 
-export default function ProductSlider({ title, settings }) {
+export default function ProductSlider({ title, settings, productsRes }) {
+console.log("🚀 ~ ProductSlider ~ productsRes:", productsRes)
 
   return (
     <section className="py-20">
@@ -16,11 +18,11 @@ export default function ProductSlider({ title, settings }) {
       </h2>}
       <div className="slider-container">
         <Slider {...settings}>
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map((item, idx) => {
+          {productsRes?.map((item, idx) => {
             return <div key={idx} className="w-fit p-4">
-              <Image src="/images/category/1.png" alt="category1" width={363} height={375} className="mx-auto" />
+              <Image src={item?.image?.asset?.url} alt="category1" width={363} height={375} className="mx-auto" />
               <Link href="#" className="text-xl font-normal text-title_Clr text-center flex w-fit mx-auto mt-8">
-                Lorem Ipsum
+                {item?.title}
               </Link>
             </div>
           })}

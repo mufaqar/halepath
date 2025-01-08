@@ -11,7 +11,7 @@ const CenterSlider = ({data}:any) => {
           <div key={idx} className="">
             <figure>
               <Image
-                src={urlForImage(item?.gallery[0]?.asset?._ref)?.url()}
+                src={item?.image?.asset?.url}
                 alt=""
                 width={363}
                 height={369}

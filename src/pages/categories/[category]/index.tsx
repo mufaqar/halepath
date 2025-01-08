@@ -31,7 +31,7 @@ export default function Category({ categoryRes, productsRes }: any) {
         <div className="container mx-auto px-3 grid items-center md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 xl:gap-[70px]">
           <div className="h-full">
             <Image
-              src={categoryRes?.image?.asset?.url}
+              src={categoryRes?.image?.asset?.url || categoryRes?.feature_image?.asset?.url}
               alt=""
               width={651}
               height={375}
@@ -62,9 +62,9 @@ export default function Category({ categoryRes, productsRes }: any) {
             Explore Packaging Solutions
           </h2>
         </div>
-        <CenterSlider />
-        <CenterSlider />
-        <CenterSlider />
+        <CenterSlider data={productsRes}/>
+        <CenterSlider data={productsRes}/>
+        <CenterSlider data={productsRes}/>
       </section>
 
       {categoryRes?.grid?.map((item: any, idx: number) => (
