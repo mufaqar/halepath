@@ -9,7 +9,7 @@ function HowIt_work() {
                     <h2 className='md:text-4xl text-2xl font-normal text-white mb-10'>
                         Globally Expertise Delivered Locally
                     </h2>
-                    <Link href="#" className='bg-primary hover:bg-white px-9 py-3 text-lg font-medium text-white hover:text-primary rounded-full border-2 border-primary flex items-center gap-2 w-fit'>
+                    <Link href="/products" className='bg-primary hover:bg-white px-9 py-3 text-lg font-medium text-white hover:text-primary rounded-full border-2 border-primary flex items-center gap-2 w-fit'>
                         See All Products
                     </Link>
                 </div>

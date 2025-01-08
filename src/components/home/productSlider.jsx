@@ -28,7 +28,7 @@ console.log("🚀 ~ ProductSlider ~ productsRes:", productsRes)
           })}
         </Slider>
       </div>
-      {title && <Link href="#" className='bg-secondary hover:bg-white px-9 py-3 text-lg font-medium text-white hover:text-secondary rounded-full border-2 border-secondary flex items-center gap-2 mt-12 w-fit mx-auto'>
+      {title && <Link href="/products" className='bg-secondary hover:bg-white px-9 py-3 text-lg font-medium text-white hover:text-secondary rounded-full border-2 border-secondary flex items-center gap-2 mt-12 w-fit mx-auto'>
         See All Products
       </Link>}
     </section>
