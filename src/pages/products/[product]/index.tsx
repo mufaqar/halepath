@@ -70,7 +70,7 @@ export default function Product({ productRes, productsRes }: any) {
           <h2 className="font-extrabold md:text-4xl text-2xl text-center text-title_Clr mb-5">
             Learn More About Custom Retail Boxes
           </h2>
-          <div className="container px-3 desc_content mx-auto mt-5 overflow-y-scroll max_content max-h-[812px]">
+          <div className="container px-3 desc_content mx-auto mt-5 overflow-y-auto max_content max-h-[812px]">
             <PortableText value={productRes?.content} />
           </div>
         </section>

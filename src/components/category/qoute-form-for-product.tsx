@@ -171,7 +171,7 @@ function QouteFormForProduct() {
           </section>
 
           <section className="grid grid-cols-3 mt-2.5 gap-2 items-start">
-            <div className=" col-span-2 md:col-span-1 relative">
+            <div className="relative">
               <label
                 htmlFor="packing"
                 className="text-sm font-medium leading-none hidden"
@@ -194,7 +194,7 @@ function QouteFormForProduct() {
               {/* {errors.packing && <span className='text-xs text-red-500'>This field is required</span>} */}
             </div>
 
-            <div className="flex-1 col-span-3 md:col-span-1 relative">
+            <div className="relative">
               <label
                 htmlFor="Unit"
                 className="text-sm font-medium leading-none hidden"
@@ -214,7 +214,7 @@ function QouteFormForProduct() {
               <RiArrowDownSLine className="absolute right-4 top-1/2 text-xl text-gray-500 -translate-y-1/2" />
             </div>
 
-            <div className="flex-1 col-span-3 md:col-span-1 relative">
+            <div className="relative">
               <label
                 htmlFor="Unit"
                 className="text-sm font-medium leading-none hidden"

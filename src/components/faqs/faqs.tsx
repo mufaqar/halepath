@@ -33,7 +33,7 @@ const Faqs = ({col, data}:any) => {
                 openFaq === idx ? "max-h-[300px] h-full" : "h-0 overflow-hidden"
               }`}
             >
-              <p className="text-lg px-6 text-[#1C1C1C] pb-6">
+              <p className="text-lg px-6 text-left text-[#1C1C1C] pb-6">
               {item?.answer}
               </p>
             </div>
