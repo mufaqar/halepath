@@ -262,7 +262,8 @@ ul.career_list li::marker {
 }
 
 .single .slick-list,
-.testimonials .slick-list{
+.testimonials .slick-list,
+.about .slick-list{
   padding: 0 !important
 }
 

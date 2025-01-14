@@ -5,7 +5,6 @@ import Image from "next/image";
 import { urlForImage } from "../../../sanity/lib/image"
 
 export default function ProductSlider({ title, settings, productsRes }) {
-console.log("🚀 ~ ProductSlider ~ productsRes:", productsRes)
 
   return (
     <section className="py-20">
@@ -20,8 +19,10 @@ console.log("🚀 ~ ProductSlider ~ productsRes:", productsRes)
         <Slider {...settings}>
           {productsRes?.map((item, idx) => {
             return <div key={idx} className="w-fit p-4">
+              <Link href={`/products/${item.slug.current}`}>
               <Image src={item?.image?.asset?.url} alt="category1" width={363} height={375} className="mx-auto" />
-              <Link href="#" className="text-xl font-normal text-title_Clr text-center flex w-fit mx-auto mt-8">
+              </Link>
+              <Link href={`/products/${item.slug.current}`} className="text-xl font-normal text-title_Clr text-center flex w-fit mx-auto mt-8">
                 {item?.title}
               </Link>
             </div>

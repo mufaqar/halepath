@@ -52,13 +52,13 @@ function Packaging_Style({ data }: any) {
                 </div>
                 <Slider {...settings}>
                     {
-                        [0, 1, 2, 3, 4, 5, 6].map((category: any, i: number) => (
+                        data?.map((category: any, i: number) => (
                             <PackingBox
                                 key={i}
                                 title={category?.name}
                                 content={category?.excerpt}
-                                slug={category?.slug}
-                                img={urlForImage(category?.image?.asset._ref).width(306).url()}
+                                slug={category?.slug?.current}
+                                img={category?.image?.asset.url}
                             />
                         ))
                     }
