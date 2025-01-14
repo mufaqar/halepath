@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-function PackingBox({ title, content, img, slug }: any) {
+function PackingBox({ title, img, slug }: any) {
     return (
         <div className="w-fit p-4">
             <Image src={img} alt="category1" width={363} height={375} className="mx-auto" />
