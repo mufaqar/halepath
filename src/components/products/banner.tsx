@@ -1,10 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
-import Qoute_Form from '../category/qoute-form'
-
 import Product_Gallery from './product-gallery'
-
 import { urlForImage } from '../../../sanity/lib/image'
+import QouteFormForProduct from '../category/qoute-form-for-product'
 
 
 function Banner({ data }: any) {
@@ -21,13 +19,12 @@ function Banner({ data }: any) {
                     <Product_Gallery data={data} />
 
                     {/* <Image src={urlForImage(data?.image?.asset?._ref).width(534)?.url()} alt='category-baner' width={534} height={400} className='mx-auto' /> */}
-
                 </div>
                 <div className='md:w-1/2 w-full'>
                     <h2 className='md:text-[41px] md:leading-normal text-3xl font-bold text-title_Clr mb-3'>
                         Get Custom Quote
                     </h2>
-                    <Qoute_Form />
+                    <QouteFormForProduct />
                 </div>
             </div>
         </section>

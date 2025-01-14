@@ -29,7 +29,7 @@ const Product_Gallery = ({data}) => {
   };
 
   return (
-    <div className="content">
+    <div className="content single">
       <div className="container">
         <Slider {...settings}
           asNavFor={nav1}
@@ -46,16 +46,15 @@ const Product_Gallery = ({data}) => {
             </div>
           ))}
         </Slider>
-        <div className="thumb-wrapper">
+        <div className="thumb-wrapper flex overflow-x-auto !justify-start singleproducts">
           {data?.gallery?.map((item, idx) => (
             <div
               key={idx}
-              className={`${currentSlide === idx ? "active" : null} h-[131px]`}
+              className={`${currentSlide === idx ? "active" : null} group h-[131px] min-w-[167px] p-3`}
               onClick={() => {
                 slider1?.slickGoTo(idx)
               }}>
-              <Image src={urlForImage(item?.asset?._ref).width(154)?.url()} alt={item?.alt} width={154} height={131} className='w-full object-cover h-full' />
-              {currentSlide}
+              <Image src={urlForImage(item?.asset?._ref).width(154)?.url()} alt={item?.alt} width={154} height={131} className='w-full group-hover:scale-110 rounded-md transition-all duration-200 ease-linear object-cover' />
             </div>
           ))}
         </div>
