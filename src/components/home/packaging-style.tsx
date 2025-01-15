@@ -10,6 +10,7 @@ function Packaging_Style({ data }: any) {
         className: "center",
         centerMode: true,
         infinite: true,
+        autoplay: true,
         centerPadding: "60px",
         slidesToShow: 5,
         speed: 500,
