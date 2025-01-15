@@ -19,12 +19,6 @@ export const categories = {
       title: 'Meta Description'
     },
     {
-      name: 'metatags',
-      type: 'text',
-      description: "Please seprate tag with ','",
-      title: 'Meta Tags'
-    },
-    {
       title: 'Slug',
       name: 'slug',
       type: 'slug',
@@ -42,11 +36,18 @@ export const categories = {
       name: 'icon',
       type: 'image',
     },
+
+    {
+      title: 'Feature Image',
+      name: 'feature_image',
+      type: 'image',
+    },
     {
       name: 'excerpt',
       type: 'text',
       title: 'Excerpt'
     },
+
     {
       title: 'Image',
       name: 'image',
@@ -62,11 +63,7 @@ export const categories = {
         },
       ]
     },
-    {
-      name: 'secound_title',
-      type: 'string',
-      title: '2nd Title'
-    },
+
     {
       name: 'content',
       title: 'Content',
@@ -95,6 +92,7 @@ export const categories = {
         },
       ]
     },
+
     {
       title: 'Grid',
       name: 'grid',
@@ -116,57 +114,57 @@ export const categories = {
               type: 'string',
               title: 'Title'
             },
-            {
-              title: 'List',
-              name: 'list',
-              type: 'array',
-              of: [
-                {
-                  type: 'object',
-                  fields: [
-                    {
-                      name: 'title',
-                      type: 'string',
-                      title: 'Title'
-                    },
-                    {
-                      name: 'content',
-                      type: 'text',
-                      title: 'Content'
-                    }
-                  ]
-                }
-              ]
-            }
+           {
+            name: 'Info',
+            type: 'text',
+            title: 'info'
+           },
+           {
+            name: 'button_link',
+            type: 'string',
+            title: 'Button Link'
+           }
           ]
         }
       ]
     },
-    // {
-    //   title: 'Faqs',
-    //   name: 'faqs',
-    //   type: 'array',
-    //   of: [
-    //     {
-    //       type: 'reference',
-    //       to: [
-    //         {type: 'faqs'},
-    //       ]
-    //     }
-    //   ]
-    // },
-     {
-      title: 'Order Process',
-      name: 'orderprocess',
-      type: 'array',
+    
+    {
+      title: "Our Capabilities",
+      name: "Our_capabilities",
+      type: "array",
       of: [
         {
-          type: 'reference',
-          to: [
-            {type: 'orderprocess'},
-          ]
-        }
-      ]
+          type: "object",
+          fields: [
+            {
+              title: "Image",
+              name: "image",
+              type: "image",
+              options: {
+                hotspot: true,
+              },
+            },
+            {
+              name: "title",
+              type: "string",
+              title: "Title",
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      title: "Faqs",
+      name: "faqs",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "faqs" }],
+        },
+      ],
     },
     
   ]

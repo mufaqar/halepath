@@ -20,7 +20,7 @@ const BannerPageMiddel = () => {
               been the industry's.
             </p>
             <Link
-              href=""
+              href="/about-us"
               className="bg-[#53B6C9] px-[35px] rounded-full font-medium text-[17px] py-[14px]"
             >
               About Us

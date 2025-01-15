@@ -3,8 +3,10 @@ import Instagram from '@/components/instagram/instagram';
 import TestimonialAndFaq from '@/components/testimonial/testimonial-and-faq';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
+import { client } from '../../../sanity/lib/client';
+import { Qfaqs, Qtestimonials } from '../../../sanity/queries';
 
-const ContactUs = () => {
+const ContactUs = ({testimonialsRes, faqRes}:any) => {
   const [loading, setLoading] = useState(false);
   const {
     register,
@@ -39,10 +41,23 @@ const ContactUs = () => {
   return (
     <>
     <Get_Qoute />
-    <TestimonialAndFaq />
+    <TestimonialAndFaq faqRes={faqRes} testimonialsRes={testimonialsRes}/>
     <Instagram />
     </>
   )
 }
 
 export default ContactUs
+
+
+
+export async function getServerSideProps() {
+  const testimonialsRes = await client.fetch(Qtestimonials);
+  const faqRes = await client.fetch(Qfaqs);
+  return {
+    props: {
+      testimonialsRes, faqRes,
+      preview: true
+    }
+  };
+}

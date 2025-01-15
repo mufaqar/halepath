@@ -12,7 +12,7 @@ const WhatWeDo = () => {
                 <p className='md:text-xl text-base font-normal text-title_Clr text-center max-w-[640px] mx-auto'>
                     Lorem Ipsum is simply dummy to text of the printing and  Lorem a typesetting industry. Lorem and Ipsum has been the industry's a standard.
                 </p>
-                <Link href="#" className='bg-secondary hover:bg-white px-9 py-3 text-lg font-medium text-white hover:text-secondary rounded-full border-2 border-secondary flex items-center gap-2 mt-12 w-fit mx-auto'>
+                <Link href="/products" className='bg-secondary hover:bg-white px-9 py-3 text-lg font-medium text-white hover:text-secondary rounded-full border-2 border-secondary flex items-center gap-2 mt-12 w-fit mx-auto'>
                     See All Products
                 </Link>
             </div>

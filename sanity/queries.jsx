@@ -2,19 +2,72 @@ export const Qtestimonials = `*[ _type == "testimonial"]`;
 
 export const Qfaqs = `*[ _type == "faqs"]`;
 
-export const Qcategories = `*[ _type == "categories"]`;
+export const Qcategories = `*[ _type == "categories"]{
+     feature_image{
+          asset->{
+               url
+          }
+     },
+     name,
+     metatitle,
+     metadescription,
+     slug,
+     icon{
+          asset->{
+               url
+          }
+     },
+     excerpt,
+     image{
+          asset->{
+               url
+          }
+     },
+     content,
+     grid[]{
+          image{
+               asset->{
+                    url
+               }
+          },
+          title,
+          info,
+          button_link
+     },
+     Our_capabilities[]{
+          image{
+          asset->{
+               url
+          }
+     },
+          title,
+
+     },
+     faqs[]->{
+          question,
+          answer
+     }
+}`;
 
 export const Qproducts = `*[ _type == "products"]{
      title,
      secound_title,
      _createdAt,
-     image,
-     gallery,
+     image{
+          asset->{
+               url
+          }
+     },
+     gallery[]{
+          asset->{
+               url
+          }
+     },
      slug,
      excerpt,
      content,
      featured,
-     categories[] ->{
+     categories[]->{
           name,
           slug
      },
@@ -23,28 +76,60 @@ export const Qproducts = `*[ _type == "products"]{
 
 
 export const QSingleCategory = ` *[ _type == "categories" && slug.current == $slug ][0]{
+    feature_image{
+          asset->{
+               url
+          }
+     },
      name,
      metatitle,
      metadescription,
-     metatags,
      slug,
-     icon,
+     icon{
+          asset->{
+               url
+          }
+     },
      excerpt,
-     image,
-     secound_title,
+     image{
+          asset->{
+               url
+          }
+     },
      content,
-     grid,
-     orderprocess[]->{
+     grid[]{
+          image{
+               asset->{
+                    url
+               }
+          },
           title,
-          detail
+          info,
+          button_link
+     },
+     Our_capabilities[]{
+          image{
+          asset->{
+               url
+          }
+     },
+          title,
+
+     },
+     faqs[]->{
+          question,
+          answer
      }
 }`;
 
 export const QSingleProducts = ` *[ _type == "products" && slug.current == $slug ][0]{
      title,
-     secound_title,
      _createdAt,
-     image,
+     image->{
+          asset{
+               url
+          }
+     },
      gallery,
      slug,
      excerpt,
@@ -53,17 +138,32 @@ export const QSingleProducts = ` *[ _type == "products" && slug.current == $slug
           name,
           slug
      },
-     grid,
-     mailerbox,
-     orderprocess[]->{
+     grid[]{
+          image{
+               asset->{
+                    url
+               }
+          },
           title,
-          detail
+          info,
+          button_link
+     },
+     Our_capabilities[]{
+          image{
+               asset->{
+                    url
+               }
+          },
+          title
+     },
+      faqs[]->{
+          question,
+          answer
      },
      _createdAt,
      _updatedAt,
      metatitle,
      metadescription,
-     metatags
 }`;
 
 
@@ -87,9 +187,7 @@ export const Qblogs = `*[ _type == "blogs"]{
           }
      },
      slug,
-     excerpt,
-     content,
-     category->{
+     Category->{
           name,
           slug
      }
