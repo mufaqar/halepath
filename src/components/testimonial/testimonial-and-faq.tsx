@@ -9,7 +9,7 @@ const TestimonialAndFaq = ({faqRes, testimonialsRes}:any) => {
   const slider = React.useRef<any>(null);
 
   return (
-    <section className="py-[60px] bg-[#F5F5F5]">
+    <section className="py-[60px] bg-[#F5F5F5]" id="testimonials">
       <div className="container mx-auto px-4 grid md:grid-cols-2 gap-6">
         <div>
           <div className="md:max-w-[470px] max-w-[350px] mx-auto">
