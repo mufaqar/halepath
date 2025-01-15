@@ -136,7 +136,7 @@ function Header() {
             </nav>
             <div className="lg:w-[24%] lg:flex gap-5 justify-end hidden">
               <Link
-                href="#"
+                href="/contact-us"
                 className="bg-transparent hover:bg-primary px-5 py-2.5 text-base uppercase font-medium text-primary hover:text-white rounded-full border-2 border-primary"
               >
                 Contact Us

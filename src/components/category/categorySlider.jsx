@@ -12,7 +12,7 @@ export default function CategorySlider({ categoriesRes }) {
     centerMode: true,
     infinite: true,
     centerPadding: "60px",
-    slidesToShow: 4,
+    slidesToShow: 5,
     speed: 500,
     responsive: [
       {

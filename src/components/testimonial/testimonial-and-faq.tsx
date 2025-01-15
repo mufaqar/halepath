@@ -5,7 +5,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import { FaStar } from "react-icons/fa";
 
-const TestimonialAndFaq = () => {
+const TestimonialAndFaq = ({faqRes, testimonialsRes}:any) => {
   const slider = React.useRef<any>(null);
 
   return (
@@ -18,12 +18,12 @@ const TestimonialAndFaq = () => {
               <div className="h-[3px] bg-[#1C2E42] w-16" />
             </h6>
             <h2 className="text-2xl lg:text-[43px] lg:leading-[50px] mt-5 font-semibold leading-normal">
-              What Customers Says{" "}
+              What Customers Says
               <span className="text-[#47AFC3]">About Us</span>
             </h2>
             <section className="testimonials">
               <Slider {...tsettings} ref={slider}>
-                {[1, 2, 3, 4].map((item, idx) => (
+                {testimonialsRes?.map((item:any, idx:number) => (
                   <div className="px-1 pb-4" key={idx}>
                     <div
                       className="p-8 bg-white mt-10 border shadow rounded-[19px]" >
@@ -34,10 +34,7 @@ const TestimonialAndFaq = () => {
                         height={54}
                       />
                       <p className="mt-4">
-                        Lorem ipsum dolor sit amet. Qui ducimus beatae quo
-                        galisum architecto 33 magnam quos. Quo ducimus ipsum et
-                        atque voluptatem est beatae fugit. Sit odit obcaecati
-                        Sit odit obcaecati
+                        {item?.review}
                        
                       </p>
                       <div className="mt-2 flex gap-1">
@@ -57,7 +54,7 @@ const TestimonialAndFaq = () => {
                         </figure>
                         <div>
                           <h6 className="font-semibold text-2xl text-[#1C1C1C]">
-                            Marshall Cook
+                            {item?.name}
                           </h6>
                           <p className="text-[#1C1C1CE8]">Co founder</p>
                         </div>
@@ -84,7 +81,7 @@ const TestimonialAndFaq = () => {
             </div>
           </div>
         </div>
-        <Faqs />
+        <Faqs data={faqRes?.slice(0,6)}/>
       </div>
     </section>
   );

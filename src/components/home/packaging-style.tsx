@@ -11,7 +11,7 @@ function Packaging_Style({ data }: any) {
         centerMode: true,
         infinite: true,
         centerPadding: "60px",
-        slidesToShow: 4,
+        slidesToShow: 5,
         speed: 500,
         responsive: [
             {
@@ -42,7 +42,7 @@ function Packaging_Style({ data }: any) {
     return (
         <section id="box-by-material" className='py-16 bg-[#EAF6F9]'>
             <div className='px-0'>
-                <div>
+                <div className='mb-16'>
                     <h2 className="md:text-[51px] md:leading-normal text-3xl font-semibold text-title_Clr text-center">
                         Explore Our Custom Printing and Packaging Design
                     </h2>
@@ -58,7 +58,7 @@ function Packaging_Style({ data }: any) {
                                 title={category?.name}
                                 content={category?.excerpt}
                                 slug={category?.slug?.current}
-                                img={category?.image?.asset.url}
+                                img={category?.feature_image?.asset.url}
                             />
                         ))
                     }
