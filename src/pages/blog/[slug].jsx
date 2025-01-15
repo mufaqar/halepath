@@ -3,8 +3,6 @@ import { client } from '../../../sanity/lib/client';
 import { Qblogs, QSingleBlog } from '../../../sanity/queries'
 import Image from 'next/image';
 import Featured_Posts from "@/components/blog/featured-post";
-import { convertTimestamp } from '@/utils'
-// import { PortableText } from '@portabletext/react';
 const BlockContent = require('@sanity/block-content-to-react')
 
 const BlogDetails = ({ blog, blogs }) => {
