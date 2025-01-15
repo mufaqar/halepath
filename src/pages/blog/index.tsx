@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Featured_Posts from "@/components/blog/featured-post";
 import { client } from "../../../sanity/lib/client";
 import { Qblogs } from "../../../sanity/queries";
+import Head from "next/head";
 
 export default function Blogs({ blogs, blogsCategories }: any) {
   const [searchValue, setSearchValue] = useState("");
@@ -15,6 +16,12 @@ export default function Blogs({ blogs, blogsCategories }: any) {
 
   return (
     <>
+    <Head>
+      <title>Blogs | Hale Path Packaging</title>
+      <meta name="description" content="Hale Path Packaging"/>
+      <meta name="author" content="Hale Path Packaging"/>
+      <link rel="canonical" href="https://halepath.vercel.app/blog"/>
+    </Head>
       <PageBanner title="Blogs" content="Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques." />
       <section className="py-16">
         <div className="container mx-auto px-4">

@@ -6,10 +6,18 @@ import DesignBox from '@/components/home/designBox';
 import { urlForImage } from '../../../sanity/lib/image';
 import Link from 'next/link';
 import PageBanner from '@/components/page-banner';
+import Head from 'next/head';
 
 const Products = ({ productsRes }: any) => {
   return (
     <>
+    <Head>
+      <title>Box By Material | Hale Path Packaging</title>
+      <meta name="description" content="Box By Material"/>
+      <meta name="author" content="Hale Path Packaging"/>
+      <link rel="canonical" href={`https://halepath.vercel.app/box-by-material`}/>
+    </Head>
+
       <PageBanner title="Box by Material"
         content="Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques." />
       <section>

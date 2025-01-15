@@ -16,7 +16,6 @@ export default function Product({ productRes, productsRes }: any) {
     <>
       <Head>
         <title>{productRes?.metatitle}</title>
-        <meta name="keywords" content={productRes?.metatags} />
         <meta name="description" content={productRes?.metadescription} />
         <meta name="subject" content="products" />
         <meta name="copyright" content="packhoop" />

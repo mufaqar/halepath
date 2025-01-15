@@ -3,11 +3,20 @@ import { client } from '../../../sanity/lib/client';
 import { Qblogs, QSingleBlog } from '../../../sanity/queries'
 import Image from 'next/image';
 import Featured_Posts from "@/components/blog/featured-post";
+import Head from 'next/head';
 const BlockContent = require('@sanity/block-content-to-react')
 
 const BlogDetails = ({ blog, blogs }) => {
+
   return (
     <>
+    <Head>
+      <title>{blog?.metatitle} | Hale Path Packaging</title>
+      <meta name="description" content={blog?.metadescription}/>
+      <meta name="author" content="Hale Path Packaging"/>
+      <link rel="canonical" href={`https://halepath.vercel.app/${blog.slug.current}`}/>
+    </Head>
+    
       <section className='pt-14'>
         <div className='container mx-auto px-4'>
           <h1 className='md:text-[51px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-4'>

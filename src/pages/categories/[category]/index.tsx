@@ -17,10 +17,9 @@ export default function Category({ categoryRes, productsRes }: any) {
     <>
       <Head>
         <title>{categoryRes?.metatitle}</title>
-        <meta name="keywords" content={categoryRes?.metatags} />
         <meta name="description" content={categoryRes?.metadescription} />
         <meta name="subject" content="products" />
-        <meta name="copyright" content="packhoop" />
+        <meta name="copyright" content="Halepath" />
         <meta name="language" content="En" />
         <meta name="robots" content="index,follow" />
         <meta name="subtitle" content={categoryRes?.metadescription} />

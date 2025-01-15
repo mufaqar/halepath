@@ -1,9 +1,16 @@
 import PageBanner from '@/components/page-banner'
+import Head from 'next/head'
 import React from 'react'
 
 const PrivacyPolicy = () => {
   return (
     <>
+    <Head>
+        <title>Privacy Policy | Hale Path Packaging</title>
+        <meta name="description" content="Privacy Policy"/>
+        <meta name="author" content="Hale Path Packaging"/>
+        <link rel="canonical" href={`https://halepath.vercel.app/privacy-policy`}/>
+      </Head>
       <PageBanner title="Privacy Policy" />
       <section className='container mx-auto px-3'>
         <section className='py-16'>

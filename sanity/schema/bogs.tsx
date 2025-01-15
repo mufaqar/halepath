@@ -43,12 +43,6 @@ export const blogs = {
       title: 'Meta Description'
     },
     {
-      name: 'metatags',
-      type: 'text',
-      description: "Please seprate tag with ','",
-      title: 'Meta Tags'
-    },
-    {
       title: 'Feature Image',
       name: 'image',
       type: 'image',

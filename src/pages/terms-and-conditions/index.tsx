@@ -1,9 +1,16 @@
 import PageBanner from '@/components/page-banner'
+import Head from 'next/head'
 import React from 'react'
 
 const TermsAndConditions = () => {
   return (
     <>
+    <Head>
+        <title>Terms & Conditions | Hale Path Packaging</title>
+        <meta name="description" content="Terms & Conditions"/>
+        <meta name="author" content="Hale Path Packaging"/>
+        <link rel="canonical" href={`https://halepath.vercel.app/terms-and-conditions`}/>
+      </Head>
       <PageBanner title="Terms and Conditions" />
       <section className='container mx-auto px-3'>
         <section className='py-16'>

@@ -22,12 +22,20 @@ import WhatWeDo from '@/components/home/what-we-do'
 import Career from '@/components/home/career'
 import Slider from 'react-slick'
 import MainContent from '@/components/main/main-content'
+import Head from 'next/head'
 
 export default function Home({ testimonialsRes, faqRes, categoriesRes, productsRes, featureproductsRes }) {
   const fproduct = productsRes?.filter((item) => item.featured === true)
   const settingDotsFalse = { ...settings, 'dots': false }
 
   return (
+    <>
+    <Head>
+      <title>Hale Path Packaging</title>
+      <meta name="description" content="Hale Path Packaging"/>
+      <meta name="author" content="Hale Path Packaging"/>
+      <link rel="canonical" href="https://halepath.vercel.app"/>
+    </Head>
     <main className={``} >
       <MainSlider />
       <MainContent />
@@ -98,6 +106,7 @@ export default function Home({ testimonialsRes, faqRes, categoriesRes, productsR
       <Career />
       <Instagram />
     </main>
+    </>
   )
 }
 

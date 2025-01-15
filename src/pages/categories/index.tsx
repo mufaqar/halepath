@@ -5,11 +5,18 @@ import Packing_Design from '@/components/home/packing-design';
 import { urlForImage } from '../../../sanity/lib/image';
 import IconBox from '@/components/category/icon-box';
 import PageBanner from '@/components/page-banner';
+import Head from 'next/head';
 
 const Products = ({ categoriesRes }: any) => {
-  console.log("🚀 ~ Products ~ categoriesRes:", categoriesRes)
   return (
     <>
+      <Head>
+        <title>Categories | Hale Path Packaging</title>
+        <meta name="description" content="Categories"/>
+        <meta name="author" content="Hale Path Packaging"/>
+        <link rel="canonical" href={`https://halepath.vercel.app/categories`}/>
+      </Head>
+
       <PageBanner title="All Categories"
         content="Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques." />
       <section className='mb-14'>

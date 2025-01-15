@@ -218,5 +218,7 @@ export const QSingleBlog = `*[ _type == "blogs" && slug.current == $slug ][0]{
      slug,
      excerpt,
      content,
+     metatitle,
+     metadescription
      
 }`;

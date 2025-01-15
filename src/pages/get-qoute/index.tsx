@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 
@@ -35,6 +36,13 @@ const GetAQoute = () => {
   }
   return (
     <>
+    <Head>
+        <title>Get A Qoute | Hale Path Packaging</title>
+        <meta name="description" content="Get A Qoute"/>
+        <meta name="author" content="Hale Path Packaging"/>
+        <link rel="canonical" href={`https://halepath.vercel.app/get-qoute`}/>
+      </Head>
+
       <section className='py-16 bg-primary'>
         <div className='container mx-auto px-4'>
           <h2 className='md:text-4xl text-3xl font-semibold text-white text-center'>
