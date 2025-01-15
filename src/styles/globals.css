@@ -121,6 +121,13 @@ html {
 .max_content ::-webkit-scrollbar-thumb:hover {
   background: #1C2E42;
 }
+.max_content .scroll_Left{
+  direction: rtl;
+  padding-left: 16px;
+}
+.max_content .scroll_Left p{
+  direction: ltr;
+}
 
 .content .slick-next {
   right: 25px;

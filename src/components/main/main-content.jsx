@@ -4,9 +4,9 @@ import React from 'react'
 
 const MainContent = () => {
     return (
-        <>
-            <main className="container mx-auto px-4 grid mt-14 py-8 gap-10 xl:gap-0 items-center md:items-start lg:grid-cols-2">
-                <div className="flex justify-center">
+        <section className='max_content mt-14 py-8'>
+            <main className="container mx-auto px-4 flex md:flex-row flex-col gap-7">
+                <div className="md:w-1/2 w-full flex justify-center">
                     <div className="relative">
                         <figure className="flex absolute z-[-2] left-9 -top-8 justify-center">
                             <Image
@@ -39,28 +39,28 @@ const MainContent = () => {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div className="border-l-[4px] pl-10 md:text-[29px] md:leading-tight text-lg font-normal text-title_Clr relative">
-                        <p className="mb-2">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard dummy text
-                            ever since the 1500s.
-                        </p>
-                        <p className="mb-2">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard dummy text
-                            ever since the 1500s.
-                        </p>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard dummy text
-                            ever since the 1500s.
-                        </p>
-                        <div className="absolute h-[150px] w-[4px] bg-black top-0 -left-1" />
-                    </div>
+                <div className='md:w-1/2 w-full max-h-[467px] h-full overflow-y-scroll scroll_Left'>
+                    <p className='md:text-[29px] md:leading-[41px] text-lg font-normal text-title_Clr mb-2'>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
+                    <p className='md:text-[29px] md:leading-[41px] text-lg font-normal text-title_Clr mb-2'>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
+                    <p className='md:text-[29px] md:leading-[41px] text-lg font-normal text-title_Clr mb-2'>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
+                    <p className='md:text-[29px] md:leading-[41px] text-lg font-normal text-title_Clr mb-2'>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
+                    <p className='md:text-[29px] md:leading-[41px] text-lg font-normal text-title_Clr mb-2'>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
+                    <p className='md:text-[29px] md:leading-[41px] text-lg font-normal text-title_Clr mb-2'>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
                 </div>
             </main>
-        </>
+        </section>
     )
 }
 

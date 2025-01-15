@@ -21,6 +21,7 @@ import Instagram from '@/components/instagram/instagram'
 import WhatWeDo from '@/components/home/what-we-do'
 import Career from '@/components/home/career'
 import Slider from 'react-slick'
+import MainContent from '@/components/main/main-content'
 
 export default function Home({ testimonialsRes, faqRes, categoriesRes, productsRes }) {
   const fproduct = productsRes?.filter((item) => item.featured === true)
@@ -29,36 +30,7 @@ export default function Home({ testimonialsRes, faqRes, categoriesRes, productsR
   return (
     <main className={``} >
       <MainSlider />
-      <section className='py-14 max_content'>
-        <div className='container mx-auto px-4 flex md:flex-row flex-col gap-7'>
-          <div className='md:w-1/2 w-full'>
-            <Image src="/images/about-img.png" alt='about-img' width={604} height={467} />
-            <Link href="#" className='bg-secondary hover:bg-white px-9 py-3 text-lg font-medium text-white hover:text-secondary rounded-full border-2 border-secondary flex items-center gap-2 mt-5 w-fit mx-auto'>
-              About Us
-            </Link>
-          </div>
-          <div className='md:w-1/2 w-full max-h-[467px] h-full overflow-y-scroll '>
-            <p className='md:text-2xl text-lg font-normal text-title_Clr mb-2'>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-            </p>
-            <p className='md:text-2xl text-lg font-normal text-title_Clr mb-2'>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-            </p>
-            <p className='md:text-2xl text-lg font-normal text-title_Clr mb-2'>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-            </p>
-            <p className='md:text-2xl text-lg font-normal text-title_Clr mb-2'>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-            </p>
-            <p className='md:text-2xl text-lg font-normal text-title_Clr mb-2'>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-            </p>
-            <p className='md:text-2xl text-lg font-normal text-title_Clr mb-2'>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-            </p>
-          </div>
-        </div>
-      </section>
+      <MainContent />
 
       <CategorySlider categoriesRes={categoriesRes} />
 
