@@ -71,9 +71,21 @@ export const Qproducts = `*[ _type == "products"]{
           name,
           slug
      },
+     features
      
 }`;
 
+export const featuredproducts = `*[ _type == "products" && features == true] | order(publishedDate desc)[0..3]{
+     title,
+     _createdAt,
+     gallery[]{
+          asset->{
+               url
+          }
+     },
+     slug,
+     excerpt,
+}`;
 
 export const QSingleCategory = ` *[ _type == "categories" && slug.current == $slug ][0]{
     feature_image{

@@ -6,7 +6,7 @@ import Testimonials from '@/components/home/testimonials'
 import Faqs from '@/components/home/faqs'
 import Get_Qoute from '@/components/home/get-qoute'
 import { client } from '../../sanity/lib/client'
-import { Qcategories, Qfaqs, Qproducts, Qtestimonials } from '../../sanity/queries'
+import { featuredproducts, Qcategories, Qfaqs, Qproducts, Qtestimonials } from '../../sanity/queries'
 import MainSlider from '@/components/home/mainSlider'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -23,7 +23,7 @@ import Career from '@/components/home/career'
 import Slider from 'react-slick'
 import MainContent from '@/components/main/main-content'
 
-export default function Home({ testimonialsRes, faqRes, categoriesRes, productsRes }) {
+export default function Home({ testimonialsRes, faqRes, categoriesRes, productsRes, featureproductsRes }) {
   const fproduct = productsRes?.filter((item) => item.featured === true)
   const settingDotsFalse = { ...settings, 'dots': false }
 
@@ -93,7 +93,7 @@ export default function Home({ testimonialsRes, faqRes, categoriesRes, productsR
       <WhatWeOffer />
       <SliderFull />
       <Packaging_Style data={categoriesRes}/>
-      <WhatWeDo />
+      <WhatWeDo featureproductsRes={featureproductsRes} />
       <TestimonialAndFaq testimonialsRes={testimonialsRes} faqRes={faqRes}/>
       <Career />
       <Instagram />
@@ -108,9 +108,10 @@ export async function getServerSideProps() {
   const faqRes = await client.fetch(Qfaqs);
   const categoriesRes = await client.fetch(Qcategories);
   const productsRes = await client.fetch(Qproducts);
+  const featureproductsRes = await client.fetch(featuredproducts);
   return {
     props: {
-      testimonialsRes, faqRes, categoriesRes, productsRes,
+      testimonialsRes, faqRes, categoriesRes, productsRes, featureproductsRes,
       preview: true
     }
   };

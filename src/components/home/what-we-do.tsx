@@ -2,7 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 import ImgBox from './imgBox'
 
-const WhatWeDo = () => {
+const WhatWeDo = ({featureproductsRes}:any) => {
+    console.log("🚀 ~ WhatWeDo ~ featureproductsRes:", featureproductsRes)
     return (
         <section className='py-16'>
             <div className='container mx-auto px-4'>
@@ -18,12 +19,12 @@ const WhatWeDo = () => {
             </div>
             <div className='container mx-auto px-4 flex md:flex-row flex-col md:gap-40 gap-7 mt-10'>
                 <div className='md:w-1/2 w-full flex md:flex-row flex-col items-start gap-7 [&>*:nth-child(1)]:md:-mt-40'>
-                    <ImgBox img="/images/blog/blog1.png" title="Lorem Ipsum" content="Lorem Ipsum is simply dummy to text of the printing and  Lorem a typesetting industry. Lorem and Ipsum has been the industry's a standard." />
-                    <ImgBox img="/images/blog/blog2.png" title="Lorem Ipsum" content="Lorem Ipsum is simply dummy to text of the printing and  Lorem a typesetting industry. Lorem and Ipsum has been the industry's a standard." />
+                    <ImgBox img={featureproductsRes[0]?.gallery?.[0]?.asset?.url} title={featureproductsRes[0].title} content={featureproductsRes[0].excerpt} slug={featureproductsRes[0].slug.current}  />
+                    <ImgBox img={featureproductsRes[1]?.gallery?.[0]?.asset?.url} title={featureproductsRes[1].title} content={featureproductsRes[1].excerpt} slug={featureproductsRes[1].slug.current}  />
                 </div>
                 <div className='md:w-1/2 w-full flex md:flex-row flex-col items-start gap-7 [&>*:nth-child(2)]:md:-mt-40'>
-                    <ImgBox img="/images/blog/blog3.png" title="Lorem Ipsum" content="Lorem Ipsum is simply dummy to text of the printing and  Lorem a typesetting industry. Lorem and Ipsum has been the industry's a standard." />
-                    <ImgBox img="/images/blog/blog4.png" title="Lorem Ipsum" content="Lorem Ipsum is simply dummy to text of the printing and  Lorem a typesetting industry. Lorem and Ipsum has been the industry's a standard." />
+                    <ImgBox img={featureproductsRes[2]?.gallery?.[0]?.asset?.url} title={featureproductsRes[2].title} content={featureproductsRes[2].excerpt} slug={featureproductsRes[2].slug.current}  />
+                    <ImgBox img={featureproductsRes[3]?.gallery?.[0]?.asset?.url} title={featureproductsRes[3].title} content={featureproductsRes[3].excerpt} slug={featureproductsRes[3].slug.current}  />
                 </div>
             </div>
         </section>

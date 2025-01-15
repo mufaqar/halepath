@@ -25,6 +25,11 @@ export const products = {
       },
     },
     {
+      title: 'Home Featured',
+      name: 'features',
+      type: 'boolean'
+    },
+    {
       name: "excerpt",
       type: "text",
       title: "Excerpt",
