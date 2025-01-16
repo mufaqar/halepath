@@ -9,13 +9,13 @@ const Steps = () => {
                     className="relative flex md:flex-row flex-col md:gap-[30px] gap-7"
                 >
                     <span
-                        className={`text-xl font-semibold text-white bg-secondary p-[18px] border-[18px] border-primary rounded-full flex items-center justify-center w-[89px] h-[89px] before_line ${index === steps.length - 1 ? "before:content-none" : ""
+                        className={`text-xl font-medium text-white PoppinsMedium bg-secondary p-[18px] border-[18px] border-primary rounded-full flex items-center justify-center w-[89px] h-[89px] before_line ${index === steps.length - 1 ? "before:content-none" : ""
                             }`}
                     >
                         {`0${step.id}`}
                     </span>
                     <div>
-                        <h4 className="text-xl font-semibold text-primary mb-2">
+                        <h4 className="text-xl font-medium text-primary mb-2 PoppinsMedium">
                             {step.title}
                         </h4>
                         <p className="text-sm font-light text-white">{step.description}</p>
