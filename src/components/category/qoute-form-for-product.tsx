@@ -57,7 +57,7 @@ function QouteFormForProduct() {
                 Name
               </label>
               <input
-                className="text-sm font-medium text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                 type="text"
                 {...register("name", { required: true })}
                 id="name"
@@ -72,7 +72,7 @@ function QouteFormForProduct() {
                 Phone Number
               </label>
               <input
-                className="text-sm font-medium text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                 type="tel"
                 {...register("phone")}
                 id="phone"
@@ -90,7 +90,7 @@ function QouteFormForProduct() {
                 Email Address
               </label>
               <input
-                className="text-sm font-medium text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                 type="email"
                 {...register("email", { required: true })}
                 id="email"
@@ -106,7 +106,7 @@ function QouteFormForProduct() {
                 Select Product
               </label>
               <select
-                className="text-sm font-medium text-txt_Clr cursor-pointer bg-white p-[26px] border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full w-full"
+                className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr cursor-pointer bg-white p-[26px] border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full w-full"
                 id="Product"
                 placeholder="Select Product"
                 {...register("Product", { required: true })}
@@ -131,7 +131,7 @@ function QouteFormForProduct() {
                 Length
               </label>
               <input
-                className="text-sm font-medium text-txt_Clr rounded-full bg-white p-[26px] border border-[#CACACA] focus:border-secondary  outline-none w-full"
+                className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr rounded-full bg-white p-[26px] border border-[#CACACA] focus:border-secondary  outline-none w-full"
                 type="number"
                 {...register("Length", { required: true })}
                 id="Length"
@@ -146,7 +146,7 @@ function QouteFormForProduct() {
                 Width
               </label>
               <input
-                className="text-sm font-medium text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                 type="number"
                 {...register("Width", { required: true })}
                 id="Width"
@@ -161,7 +161,7 @@ function QouteFormForProduct() {
                 Depth
               </label>
               <input
-                className="text-sm font-medium text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary outline-none rounded-full w-full"
+                className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary outline-none rounded-full w-full"
                 type="number"
                 {...register("Depth", { required: true })}
                 id="Depth"
@@ -179,7 +179,7 @@ function QouteFormForProduct() {
                 Colors
               </label>
               <select
-                className="text-sm font-medium text-txt_Clr cursor-pointer bg-white p-[26px] border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full w-full"
+                className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr cursor-pointer bg-white p-[26px] border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full w-full"
                 id="Colors"
                 {...register("Colors", { required: true })}
               >
@@ -202,7 +202,7 @@ function QouteFormForProduct() {
                 Select Unit
               </label>
               <select
-                className="text-sm font-medium text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full cursor-pointer w-full"
+                className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full cursor-pointer w-full"
                 id="Unit"
                 {...register("Unit", { required: true })}
               >
@@ -222,7 +222,7 @@ function QouteFormForProduct() {
                 Select Stock
               </label>
               <select
-                className="text-sm font-medium text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full cursor-pointer w-full"
+                className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full cursor-pointer w-full"
                 id="Stock"
                 {...register("Stock", { required: true })}
               >
@@ -237,7 +237,7 @@ function QouteFormForProduct() {
 
           <section className="col-span-2 md:col-span-1 mt-2.5">
             <textarea
-              className="text-sm font-medium rounded-[20px] h-[141px] text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary  outline-none w-full"
+              className="text-sm font-medium rounded-[20px] h-[141px] text-txt_Clr placeholder:text-txt_Clr bg-white p-[26px] border border-[#CACACA] focus:border-secondary  outline-none w-full"
               id="detail"
               {...register("detail", { required: true })}
               rows={3}
