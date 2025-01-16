@@ -5,7 +5,7 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 
 const Featured_Posts = ({ data }) => {
     return (
-        <div className='shadow-[-1px_3px_10px_0px_rgba(0,0,0,0.06)]'>
+        <div className='shadow-[-1px_3px_10px_0px_rgba(0,0,0,0.06)] border border-[#E5E5E5]'>
             <div className='h-[264px]'>
                 <Image src={data?.image?.asset?.url} alt='Featured' width={480} height={264} className='w-full h-full object-cover object-center' />
             </div>

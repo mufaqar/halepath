@@ -8,49 +8,49 @@ function Footer() {
     <footer className='pt-14 pb-4 relative'>
       <div className='container mx-auto px-4 grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 justify-between gap-7'>
         <div>
-          <h6 className='text-2xl font-semibold text-title_Clr mb-6'>
+          <h6 className='text-2xl font-semibold text-title_Clr mb-6 PoppinsMedium'>
             Company
             <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
           </h6>
           <ul className='flex flex-col gap-2.5'>
             <li>
-              <Link href="/" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/about-us" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/about-us" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/categories" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/categories" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Product By Industry
               </Link>
             </li>
             <li>
-              <Link href="/products" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/products" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Products
               </Link>
             </li>
             <li>
-              <Link href="/about-us#testimonials" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/about-us#testimonials" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Testimonials
               </Link>
             </li>
             <li>
-              <Link href="/about-us#faqs" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/about-us#faqs" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 FAQ's
               </Link>
             </li>
             <li>
-              <Link href="/contact-us" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/contact-us" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Contact
               </Link>
@@ -58,49 +58,49 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h6 className='text-2xl font-semibold text-title_Clr mb-6'>
+          <h6 className='text-2xl font-semibold text-title_Clr mb-6 PoppinsMedium'>
             Products Packaging
             <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
           </h6>
           <ul className='flex flex-col gap-2.5'>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Mailer Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Rigid Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Kraft Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Cardboard Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Products Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Sustainable Packaging
               </Link>
@@ -108,43 +108,43 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h6 className='text-2xl font-semibold text-title_Clr mb-6'>
+          <h6 className='text-2xl font-semibold text-title_Clr mb-6 PoppinsMedium'>
             Packaging Style
             <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
           </h6>
           <ul className='flex flex-col gap-2.5'>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Sleeve & Tray
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Die Cut Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Cigerate Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Child Resistance Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Window Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Gable Boxes
               </Link>
@@ -152,19 +152,19 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h6 className='text-2xl font-semibold text-title_Clr mb-6'>
+          <h6 className='text-2xl font-semibold text-title_Clr mb-6 PoppinsMedium'>
             Inspiration
             <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
           </h6>
           <ul className='flex flex-col gap-2.5'>
             <li>
-              <Link href="/blog" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="/blog" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Blog
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Client Success Stories
               </Link>
@@ -172,19 +172,19 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h6 className='text-2xl font-semibold text-title_Clr mb-6'>
+          <h6 className='text-2xl font-semibold text-title_Clr mb-6 PoppinsMedium'>
             Contact
             <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
           </h6>
           <ul className='flex flex-col gap-2.5'>
             <li>
-              <Link href="tel:866-225-2112" className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="tel:866-225-2112" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 866-225-2112
               </Link>
             </li>
             <li>
-              <Link href="mailto:info@halepathpack.com" target='_blank' className='text-base font-normal text-title_Clr flex items-center gap-2'>
+              <Link href="mailto:info@halepathpack.com" target='_blank' className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 info@halepathpack.com
               </Link>

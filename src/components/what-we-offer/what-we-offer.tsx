@@ -3,7 +3,7 @@ import React from 'react'
 
 const WhatWeOffer = () => {
   return (
-    <section className="mt-[60px]">
+    <section className="pt-[60px] bg-[#F5F5F5]">
     <div className="container mx-auto px-4">
       <h6 className="text-[#1C2E42] font-semibold flex gap-2 items-center">
         What We Offer

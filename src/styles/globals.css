@@ -26,7 +26,10 @@
   font-family: 'PoppinsBold';
   src: url('../../public/fonts/Poppins-Bold.ttf');
 }
-
+@font-face {
+  font-family: 'PoppinsMedium';
+  src: url('../../public/fonts/Poppins-Medium.ttf');
+}
 @font-face {
   font-family: 'PoppinsRegular';
   src: url('../../public/fonts/Poppins-Regular.ttf');
@@ -48,13 +51,16 @@ h3,
 h4,
 h5,
 h6,
-p,
-li {
-  font-family: 'PoppinsRegular';
+.PoppinsBold {
+  font-family: 'PoppinsBold';
 }
-
-a,
-span {
+a,.PoppinsMedium{
+  font-family: 'PoppinsMedium';
+}
+p,
+li,
+span,
+.PoppinsRegular {
   font-family: 'PoppinsRegular';
 }
 
@@ -121,11 +127,13 @@ html {
 .max_content ::-webkit-scrollbar-thumb:hover {
   background: #1C2E42;
 }
-.max_content .scroll_Left{
+
+.max_content .scroll_Left {
   direction: rtl;
   padding-left: 16px;
 }
-.max_content .scroll_Left p{
+
+.max_content .scroll_Left p {
   direction: ltr;
 }
 
@@ -150,7 +158,9 @@ html {
 
 
 
-.desc_content h4, .desc_content h3, .desc_content h2 {
+.desc_content h4,
+.desc_content h3,
+.desc_content h2 {
   font-size: 24px;
   line-height: 30.72px;
   color: #1c1c1c;
@@ -165,7 +175,10 @@ html {
   font-weight: 400;
   margin-bottom: 20px;
 }
-.slick-list{padding:0 10% 0 13% !important;}
+
+.slick-list {
+  padding: 0 10% 0 13% !important;
+}
 
 .desc_content p strong {
   font-weight: 600;
@@ -264,13 +277,13 @@ ul.career_list li::marker {
   content: '✔';
 }
 
-.Main_slider .slick-list{
+.Main_slider .slick-list {
   padding: 0 !important;
 }
 
 .single .slick-list,
 .testimonials .slick-list,
-.about .slick-list{
+.about .slick-list {
   padding: 0 !important
 }
 
@@ -278,12 +291,12 @@ ul.career_list li::marker {
   display: none;
 }
 
-.video-container{
+.video-container {
   width: 100%;
   height: 605px;
   position: relative;
 }
-    
+
 .video-container iframe {
   position: absolute;
   top: 50%;
@@ -292,11 +305,13 @@ ul.career_list li::marker {
   height: 605px;
   transform: translate(-50%, -50%);
 }
-video{
+
+video {
   width: 100vw !important;
   left: 0 !important;
 }
+
 .ytp-watermark,
-.ytp-title-text{
+.ytp-title-text {
   display: none !important;
 }

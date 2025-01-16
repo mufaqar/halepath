@@ -45,9 +45,9 @@ export default function Home({ testimonialsRes, faqRes, categoriesRes, productsR
       <section className='bg-secondary py-7'>
         <div className='container mx-auto px-4 flex md:flex-row flex-col items-center gap-7 justify-between'>
           <div className='md:w-2/3 w-full flex flex-wrap items-center gap-3'>
-            <p className='md:text-xl text-lg font-bold text-white mr-4'>
+            <h6 className='md:text-xl text-lg font-normal text-white mr-4'>
               Need More This Special Year?
-            </p>
+            </h6>
             <p className='md:text-3xl text-xl font-normal text-primary'>30%</p>
             <p className='md:text-3xl text-xl font-normal text-white'>
               Discount Bulk Shopping

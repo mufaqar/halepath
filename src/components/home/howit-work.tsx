@@ -6,9 +6,9 @@ function HowIt_work() {
         <section className='py-10 md:px-4 px-4'>
             <div className='container mx-auto md:p-14 p-8 bg-secondary flex md:flex-row flex-col gap-7 justify-between items-center rounded-[19px]'>
                 <div>
-                    <h2 className='md:text-4xl text-2xl font-normal text-white mb-10'>
+                    <p className='md:text-4xl text-2xl font-normal text-white mb-10'>
                         Globally Expertise Delivered Locally
-                    </h2>
+                    </p>
                     <Link href="/products" className='bg-primary hover:bg-white px-9 py-3 text-lg font-medium text-white hover:text-primary rounded-full border-2 border-primary flex items-center gap-2 w-fit'>
                         See All Products
                     </Link>

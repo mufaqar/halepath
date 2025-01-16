@@ -8,10 +8,10 @@ const Career = () => {
             <div className='relative container mx-auto px-8 bg-[url("/images/career-bg.png")] bg-cover bg-no-repeat bg-center rounded-[20px] md:pt-14 md:pl-14 md:pr-0 p-10 md:pb-0 pb-0'>
                 <div className='flex md:flex-row flex-col md:gap-8 gap-8'>
                     <div className='md:w-2/5 w-full'>
-                        <h4 className='text-lg font-normal text-white mb-7 uppercase tracking-widest'>
+                        <p className='text-lg font-normal text-white mb-7 uppercase tracking-[5px] border-l-2 border-secondary pl-1.5'>
                             Careers with Ball
-                        </h4>
-                        <h2 className='md:text-[56px] md:leading-normal text-4xl font-medium text-white mb-9'>
+                        </p>
+                        <h2 className='md:text-[56px] md:leading-normal text-4xl font-medium text-white mb-9 PoppinsMedium'>
                             Be unstoppable.
                         </h2>
                         <p className='text-base font-normal text-white mb-6'>
@@ -22,23 +22,23 @@ const Career = () => {
                             With Ball, you’re working toward something bigger than
                             yourself.
                         </p>
-                        <Link href="#" className='bg-secondary hover:bg-white px-8 py-2.5 text-sm font-bold text-white hover:text-secondary rounded-full border-2 border-secondary flex items-center gap-2 mt-8 w-fit'>
+                        <Link href="#" className='bg-secondary hover:bg-white px-8 py-2.5 text-sm font-medium PoppinsBold text-white hover:text-secondary rounded-full border-2 border-secondary flex items-center gap-2 mt-8 w-fit'>
                             Explore Ball Careers
                         </Link>
                         <ul className='career_list text-white flex flex-col gap-4 md:mt-16 mt-10 md:mb-24 mb-10'>
-                            <li className='text-base font-bold text-white'>
+                            <li className='text-base PoppinsMedium text-white'>
                                 Medical, dental and vision insurance
                             </li>
-                            <li className='text-base font-bold text-white'>
+                            <li className='text-base PoppinsMedium text-white'>
                                 Employee stock purchase and company match
                             </li>
-                            <li className='text-base font-bold text-white'>
+                            <li className='text-base PoppinsMedium text-white'>
                                 MPaid holidays, vacation and sick leave & parental leave
                             </li>
-                            <li className='text-base font-bold text-white'>
+                            <li className='text-base PoppinsMedium text-white'>
                                 Life Insurance
                             </li>
-                            <li className='text-base font-bold text-white'>
+                            <li className='text-base PoppinsMedium text-white'>
                                 401(k) plan
                             </li>
                         </ul>
