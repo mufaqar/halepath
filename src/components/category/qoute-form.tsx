@@ -56,7 +56,7 @@ function Qoute_Form() {
               Name
             </label>
             <input
-              className="text-sm font-medium text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+              className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
               type="text"
               {...register("name", { required: true })}
               id="name"
@@ -71,7 +71,7 @@ function Qoute_Form() {
               Phone Number
             </label>
             <input
-              className="text-sm font-medium text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+              className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
               type="tel"
               {...register("phone")}
               id="phone"
@@ -86,7 +86,7 @@ function Qoute_Form() {
               Email Address
             </label>
             <input
-              className="text-sm font-medium text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+              className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
               type="email"
               {...register("email", { required: true })}
               id="email"
@@ -102,7 +102,7 @@ function Qoute_Form() {
               Select Product
             </label>
             <select
-              className="text-sm font-medium text-txt_Clr cursor-pointer bg-white p-4 border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full w-full"
+              className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr cursor-pointer bg-white p-4 border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full w-full"
               id="Unit"
               {...register("Unit", { required: true })}
             >
@@ -121,7 +121,7 @@ function Qoute_Form() {
               Colors
             </label>
             <select
-              className="text-sm font-medium text-txt_Clr cursor-pointer bg-white p-4 border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full w-full"
+              className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr cursor-pointer bg-white p-4 border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full w-full"
               id="Colors"
               {...register("Colors", { required: true })}
             >
@@ -148,7 +148,7 @@ function Qoute_Form() {
                   Length
                 </label>
                 <input
-                  className="text-sm font-medium text-txt_Clr rounded-full bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none w-full"
+                  className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr rounded-full bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none w-full"
                   type="number"
                   {...register("Length", { required: true })}
                   id="Length"
@@ -163,7 +163,7 @@ function Qoute_Form() {
                   Width
                 </label>
                 <input
-                  className="text-sm font-medium text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                  className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                   type="number"
                   {...register("Width", { required: true })}
                   id="Width"
@@ -178,7 +178,7 @@ function Qoute_Form() {
                   Depth
                 </label>
                 <input
-                  className="text-sm font-medium text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary outline-none rounded-full w-full"
+                  className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary outline-none rounded-full w-full"
                   type="number"
                   {...register("Depth", { required: true })}
                   id="Depth"
@@ -193,7 +193,7 @@ function Qoute_Form() {
                   Select Unit
                 </label>
                 <select
-                  className="text-sm font-medium text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full cursor-pointer w-full"
+                  className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full cursor-pointer w-full"
                   id="Unit"
                   {...register("Unit", { required: true })}
                 >
@@ -214,7 +214,7 @@ function Qoute_Form() {
           </section>
           <section className="col-span-2 md:col-span-1">
             <textarea
-              className="text-sm font-medium rounded-[20px] text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none w-full"
+              className="text-sm font-medium rounded-[20px] text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none w-full"
               id="detail"
               {...register("detail", { required: true })}
               rows={3}

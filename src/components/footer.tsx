@@ -64,39 +64,39 @@ function Footer() {
           </h6>
           <ul className='flex flex-col gap-2.5'>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
+              <Link href="/categories/cosmetic-boxes" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Mailer Boxes
+                Cosmetic Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Rigid Boxes
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Kraft Boxes
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
+              <Link href="/categories/cardboard-boxes" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
                 Cardboard Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
+              <Link href="/categories/cbd-boxes" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Products Boxes
+                CBD Boxes
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
+              <Link href="/categories/display-boxes" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
                 <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Boxes
+                Display Boxes
+              </Link>
+            </li>
+            <li>
+              <Link href="/categories/bottle-boxes" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Bottle Boxes
+              </Link>
+            </li>
+            <li>
+              <Link href="/categories/retail-boxes" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
+                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
+                Retail Boxes
               </Link>
             </li>
             <li>
