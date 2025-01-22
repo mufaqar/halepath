@@ -116,7 +116,7 @@ export const QSingleCategory = ` *[ _type == "categories" && slug.current == $sl
                }
           },
           title,
-          info,
+          Info,
           button_link
      },
      Our_capabilities[]{
@@ -157,7 +157,7 @@ export const QSingleProducts = ` *[ _type == "products" && slug.current == $slug
                }
           },
           title,
-          info,
+          Info,
           button_link
      },
      Our_capabilities[]{

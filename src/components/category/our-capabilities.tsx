@@ -18,7 +18,7 @@ const OurCapabilities = ({ data }: any) => {
               width={48}
               height={48}
             />
-            <h6 className="text-[#111827] text-center text-xs mt-3">
+            <h6 className="text-[#111827] text-center !font-normal text-xs mt-3">
               {item?.title}
             </h6>
           </div>

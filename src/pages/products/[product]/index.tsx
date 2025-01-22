@@ -53,7 +53,7 @@ export default function Product({ productRes, productsRes }: any) {
                 <h4 className="text-[#111827] mt-5 md:mt-0 font-bold text-3xl text-center md:text-left mb-4">
                   {item.title}
                 </h4>
-                <p className="mb-7 text-center md:text-left">{item.info}</p>
+                <p className="mb-7 text-center md:text-left">{item.Info}</p>
                 <Link
                   href={item?.button_link}
                   className="py-[9px] px-[41px] text-white bg-[#1C2E42] rounded-md"

@@ -4,13 +4,13 @@ import React from 'react'
 const WhatWeOffer = () => {
   return (
     <section className="pt-[60px] bg-[#F5F5F5]">
-    <div className="container mx-auto px-4">
+    <div className="container flex flex-col justify-center items-center mx-auto px-4">
       <h6 className="text-[#1C2E42] font-semibold flex gap-2 items-center">
         What We Offer
         <div className="h-[3px] bg-[#1C2E42] w-16" />
       </h6>
-      <h2 className="text-2xl lg:text-[43px] font-semibold leading-normal">
-        Sustainable Products & Services That Drive Your Business Forward
+      <h2 className="text-2xl lg:text-[43px] text-center font-semibold leading-normal">
+        Sustainable Products & Services
       </h2>
     </div>
     <div className="offerbg bg-cover bg-no-repeat mt-60 border border-black">

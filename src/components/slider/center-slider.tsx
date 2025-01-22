@@ -1,10 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
-import { urlForImage } from "../../../sanity/lib/image";
 import Link from "next/link";
 
-const CenterSlider = ({data}:any) => {
+const CenterSlider = ({data, squareImage}:any) => {
  return (
     <section className="mt-10 overflow-x-hidden">
       <Slider {...settings}>
@@ -12,7 +11,7 @@ const CenterSlider = ({data}:any) => {
           <div key={idx} className="">
             <Link href={`/products/${item?.slug.current}`}>
               <Image
-                src={item?.image?.asset?.url}
+                src={squareImage ? item?.gallery[0]?.asset?.url :item?.image?.asset?.url}
                 alt=""
                 width={363}
                 height={369}
