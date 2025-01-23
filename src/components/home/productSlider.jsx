@@ -12,7 +12,7 @@ export default function ProductSlider({ title, settings, productsRes }) {
         <span> Our Products </span>
         <span className="block border-b-2 border-title_Clr max-w-[61px] w-full"></span>
       </h4>}
-      {title && <h2 className="md:text-[51px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-14">
+      {title && <h2 className="md:text-[43px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-14">
         Our Latest Products
       </h2>}
       <div className="slider-container">

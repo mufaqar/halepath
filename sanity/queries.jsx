@@ -49,6 +49,32 @@ export const Qcategories = `*[ _type == "categories"]{
      }
 }`;
 
+export const QproductsByCategory = `
+*[_type == "products" && $slug in categories[]->slug.current] {
+     title,
+     secound_title,
+     _createdAt,
+     image{
+          asset->{
+               url
+          }
+     },
+     gallery[]{
+          asset->{
+               url
+          }
+     },
+     slug,
+     excerpt,
+     content,
+     featured,
+     categories[]->{
+          name,
+          slug
+     },
+     features
+}`
+
 export const Qproducts = `*[ _type == "products"]{
      title,
      secound_title,

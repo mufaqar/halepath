@@ -8,13 +8,13 @@ const SliderFull = () => {
     <>
       <section className="about">
         <Slider {...settings}>
-          {[1, 2, 3, 4, 5].map((item, idx) => (
+          {data?.map((item, idx) => (
             <div className="!grid md:grid-cols-2" key={idx}>
               <figure className="">
                 <Image
-                  src="/images/about-page/slider.png"
+                  src={item?.image}
                   alt=""
-                  className="w-full object-cover h-full"
+                  className="w-full object-cover h-[400px] md:h-[690px]"
                   width={1023}
                   height={772}
                 />
@@ -24,13 +24,12 @@ const SliderFull = () => {
                   <h6 className="text-[#1C2E42] font-semibold text-xl">
                     Hale Path Packaging
                   </h6>
-                  <h2 className="font-semibold xl:text-[100px] text-[50px] leading-[60px] lg:text-[70px] lg:leading-[80px] xl:leading-[105px]">
-                    Good
-                    <br /> Quality <br /> Packaging
+                  <h2 className="font-semibold xl:text-[100px] max-w-[580px] text-[50px] leading-[60px] lg:text-[70px] lg:leading-[80px] xl:leading-[105px]">
+                    {item?.title}
                   </h2>
                   <div className="flex mt-5">
                     <Link
-                      href="#"
+                      href={item?.link}
                       className="bg-[#1C2E42] text-white px-[35px] rounded-full font-medium text-[17px] py-[14px]"
                     >
                       Learn more
@@ -56,3 +55,23 @@ var settings = {
     slidesToScroll: 1,
     arrows: false,
   };
+
+
+
+const data = [
+  {
+    image: "/images/about-page/slider.png",
+    title: "Good Quality Packaging",
+    link: "#"
+  },
+  {
+    image: "/images/about-page/s1.png",
+    title: "Good Quality Packaging",
+    link: "#"
+  },
+  {
+    image: "/images/about-page/s2.webp",
+    title: "Good Quality Packaging",
+    link: "#"
+  }
+]

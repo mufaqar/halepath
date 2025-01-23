@@ -7,7 +7,7 @@ import Link from "next/link";
 import OurCapabilities from "@/components/category/our-capabilities";
 import Faqs from "@/components/faqs/faqs";
 import { client } from "../../../../sanity/lib/client";
-import { Qproducts, QSingleCategory } from "../../../../sanity/queries";
+import { Qproducts, QproductsByCategory, QSingleCategory } from "../../../../sanity/queries";
 import { PortableText } from "@portabletext/react";
 
 export default function Category({ categoryRes, productsRes }: any) {
@@ -130,7 +130,8 @@ export async function getServerSideProps(pageContext: any) {
   const slug = pageContext.query.category;
   const categoryRes = await client.fetch(QSingleCategory, { slug });
   const productsRes = await client.fetch(Qproducts);
-
+  // const productsRes2 = await client.fetch(QproductsByCategory, { slug });
+  
   if (categoryRes?.length < 1) {
     return {
       notFound: true,

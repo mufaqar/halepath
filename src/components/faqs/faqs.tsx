@@ -15,7 +15,7 @@ const Faqs = ({col, data}:any) => {
       <h2 className="text-2xl lg:text-[43px] font-semibold leading-normal">
         Frequently Asked <span className="text-[#47AFC3]">Questions</span>
       </h2>
-      <div className={`mt-10 grid gap-1 ${col === 2 && "grid-cols-2"}`}>
+      <div className={`mt-10 grid gap-1 ${col === 2 && "grid-cols-1 md:grid-cols-2"}`}>
         {data?.map((item:any, idx:number) => (
           <div key={idx}>
             <div

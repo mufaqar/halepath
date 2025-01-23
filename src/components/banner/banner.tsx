@@ -5,7 +5,7 @@ const BannerPageMiddel = () => {
   return (
     <section className="bg-cover mt-10 bg-no-repeat about_bg">
         <div className="container mx-auto px-4 pt-[110px]">
-          <h2 className="text-white font-bold text-3xl md:text-5xl lg:text-[71px]">
+          <h2 className="text-white font-bold text-3xl md:text-5xl lg:text-[51px]">
             Corrugated Packaging
           </h2>
         </div>

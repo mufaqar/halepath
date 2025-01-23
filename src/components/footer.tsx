@@ -197,7 +197,7 @@ function Footer() {
           <h6 className='text-base font-semibold text-title_Clr mb-6'>
             Where We’re Trusted
           </h6>
-          <div className='flex gap-5 items-center'>
+          <div className='flex flex-wrap sm:flex-nowrap gap-5 items-center'>
             <Image src="/images/google-reviws.png" alt='google-reviws' width={117} height={46} className='md:w-full w-1/3' />
             <Image src="/images/trustpilot.png" alt='trustpilot' width={117} height={59} className='md:w-full w-1/3' />
             <Image src="/images/bbb.png" alt='bbb' width={163} height={34} className='md:w-full w-1/3' />
