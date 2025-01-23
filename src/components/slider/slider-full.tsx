@@ -19,12 +19,18 @@ const SliderFull = () => {
                   height={772}
                 />
               </figure>
-              <div className="slider_bg bg-cover bg-no-repeat flex justify-center md:items-center flex-col px-10 md:px-5 pb-14 md:pb-10 py-10 p-5">
-                <div>
-                  <h6 className="text-[#1C2E42] font-semibold text-xl">
+              <div className={`bg-cover bg-no-repeat flex justify-center md:items-center flex-col px-10 md:px-5 pb-14 md:pb-10 py-10 p-5 
+                ${idx === 0 && 'slider_bg'}
+                ${idx === 1 && 'slider_bg2'}
+                ${idx === 2 && 'slider_bg3'}
+              `}>
+                <div className={`
+                  ${idx !== 0 && 'text-white'}
+                `}>
+                  <h6 className="font-semibold text-xl">
                     Hale Path Packaging
                   </h6>
-                  <h2 className="font-semibold xl:text-[100px] max-w-[580px] text-[50px] leading-[60px] lg:text-[70px] lg:leading-[80px] xl:leading-[105px]">
+                  <h2 className="font-semibold  xl:text-[100px] max-w-[580px] text-[50px] leading-[60px] lg:text-[70px] lg:leading-[80px] xl:leading-[105px]">
                     {item?.title}
                   </h2>
                   <div className="flex mt-5">

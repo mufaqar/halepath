@@ -217,6 +217,13 @@ html {
 .slider_bg {
   background-image: url('../../public/images/about-page/slider-bg.svg');
 }
+.slider_bg2 {
+  background: linear-gradient(40deg, rgba(244,123,98,1) 15%, rgba(238,58,121,1) 79%);
+}
+.slider_bg3 {
+  background: linear-gradient(40deg, rgba(65,182,219,1) 15%, rgba(141,201,154,1) 79%);
+}
+
 
 .about .slick-dots {
   bottom: 1rem;
