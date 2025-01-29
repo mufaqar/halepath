@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import Image from "next/image";
 import { urlForImage } from "../../../sanity/lib/image"
+import MaskingImage from "../masking-Image";
 
 export default function ProductSlider({ title, settings, productsRes }) {
 
@@ -18,14 +19,7 @@ export default function ProductSlider({ title, settings, productsRes }) {
       <div className="slider-container">
         <Slider {...settings}>
           {productsRes?.map((item, idx) => {
-            return <div key={idx} className="w-fit p-4">
-              <Link href={`/products/${item.slug.current}`}>
-              <Image src={item?.image?.asset?.url} alt="category1" width={363} height={375} className="mx-auto" />
-              </Link>
-              <Link href={`/products/${item.slug.current}`} className="text-xl font-normal text-title_Clr text-center flex w-fit mx-auto mt-8">
-                {item?.title}
-              </Link>
-            </div>
+            return <MaskingImage key={idx} data={item}/>
           })}
         </Slider>
       </div>

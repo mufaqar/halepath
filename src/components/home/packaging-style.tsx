@@ -2,6 +2,7 @@ import React from 'react'
 import PackingBox from './packingBox'
 import { urlForImage } from '../../../sanity/lib/image'
 import Slider from 'react-slick'
+import MaskingImage from '../masking-Image'
 
 function Packaging_Style({ data }: any) {
     const settings = {
@@ -53,15 +54,7 @@ function Packaging_Style({ data }: any) {
                 </div>
                 <Slider {...settings}>
                     {
-                        data?.map((category: any, i: number) => (
-                            <PackingBox
-                                key={i}
-                                title={category?.name}
-                                content={category?.excerpt}
-                                slug={category?.slug?.current}
-                                img={category?.feature_image?.asset.url}
-                            />
-                        ))
+                        data?.map((item: any, i: number) => <MaskingImage key={i} data={item}/>)
                     }
                 </Slider>
             </div>

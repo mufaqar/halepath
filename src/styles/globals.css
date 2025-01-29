@@ -323,3 +323,9 @@ video {
   display: none !important;
 }
 
+.maskimage{
+  mask-image: url('../../public/masking.png');
+  -webkit-mask-image: url('../../public/masking.png');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+}

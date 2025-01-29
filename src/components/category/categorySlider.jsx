@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { FaChevronRight } from 'react-icons/fa'
 import Image from "next/image";
+import MaskingImage from "../masking-Image";
 
 export default function CategorySlider({ categoriesRes }) {
   const settings = {
@@ -50,12 +51,7 @@ export default function CategorySlider({ categoriesRes }) {
       <div className="slider-container">
         <Slider {...settings}>
           {categoriesRes?.map((_item, idx) => {
-            return <div key={idx} className="w-fit p-4">
-              <Link href={"/categories/" + _item?.slug.current}><Image src={_item?.feature_image?.asset?.url} alt="category1" width={363} height={375} /></Link>
-              <Link href={"/categories/" + _item?.slug.current} className="text-xl font-normal text-title_Clr text-center flex w-fit mx-auto mt-8">
-                {_item?.name}
-              </Link>
-            </div>
+            return <MaskingImage key={idx} data={_item}/>
           })}
         </Slider>
       </div>

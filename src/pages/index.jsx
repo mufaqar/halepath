@@ -23,6 +23,7 @@ import Career from '@/components/home/career'
 import Slider from 'react-slick'
 import MainContent from '@/components/main/main-content'
 import Head from 'next/head'
+import MaskingImage from '@/components/masking-Image'
 
 export default function Home({ testimonialsRes, faqRes, categoriesRes, productsRes, featureproductsRes }) {
   const fproduct = productsRes?.filter((item) => item.featured === true)
@@ -70,28 +71,14 @@ export default function Home({ testimonialsRes, faqRes, categoriesRes, productsR
         <div className="slider-container">
           <Slider {...settingDotsFalse}>
             {productsRes?.map((item, idx) => {
-              return <div key={idx} className="w-fit p-4">
-                <Link href={`/products/${item.slug.current}`}>
-                  <Image src={item?.image?.asset?.url} alt="category1" width={363} height={375} className="mx-auto" />
-                </Link>
-                <Link href={`/products/${item.slug.current}`} className="text-xl font-normal text-title_Clr text-center flex w-fit mx-auto mt-8">
-                  {item?.title}
-                </Link>
-              </div>
+              return <MaskingImage key={idx} data={item}/>
             })}
           </Slider>
         </div>
         <div className="slider-container mt-10">
           <Slider {...settingDotsFalse}>
             {productsRes?.map((item, idx) => {
-              return <div key={idx} className="w-fit p-4">
-                <Link href={`/products/${item.slug.current}`}>
-                  <Image src={item?.image?.asset?.url} alt="category1" width={363} height={375} className="mx-auto" />
-                </Link>
-                <Link href={`/products/${item.slug.current}`} className="text-xl font-normal text-title_Clr text-center flex w-fit mx-auto mt-8">
-                  {item?.title}
-                </Link>
-              </div>
+              return <MaskingImage key={idx} data={item}/>
             })}
           </Slider>
         </div>

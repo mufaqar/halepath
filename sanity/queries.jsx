@@ -77,6 +77,7 @@ export const QproductsByCategory = `
 
 export const Qproducts = `*[ _type == "products"]{
      title,
+     _type,
      secound_title,
      _createdAt,
      image{
@@ -183,7 +184,7 @@ export const QSingleProducts = ` *[ _type == "products" && slug.current == $slug
                }
           },
           title,
-          Info,
+          info,
           button_link
      },
      Our_capabilities[]{
