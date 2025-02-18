@@ -7,8 +7,13 @@ import Link from "next/link";
 import OurCapabilities from "@/components/category/our-capabilities";
 import Faqs from "@/components/faqs/faqs";
 import { client } from "../../../../sanity/lib/client";
-import { Qproducts, QproductsByCategory, QSingleCategory } from "../../../../sanity/queries";
+import {
+  Qproducts,
+  QproductsByCategory,
+  QSingleCategory,
+} from "../../../../sanity/queries";
 import { PortableText } from "@portabletext/react";
+import CategoriesProducts from "./categories-products";
 
 export default function Category({ categoryRes, productsRes }: any) {
   const slider = React.useRef<any>(null);
@@ -30,7 +35,10 @@ export default function Category({ categoryRes, productsRes }: any) {
         <div className="container mx-auto px-3 grid items-center md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 xl:gap-[70px]">
           <div className="h-full">
             <Image
-              src={categoryRes?.image?.asset?.url || categoryRes?.feature_image?.asset?.url}
+              src={
+                categoryRes?.image?.asset?.url ||
+                categoryRes?.feature_image?.asset?.url
+              }
               alt=""
               width={651}
               height={375}
@@ -49,22 +57,13 @@ export default function Category({ categoryRes, productsRes }: any) {
       <section>
         <div className="container mx-auto px-3 ">
           <h2 className="font-extrabold text-4xl text-center">
-            Get Custom Quote
+            { categoryRes?.product_title ? categoryRes?.product_title : "Get Custom Quote" }
           </h2>
         </div>
         <Qoute_Form />
       </section>
 
-      <section className="mt-20">
-        <div className="container mx-auto px-3 ">
-          <h2 className="font-extrabold text-4xl text-center">
-            Explore Packaging Solutions
-          </h2>
-        </div>
-        <CenterSlider data={productsRes} squareImage/>
-        <CenterSlider data={productsRes} squareImage/>
-        <CenterSlider data={productsRes} squareImage/>
-      </section>
+      <CategoriesProducts productsRes={productsRes}/>
 
       {categoryRes?.grid?.map((item: any, idx: number) => (
         <section className="my-20" key={idx}>
@@ -87,7 +86,7 @@ export default function Category({ categoryRes, productsRes }: any) {
               </h4>
               <p className="mb-7 text-center md:text-left">{item?.Info}</p>
               <Link
-                href={item?.button_link || '#'}
+                href={item?.button_link || "#"}
                 className="py-[9px] px-[41px] text-white bg-[#1C2E42] rounded-md"
               >
                 Get Custom Quote
@@ -101,7 +100,7 @@ export default function Category({ categoryRes, productsRes }: any) {
         <h2 className="font-extrabold md:text-4xl text-2xl text-center text-title_Clr mb-5">
           Learn More About Custom Retail Boxes
         </h2>
-        <div className="container px-3 desc_content mx-auto mt-5 overflow-y-scroll max_content max-h-[812px]">
+        <div className="container px-3 desc_content mx-auto mt-5 overflow-y-scroll max_content max-h-[712px]">
           <PortableText value={categoryRes?.content} />
         </div>
       </section>
@@ -131,7 +130,7 @@ export async function getServerSideProps(pageContext: any) {
   const categoryRes = await client.fetch(QSingleCategory, { slug });
   const productsRes = await client.fetch(Qproducts);
   // const productsRes2 = await client.fetch(QproductsByCategory, { slug });
-  
+
   if (categoryRes?.length < 1) {
     return {
       notFound: true,

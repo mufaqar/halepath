@@ -12,45 +12,45 @@ export const NavLinks = [
     {
         id: 3,
         name: "Product By Industry",
-        link: "/categories",
-        submenu: [
-            {
-                name: "Product By Industry",
-                link: "/categories",
-            },
-        ]
+        link: "/category/product-by-industry",
+        // submenu: [
+        //     {
+        //         name: "Product By Industry",
+        //         link: "/categories",
+        //     },
+        // ]
     },
     {
         id: 4,
         name: "Brand Finishes",
-        link: "/brand-finishes",
-        submenu: [
-            {
-                name: "Brand Finishes",
-                link: "/brand-finishes",
-            },
-        ]
+        link: "/category//brand-finishes",
+        // submenu: [
+        //     {
+        //         name: "Brand Finishes",
+        //         link: "/brand-finishes",
+        //     },
+        // ]
     },
     {
         id: 5,
         name: "Box By Style",
-        link: "#",
-        submenu: [
-            {
-                name: "Box By Style",
-                link: "#",
-            },
-        ]
+        link: "/category/box-by-style",
+        // submenu: [
+        //     {
+        //         name: "Box By Style",
+        //         link: "#",
+        //     },
+        // ]
     },
     {
         id: 6,
         name: "Custom Printed Box",
-        link: "/custom-print-box",
-        submenu: [
-            {
-                name: "Custom Printed Box",
-                link: "/custom-print-box",
-            },
-        ]
+        link: "/category/custom-printed-box",
+        // submenu: [
+        //     {
+        //         name: "Custom Printed Box",
+        //         link: "/custom-print-box",
+        //     },
+        // ]
     },
 ]

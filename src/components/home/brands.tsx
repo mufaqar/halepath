@@ -4,7 +4,7 @@ import React from 'react'
 
 function Brands() {
     return (
-        <section className='py-10 md:px-4 px-4'>
+        <section className='pb-12 md:px-4 px-4'>
             <div className='container mx-auto md:p-8 p-8 shadow-[0_0_5px_0_rgba(0,0,0,0.31)] rounded-[19px]'>
                 <h2 className='md:text-4xl text-2xl font-bold text-title_Clr text-center mb-10'>
                     Brand That Trust Us

@@ -124,6 +124,7 @@ export const QSingleCategory = ` *[ _type == "categories" && slug.current == $sl
      metatitle,
      metadescription,
      slug,
+     product_title,
      icon{
           asset->{
                url

@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const MaskingImage = ({data}:any) => {
-  const link = data?._type === "products" ? `/products/${data?.slug.current}` : `/categories/${data?.slug.current}`
+  const link = data?._type === "products" ? `/${data?.slug.current}` : `/category/${data?.slug.current}`
   return (
     <div className="w-fit p-2">
       <Link href={link}>

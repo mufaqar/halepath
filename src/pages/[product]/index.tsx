@@ -4,12 +4,12 @@ import Head from "next/head";
 import OurCapabilities from "@/components/category/our-capabilities";
 import Faqs from "@/components/faqs/faqs";
 import CenterSlider from "@/components/slider/center-slider";
-import { client } from "../../../../sanity/lib/client";
-import { Qfaqs, Qproducts, QSingleProducts } from "../../../../sanity/queries";
 import { PortableText } from "@portabletext/react";
 import ImageCarousel from "@/components/image-crousel/ImageCarousel";
 import Link from "next/link";
 import Image from "next/image";
+import { client } from "../../../sanity/lib/client";
+import { Qproducts, QSingleProducts } from "../../../sanity/queries";
 
 export default function Product({ productRes, productsRes }: any) {
   return (
@@ -27,7 +27,7 @@ export default function Product({ productRes, productsRes }: any) {
 
       <main>
         <Banner data={productRes} />
-        <section className="mt-20">
+        <section className="mt-20 max-w-[2200px] mx-auto px-3 lg:px-0">
           <h2 className="text-2xl text-center mb-8 sm:text-3xl md:text-5xl font-bold">
             Custom Retail Boxes Gallery
           </h2>

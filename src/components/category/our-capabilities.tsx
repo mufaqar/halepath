@@ -24,7 +24,7 @@ const OurCapabilities = ({ data }: any) => {
           </div>
         ))}
       </div>
-      <div className="flex gap-4 mt-6">
+      <div className="flex flex-col sm:flex-row text-center gap-4 mt-6">
         <Link
           href="#"
           className="py-[9px] px-[41px] text-white bg-[#1C2E42] rounded-md"

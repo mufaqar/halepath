@@ -20,6 +20,7 @@
     "autoprefixer": "10.4.16",
     "eslint": "8.53.0",
     "eslint-config-next": "14.0.2",
+    "framer-motion": "^12.4.3",
     "next": "14.0.2",
     "next-sanity": "^5.5.10",
     "nodemailer": "^6.9.7",

@@ -21,7 +21,7 @@ const Products = ({ productsRes }: any) => {
             {productsRes?.map((product: any, idx: number) => (
               <div key={idx} className="shadow-[0px_0px_5px_0px_rgba(0,0,0,0.39)]">
                 <div className="h-[333px] ">
-                <Link href={`/products/${product?.slug?.current}`}>
+                <Link href={`/${product?.slug?.current}`}>
                   <Image
                     src={product?.gallery[0].asset.url}
                     alt="Featured"
@@ -34,7 +34,7 @@ const Products = ({ productsRes }: any) => {
                 <div className="md:p-6 p-5">
                   <h4>
                     <Link
-                      href={`/products/${product?.slug?.current}`}
+                      href={`/${product?.slug?.current}`}
                       className="md:text-xl text-lg font-bold text-black inline-flex my-5"
                     >
                       {product?.title}

@@ -29,55 +29,56 @@ import CTA from '@/components/CTA'
 export default function Home({ testimonialsRes, faqRes, categoriesRes, productsRes, featureproductsRes }) {
   const fproduct = productsRes?.filter((item) => item.featured === true)
   const settingDotsFalse = { ...settings, 'dots': false }
+  const settingRtl = { ...settings, 'dots': false, rtl: true, }
 
   return (
     <>
-    <Head>
-      <title>Hale Path Packaging</title>
-      <meta name="description" content="Hale Path Packaging"/>
-      <meta name="author" content="Hale Path Packaging"/>
-      <link rel="canonical" href="https://halepath.vercel.app"/>
-    </Head>
-    <main className={``} >
-      <MainSlider />
-      <MainContent />
+      <Head>
+        <title>Hale Path Packaging</title>
+        <meta name="description" content="Hale Path Packaging" />
+        <meta name="author" content="Hale Path Packaging" />
+        <link rel="canonical" href="https://halepath.vercel.app" />
+      </Head>
+      <main className={``} >
+        <MainSlider />
+        <MainContent />
 
-      <CategorySlider categoriesRes={categoriesRes} />
+        <CategorySlider categoriesRes={categoriesRes} />
 
-      <CTA/>
+        <CTA />
 
-      <ProductSlider productsRes={productsRes} title="Our Latest Products" settings={settings} />
-      <HowIt_work />
-      <Brands />
-      <BannerPageMiddel />
+        <ProductSlider productsRes={productsRes} title="Our Latest Products" settings={settings} />
+        <HowIt_work />
+        <Brands />
+        <BannerPageMiddel />
 
-      <section className='my-24'>
-        <div className="slider-container mb-10">
-          <Slider {...settingDotsFalse}>
-            {productsRes?.map((item, idx) => {
-              return <MaskingImage key={idx} data={item}/>
-            })}
-          </Slider>
-        </div>
-        <CTA/>
-        <div className="slider-container mt-10">
-          <Slider {...settingDotsFalse}>
-            {productsRes?.map((item, idx) => {
-              return <MaskingImage key={idx} data={item}/>
-            })}
-          </Slider>
-        </div>
-      </section>
+        <section className='my-10'>
+          <div className="slider-container mb-10">
+            <Slider {...settingDotsFalse}>
+              {productsRes?.map((item, idx) => {
+                return <MaskingImage key={idx} data={item} />
+              })}
+            </Slider>
+          </div>
+          <CTA />
+          <div className="slider-container mt-10">
+            <Slider {...settingRtl}>
+              {productsRes?.map((item, idx) => {
+                return <MaskingImage key={idx} data={item} />
+              })}
+            </Slider>
+          </div>
+        </section>
 
-      <Get_Qoute />
-      <WhatWeOffer />
-      <SliderFull />
-      <Packaging_Style data={categoriesRes}/>
-      <WhatWeDo featureproductsRes={featureproductsRes} />
-      <TestimonialAndFaq testimonialsRes={testimonialsRes} faqRes={faqRes}/>
-      <Career />
-      <Instagram />
-    </main>
+        <Get_Qoute />
+        <WhatWeOffer />
+        <SliderFull />
+        <Packaging_Style data={categoriesRes} />
+        <WhatWeDo featureproductsRes={featureproductsRes} />
+        <TestimonialAndFaq testimonialsRes={testimonialsRes} faqRes={faqRes} />
+        <Career />
+        <Instagram />
+      </main>
     </>
   )
 }
@@ -104,12 +105,17 @@ const settings = {
   dots: true,
   arrows: false,
   className: "center",
-  centerMode: true,
+  // centerMode: true,
   infinite: true,
-  centerPadding: "60px",
+  // centerPadding: "60px",
   slidesToShow: 5,
   autoplay: true,
-  speed: 500,
+  speed: 12000,
+  cssEase: 'linear',
+  pauseOnHover: true,
+  swipeToSlide: true,
+  draggable: true,
+
   responsive: [
     {
       breakpoint: 1024,

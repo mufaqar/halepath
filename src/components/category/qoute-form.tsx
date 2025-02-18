@@ -47,7 +47,7 @@ function Qoute_Form() {
         className="grid w-full gap-2 items-center px-3 sm:px-5 py-6 md:py-10"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className="grid grid-cols-3 md:grid-cols-5 w-full gap-2.5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 w-full gap-2.5">
           <div className="">
             <label
               htmlFor="name"
@@ -113,7 +113,7 @@ function Qoute_Form() {
             </select>
             <RiArrowDownSLine className="absolute right-4 top-1/2 text-xl text-gray-500 -translate-y-1/2" />
           </div>
-          <div className=" col-span-2 md:col-span-1 relative">
+          <div className="relative">
             <label
               htmlFor="packing"
               className="text-sm font-medium leading-none hidden"
@@ -135,98 +135,86 @@ function Qoute_Form() {
             <RiArrowDownSLine className="absolute right-4 top-1/2 text-xl text-gray-500 -translate-y-1/2" />
             {/* {errors.packing && <span className='text-xs text-red-500'>This field is required</span>} */}
           </div>
+          <div className="">
+            <label
+              htmlFor="Length"
+              className="text-sm font-medium leading-none hidden"
+            >
+              Length
+            </label>
+            <input
+              className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr rounded-full bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none w-full"
+              type="number"
+              {...register("Length", { required: true })}
+              id="Length"
+              placeholder="Length"
+            />
+          </div>
+          <div className="">
+            <label
+              htmlFor="Width"
+              className="text-sm font-medium leading-none hidden"
+            >
+              Width
+            </label>
+            <input
+              className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+              type="number"
+              {...register("Width", { required: true })}
+              id="Width"
+              placeholder="Width"
+            />
+          </div>
+          <div className="">
+            <label
+              htmlFor="Depth"
+              className="text-sm font-medium leading-none hidden"
+            >
+              Depth
+            </label>
+            <input
+              className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary outline-none rounded-full w-full"
+              type="number"
+              {...register("Depth", { required: true })}
+              id="Depth"
+              placeholder="Depth"
+            />
+          </div>
+          <div className="relative">
+            <label
+              htmlFor="Unit"
+              className="text-sm font-medium leading-none hidden"
+            >
+              Select Unit
+            </label>
+            <select
+              className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full cursor-pointer w-full"
+              id="Unit"
+              {...register("Unit", { required: true })}
+            >
+              <option value="Select Unit">Select Unit </option>
+              <option value="Cosmetics Box">Inches</option>
+              <option value="Cosmetics Box">CM</option>
+              <option value="Cosmetics Box">MM</option>
+            </select>
+            <RiArrowDownSLine className="absolute right-4 top-1/2 text-xl text-gray-500 -translate-y-1/2" />
+          </div>
+          <textarea
+            className="text-sm font-medium rounded-full text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary outline-none w-full"
+            id="detail"
+            {...register("detail", { required: true })}
+            rows={1}
+            placeholder="Write Your Message..."
+          ></textarea>
         </div>
 
-        <div className="w-full grid md:grid-cols-3 gap-2">
-          <section className="col-span-2">
-            <section className="grid grid-cols-3 md:grid-cols-4 gap-2 items-start">
-              <div className="flex-1">
-                <label
-                  htmlFor="Length"
-                  className="text-sm font-medium leading-none hidden"
-                >
-                  Length
-                </label>
-                <input
-                  className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr rounded-full bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none w-full"
-                  type="number"
-                  {...register("Length", { required: true })}
-                  id="Length"
-                  placeholder="Length"
-                />
-              </div>
-              <div className="flex-1">
-                <label
-                  htmlFor="Width"
-                  className="text-sm font-medium leading-none hidden"
-                >
-                  Width
-                </label>
-                <input
-                  className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
-                  type="number"
-                  {...register("Width", { required: true })}
-                  id="Width"
-                  placeholder="Width"
-                />
-              </div>
-              <div className="flex-1">
-                <label
-                  htmlFor="Depth"
-                  className="text-sm font-medium leading-none hidden"
-                >
-                  Depth
-                </label>
-                <input
-                  className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary outline-none rounded-full w-full"
-                  type="number"
-                  {...register("Depth", { required: true })}
-                  id="Depth"
-                  placeholder="Depth"
-                />
-              </div>
-              <div className="flex-1 col-span-3 md:col-span-1 relative">
-                <label
-                  htmlFor="Unit"
-                  className="text-sm font-medium leading-none hidden"
-                >
-                  Select Unit
-                </label>
-                <select
-                  className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full cursor-pointer w-full"
-                  id="Unit"
-                  {...register("Unit", { required: true })}
-                >
-                  <option value="Select Unit">Select Unit </option>
-                  <option value="Cosmetics Box">Inches</option>
-                  <option value="Cosmetics Box">CM</option>
-                  <option value="Cosmetics Box">MM</option>
-                </select>
-                <RiArrowDownSLine className="absolute right-4 top-1/2 text-xl text-gray-500 -translate-y-1/2" />
-              </div>
-            </section>
-            <div className="md:flex gap-2 mt-3 items-center hidden">
-              <input type="checkbox" id="agree" className="p-2 w-4 h-4" />
-              <label htmlFor="agree" className="cursor-pointer text-sm">
-                I Agree that my data is <strong>collected and Stored.</strong>
-              </label>
-            </div>
-          </section>
-          <section className="col-span-2 md:col-span-1">
-            <textarea
-              className="text-sm font-medium rounded-[20px] text-txt_Clr placeholder:text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none w-full"
-              id="detail"
-              {...register("detail", { required: true })}
-              rows={3}
-              placeholder="Write Your Message..."
-            ></textarea>
-          </section>
-        </div>
-        <div className="flex gap-2 mb-3 md:hidden items-center">
-          <input type="checkbox" id="agree" className="p-2 w-4 h-4" />
-          <label htmlFor="agree" className="cursor-pointer text-sm">
-            I Agree that my data is <strong>collected and Stored.</strong>
-          </label>
+        <div className="grid  gap-2">
+          <div className="flex gap-2 my-3 col-span-5 items-center">
+            <input type="checkbox" id="agree" className="p-2 w-4 h-4" />
+            <label htmlFor="agree" className="cursor-pointer text-sm">
+              I Agree that my data is <strong>collected and Stored.</strong>
+            </label>
+          </div>
         </div>
 
         <section className="flex items-center gap-2 justify-between">
@@ -249,7 +237,7 @@ export default Qoute_Form;
 
 const UploadButton = ({ onUpload }: any) => {
   // Trigger file input when button is clicked
-  
+
   const handleButtonClick = () => {
     const fileInput = document.getElementById("fileInput") as HTMLInputElement;
     fileInput.click();

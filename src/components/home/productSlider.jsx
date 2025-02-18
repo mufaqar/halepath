@@ -8,7 +8,7 @@ import MaskingImage from "../masking-Image";
 export default function ProductSlider({ title, settings, productsRes }) {
 
   return (
-    <section className="py-20">
+    <section className="py-12">
       {title && <h4 className="text-xl font-semibold text-title_Clr mb-4 text-center flex items-center justify-center gap-3">
         <span> Our Products </span>
         <span className="block border-b-2 border-title_Clr max-w-[61px] w-full"></span>

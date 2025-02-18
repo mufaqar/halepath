@@ -1,51 +1,63 @@
 // components/ImageCarousel.js
 'use client'; // If using Next.js App Router
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
-
+import { EffectCoverflow, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import { urlForImage } from '../../../sanity/lib/image';
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
-const ImageCarousel = ({data}) => {
-  const images = [
-    '/images/about-page/slider.png',
-    '/images/about-page/slider.png',
-    '/images/about-page/slider.png',
-    '/images/about-page/slider.png',
-    '/images/about-page/slider.png',
-    '/images/about-page/slider.png',
-    '/images/about-page/slider.png',
-    '/images/about-page/slider.png',
-
-  ];
+const ImageCarousel = ({ data }) => {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
   return (
-    <div style={{ width: '100%', padding: '2rem 0' }}>
+    <div style={{ width: '100%', padding: '2rem 0', position: 'relative' }}>
+      {/* Custom Navigation Buttons */}
+      <button
+        ref={prevRef}
+        className="absolute left-1 top-1/2 transform -translate-y-1/2 z-10 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-900"
+      >
+        <MdOutlineKeyboardArrowLeft/>
+      </button>
+      <button
+        ref={nextRef}
+        className="absolute right-1 top-1/2 transform -translate-y-1/2 z-10 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-900"
+      >
+        <MdOutlineKeyboardArrowRight/>
+      </button>
+
       <Swiper
         effect="coverflow"
         grabCursor={true}
-        centeredSlides={true} // Always center the active slide
-        slidesPerView={4} // Always show 5 slides (2 left, 2 right)
-        loop={true} // Allow infinite looping
+        centeredSlides={true}
+        slidesPerView={4}
+        loop={true}
         coverflowEffect={{
-          rotate: 0, // Disable rotation
-          stretch: 0, // No extra space between slides
-          depth: 200, // Control perspective depth
-          modifier: 1, // Effect intensity
-          slideShadows: false, // No shadows
+          rotate: 0,
+          stretch: 0,
+          depth: 200,
+          modifier: 1,
+          slideShadows: false,
         }}
-        navigation={false} // Enable navigation buttons
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onBeforeInit={(swiper) => {
+          swiper.params.navigation.prevEl = prevRef.current;
+          swiper.params.navigation.nextEl = nextRef.current;
+        }}
         modules={[EffectCoverflow, Navigation]}
         style={{ width: '100%', height: '480px' }}
       >
         {data?.map((src, index) => (
           <SwiperSlide key={index}>
-            <figure className=''>
+            <figure className='rounded-[32px] overflow-hidden'>
               <img
                 src={urlForImage(src?.asset?._ref)?.url()}
                 alt={`Slide ${index + 1}`}
@@ -53,9 +65,8 @@ const ImageCarousel = ({data}) => {
                   width: '100%',
                   objectFit: 'cover',
                   borderRadius: '32px',
-                  // boxShadow: '0 5px 15px rgba(0, 0, 0, 0.2)',
                 }}
-                className='h-[460px]'
+                className="h-[460px] scale-105"
               />
             </figure>
           </SwiperSlide>

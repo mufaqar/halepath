@@ -14,10 +14,13 @@ export default function CategorySlider({ categoriesRes }) {
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 5,
-    autoplay: false,
-    speed: 8000,
+    autoplay: true,
+    speed: 12000,
     cssEase: 'linear',
-    pauseOnHover: false,
+    pauseOnHover: true,
+    swipeToSlide: true,
+    draggable: true,
+
     responsive: [
       {
         breakpoint: 1024,
@@ -46,7 +49,7 @@ export default function CategorySlider({ categoriesRes }) {
     ]
   };
   return (
-    <section className="bg-[#F5F5F5] py-20">
+    <section className="bg-[#F5F5F5] py-10">
       <h2 className="md:text-[43px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-14">
         Our Latest Category
       </h2>

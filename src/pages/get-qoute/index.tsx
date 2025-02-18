@@ -43,7 +43,7 @@ const GetAQoute = () => {
         <link rel="canonical" href={`https://halepath.vercel.app/get-qoute`}/>
       </Head>
 
-      <section className='py-16 bg-primary'>
+      <section className='py-16 pb-40 bg-primary'>
         <div className='container mx-auto px-4'>
           <h2 className='md:text-4xl text-3xl font-semibold text-white text-center'>
             Request a Quote
@@ -53,14 +53,14 @@ const GetAQoute = () => {
           </p>
         </div>
       </section>
-      <section className='py-16 grad_Bg'>
-        <div className='container mx-auto max-w-[898px] px-4'>
-          <form className="flex flex-col w-full gap-5 bg-white shadow-[0px_4px_10px_0px_rgb(0,0,0,0.1)] rounded-lg md:px-16 px-8 md:py-14 py-10 mt-8" onSubmit={handleSubmit(onSubmit)}>
-            <div className='flex md:flex-row flex-col md:gap-5 gap-4'>
+      <section className='pb-16 -mt-28 px-3'>
+        <div className='mx-auto max-w-[1020px] rounded-[20px] bg-white' style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px'}}>
+          <form className="flex flex-col w-full gap-5 px-10 py-10 mt-8" onSubmit={handleSubmit(onSubmit)}>
+            <div className='flex md:flex-row flex-col gap-4'>
               <div className="w-full">
                 {/* <label htmlFor='name' className="text-lg font-normal leading-normal">Enter your Name</label> */}
                 <input
-                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-4 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-3 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                   type="text"
                   {...register('name', { required: true })}
                   id='name'
@@ -70,7 +70,7 @@ const GetAQoute = () => {
               <div className="w-full">
                 {/* <label htmlFor='email' className="text-lg font-normal leading-normal">Email</label> */}
                 <input
-                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-4 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-3 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                   type="email"
                   {...register('email', { required: true })}
                   id='email'
@@ -82,7 +82,7 @@ const GetAQoute = () => {
               <div className="w-full">
                 {/* <label htmlFor='pname' className="text-lg font-normal leading-normal">Product Name</label> */}
                 <input
-                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-4 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-3 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                   type="text"
                   {...register('pname', { required: true })}
                   id='pname'
@@ -92,7 +92,7 @@ const GetAQoute = () => {
               <div className="w-full">
                 {/* <label htmlFor='pcode' className="text-lg font-normal leading-normal">Select Code</label> */}
                 <input
-                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-4 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-3 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                   type="text"
                   {...register('pcode', { required: true })}
                   id='pcode'
@@ -104,7 +104,7 @@ const GetAQoute = () => {
               <div className="w-full">
                 {/* <label htmlFor='quantity' className="text-lg font-normal leading-normal">Quantity</label> */}
                 <input
-                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-4 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-3 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                   type="number"
                   {...register('quantity', { required: true })}
                   id='quantity'
@@ -114,7 +114,7 @@ const GetAQoute = () => {
               <div className="w-full">
                 {/* <label htmlFor='phone' className="text-lg font-normal leading-normal">Phone Number</label> */}
                 <input
-                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-4 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-3 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                   type="tel"
                   {...register('phone', { required: true })}
                   id='phone'
@@ -126,7 +126,7 @@ const GetAQoute = () => {
               <div className="w-full">
                 {/* <label htmlFor='width' className="text-lg font-medium leading-normal hidden">Width</label> */}
                 <input
-                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-4 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-3 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                   type="number"
                   {...register('width', { required: true })}
                   id='width'
@@ -136,7 +136,7 @@ const GetAQoute = () => {
               <div className="w-full">
                 {/* <label htmlFor='depth' className="text-lg font-medium leading-normal hidden">Depth</label> */}
                 <input
-                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-4 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-3 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                   type="number"
                   {...register('depth', { required: true })}
                   id='depth'
@@ -146,7 +146,7 @@ const GetAQoute = () => {
               <div className="w-full">
                 {/* <label htmlFor='length' className="text-lg font-medium leading-normal hidden">Length</label> */}
                 <input
-                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-4 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-3 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full"
                   type="number"
                   {...register('length', { required: true })}
                   id='length'
@@ -157,7 +157,7 @@ const GetAQoute = () => {
                 {/* <label htmlFor='dimension' className="text-lg font-medium leading-normal hidden"> Dimension</label> */}
                 <select id='dimension'
                   {...register("dimension", { required: true })}
-                  className='text-lg font-normal text-txt_Clr bg-white px-4 py-4 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full'>
+                  className='text-lg font-normal text-txt_Clr bg-white px-4 py-3 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-full w-full'>
                   <option>Inch</option>
                   <option>CM</option>
                   <option>MM</option>
@@ -171,30 +171,30 @@ const GetAQoute = () => {
                 type="file"
                 {...register('file_input', { required: true })}
                 id="file_input"
-                className="text-sm font-medium text-txt_Clr block w-full border border-[#CACACA] rounded-2xl focus:border-secondary disabled:opacity-50 disabled:pointer-events-none file:bg-gray-100 file:border-0 file:me-4 file:py-5 file:px-4" />
+                className="text-sm font-medium text-txt_Clr block w-full border border-[#CACACA] rounded-2xl focus:border-secondary disabled:opacity-50 disabled:pointer-events-none file:bg-gray-100 file:border-0 file:me-4 file:py-4 file:px-4" />
               {/* {errors.file_input && <span className='text-xs text-red-500'>This field is required</span>} */}
             </div>
             <div className="w-full">
               {/* <label htmlFor='message' className="text-lg font-medium leading-normal hidden">Your Message</label> */}
               <textarea
-                className="text-lg font-normal text-txt_Clr bg-white px-4 py-4 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-2xl w-full"
+                className="text-lg font-normal text-txt_Clr bg-white px-4 py-3 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-2xl w-full"
                 id='message'
                 {...register('message', { required: true })}
-                rows={5}
+                rows={3}
                 placeholder="Enter your Meassage"></textarea>
               {/* {errors.message && <span className='text-xs text-red-500'>This field is required</span>} */}
             </div>
-            <div className="w-full flex md:flex-row flex-row gap-5 items-center">
+            <div className="w-full flex md:flex-row flex-row gap-5 items-baseline">
               {/* <label htmlFor='captcha' className="text-lg font-medium leading-normal">4 + 7 =</label> */}
               <input
-                className="text-lg font-normal text-txt_Clr bg-white px-4 py-4 mt-2 border border-[#CACACA] focus:border-secondary outline-none rounded-0 w-[64px]"
+                className="text-lg font-normal text-txt_Clr rounded-[12px] bg-white px-4 py-3 mt-2 border border-[#CACACA] focus:border-secondary outline-none rounded-0 w-[64px]"
                 id='captcha'
                 placeholder="" />
               <span className="text-lg font-medium leading-normal">Please verify.</span>
               {/* {errors.captcha && <span className='text-xs text-red-500'>This field is required</span>} */}
             </div>
             <div className="w-full">
-              <button type='submit' className="font-semibold text-white bg-primary hover:bg-secondary px-4 py-5 rounded-full w-full">
+              <button type='submit' className="font-semibold text-white bg-primary hover:bg-secondary px-4 py-4 rounded-full w-full">
                 {loading ? 'SENDING...' : 'Get Inquiry'}
               </button>
             </div>

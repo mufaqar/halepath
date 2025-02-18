@@ -50,7 +50,7 @@ async function generateSitemap() {
       `).join("")}
       ${products?.map((item) => `
         <url>
-          <loc>${SITE_URL}/products/${item.slug.current}</loc>
+          <loc>${SITE_URL}/${item.slug.current}</loc>
           <lastmod>${item._updatedAt}</lastmod>
           <priority>0.80</priority>
         </url>

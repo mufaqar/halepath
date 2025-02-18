@@ -3,7 +3,7 @@ import React from 'react'
 
 function HowIt_work() {
     return (
-        <section className='py-10 md:px-4 px-4'>
+        <section className='pb-12 md:px-4 px-4'>
             <div className='container mx-auto md:p-14 p-8 bg-secondary flex md:flex-row flex-col gap-7 justify-between items-center rounded-[19px]'>
                 <div>
                     <p className='md:text-4xl text-2xl font-normal text-white mb-10'>

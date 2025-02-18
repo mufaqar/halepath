@@ -32,6 +32,12 @@ export const categories = {
       }
     },
     {
+      name: 'product_title',
+      type: 'string',
+      title: 'Product Title',
+      initialValue: "Explore Packaging Solutions"
+    },
+    {
       title: 'Icon',
       name: 'icon',
       type: 'image',

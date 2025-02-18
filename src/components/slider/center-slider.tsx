@@ -9,7 +9,7 @@ const CenterSlider = ({data, squareImage}:any) => {
       <Slider {...settings}>
         {data?.map((item:any, idx:number) => (
           <div key={idx} className="">
-            <Link href={`/products/${item?.slug.current}`}>
+            <Link href={`/${item?.slug.current}`}>
               <Image
                 src={squareImage ? item?.gallery[0]?.asset?.url :item?.image?.asset?.url}
                 alt=""
@@ -18,7 +18,7 @@ const CenterSlider = ({data, squareImage}:any) => {
                 className="w-full"
               />
             </Link>
-            <h4 className="text-xl text-center mt-6"><Link href={`/products/${item?.slug.current}`}>{item?.title}</Link></h4>
+            <h4 className="text-xl text-center mt-6"><Link href={`/${item?.slug.current}`}>{item?.title}</Link></h4>
           </div>
         ))}
       </Slider>
