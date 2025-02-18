@@ -10,12 +10,14 @@ export default function CategorySlider({ categoriesRes }) {
     dots: false,
     arrows: false,
     className: "center",
-    centerMode: true,
+    // centerMode: true,
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 5,
-    autoplay: true,
-    speed: 500,
+    autoplay: false,
+    speed: 8000,
+    cssEase: 'linear',
+    pauseOnHover: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -51,7 +53,7 @@ export default function CategorySlider({ categoriesRes }) {
       <div className="slider-container">
         <Slider {...settings}>
           {categoriesRes?.map((_item, idx) => {
-            return <MaskingImage key={idx} data={_item}/>
+            return <MaskingImage key={idx} data={_item} />
           })}
         </Slider>
       </div>

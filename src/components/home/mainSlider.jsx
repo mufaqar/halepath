@@ -16,7 +16,7 @@ export default function MainSlider() {
   return (
     <section className="Main_slider">
       <Slider {...settings}>
-        {[0, 1, 2].map((_item, idx) => {
+        {[0].map((_item, idx) => {
           return (
             idx === 0 ? <div className="video-container" key={idx}>
               <video
