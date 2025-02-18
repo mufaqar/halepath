@@ -86,7 +86,7 @@ function Header() {
                 src="/images/logo.png"
                 alt="logo"
                 width={60}
-                height={98}
+                height={60}
               />
             </Link>
           </div>

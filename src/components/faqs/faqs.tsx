@@ -21,13 +21,13 @@ const Faqs = ({col, data}:any) => {
             <div
             className="border shadow rounded-[10px] w-full bg-white"
           >
-            <button
+            <h3
               onClick={() => handleFAQ(idx)}
               className="px-6 py-6 w-full text-[#1C1C1C] text-left text-xl flex items-center gap-4 justify-between"
             >
               {item?.question}
               <IoIosArrowDown className="text-2xl" />
-            </button>
+            </h3>
             <div
               className={`transition-all duration-200 ${
                 openFaq === idx ? "max-h-[300px] h-full" : "h-0 overflow-hidden"

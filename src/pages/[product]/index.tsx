@@ -83,9 +83,9 @@ export default function Product({ productRes, productsRes }: any) {
         </section>
         <section className="mt-20">
           <div className="container mx-auto px-4">
-            <h2 className="md:text-[51px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-4">
+            <span className="md:text-[51px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-4">
               Related Products
-            </h2>
+            </span>
           </div>
           <CenterSlider data={productsRes}/>
         </section>

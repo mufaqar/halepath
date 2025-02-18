@@ -30,7 +30,7 @@ const MainContent = () => {
 
   return (
     <section className="max_content mt-14 py-8">
-      <main className="container mx-auto px-4 flex md:flex-row flex-col gap-[70px]">
+      <main className="container mx-auto px-4 flex items-center md:flex-row flex-col gap-[70px]">
         {/* Left side with instant image switching */}
         <div className="md:w-1/2 relative w-full">
           <div className="overflow-hidden h-[467px]">
@@ -82,20 +82,23 @@ const MainContent = () => {
         </div>
 
         {/* Right side with scrollable content */}
-        <div
-          className="md:w-1/2 w-full max-h-[467px] h-full overflow-y-scroll scroll_Left"
-          onScroll={handleScroll}
-          ref={scrollRef}
-        >
-          {Array?.from({ length: 6 }).map((_, index) => (
-            <p
-              key={index}
-              className="md:text-[29px] md:leading-[41px] text-lg font-normal text-title_Clr mb-2"
-            >
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s.
-            </p>
-          ))}
+        <div className="relative md:w-1/2">
+          <div
+            className=" w-full max-h-[467px] h-full overflow-y-scroll scroll_Left"
+            onScroll={handleScroll}
+            ref={scrollRef}
+          >
+            {Array?.from({ length: 6 }).map((_, index) => (
+              <p
+                key={index}
+                className="md:text-[29px] md:leading-[41px] text-lg font-normal text-title_Clr mb-2"
+              >
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s.
+              </p>
+            ))}
+          </div>
+          <div className="absolute right-0 left-3 bottom-0 bg-gradient-to-t from-white/90 via-white/80 to-transparent top-[60%]" />
         </div>
       </main>
     </section>

@@ -56,9 +56,9 @@ export default function Category({ categoryRes, productsRes }: any) {
 
       <section>
         <div className="container mx-auto px-3 ">
-          <h2 className="font-extrabold text-4xl text-center">
+          <p className="font-extrabold text-4xl text-center">
             { categoryRes?.product_title ? categoryRes?.product_title : "Get Custom Quote" }
-          </h2>
+          </p>
         </div>
         <Qoute_Form />
       </section>
