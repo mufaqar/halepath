@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { RiArrowDownSLine } from "react-icons/ri";
+import { client } from "../../../sanity/lib/client";
+import { Qproducts } from "../../../sanity/queries";
 
 function QouteFormForProduct() {
   const [loading, setLoading] = useState(false);
+  const [products, setProducts] = useState([])
+  useEffect(()=>{
+    (async()=>{
+      const productsRes = await client.fetch(Qproducts); 
+      setProducts(productsRes)
+    })()
+  },[])
 
   const {
     register,
     handleSubmit,
-    control,
     reset,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -26,10 +33,8 @@ function QouteFormForProduct() {
         },
         body: JSON.stringify(data),
       }).then((res) => {
-        console.log("Response received");
         if (res.status === 200) {
           console.log("Response succeeded!");
-          alert("Message Successfully send.!");
           reset();
           setLoading(false);
         }
@@ -37,9 +42,9 @@ function QouteFormForProduct() {
     }
   };
 
-  const handleFileUpload = (file: any) => {
-    console.log("Uploaded file:", file.name);
-  };
+
+  
+
 
   return (
     <div className="container mx-auto mt-10 rounded-[19px] bg-[#CCCCCCB5]/70">
@@ -111,10 +116,12 @@ function QouteFormForProduct() {
                 placeholder="Select Product"
                 {...register("Product", { required: true })}
               >
-                <option value="Select Product">Select Product </option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+                <option value="Select Product" disabled>Select Product </option>
+                {
+                  products?.map((item:any)=>(
+                    <option value={item?.title}>{item?.title}</option>
+                  ))
+                }                
               </select>
               <RiArrowDownSLine className="absolute right-4 top-1/2 text-xl text-gray-500 -translate-y-1/2" />
             </div>
@@ -227,9 +234,9 @@ function QouteFormForProduct() {
                 {...register("Stock", { required: true })}
               >
                 <option value="Select Stock">Select Stock </option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
               </select>
               <RiArrowDownSLine className="absolute right-4 top-1/2 text-xl text-gray-500 -translate-y-1/2" />
             </div>
@@ -246,7 +253,7 @@ function QouteFormForProduct() {
           </section>
 
           <div className="flex gap-2 mt-3 items-center">
-            <input type="checkbox" id="agree" className="p-2 w-4 h-4" />
+            <input  {...register("agree", { required: true })} type="checkbox" id="agree" className="p-2 w-4 h-4" />
             <label htmlFor="agree" className="cursor-pointer text-sm">
               I Agree that my data is <strong>collected and Stored.</strong>
             </label>
@@ -257,6 +264,7 @@ function QouteFormForProduct() {
           <div className="w-full">
             <button
               type="submit"
+              disabled={loading ? true : false}
               className="text-base max-w-full font-semibold text-white bg-[#1C2E42] hover:bg-secondary px-4 py-3 rounded-full w-full"
             >
               {loading ? "SENDING..." : "SUBMIT"}
@@ -269,39 +277,3 @@ function QouteFormForProduct() {
 }
 
 export default QouteFormForProduct;
-
-const UploadButton = ({ onUpload }: any) => {
-  // Trigger file input when button is clicked
-
-  const handleButtonClick = () => {
-    const fileInput = document.getElementById("fileInput") as HTMLInputElement;
-    fileInput.click();
-  };
-
-  const handleFileChange = (e: any) => {
-    if (e.target.files.length > 0) {
-      onUpload(e.target.files[0]); // Pass the uploaded file to the parent
-    }
-  };
-
-  return (
-    <div>
-      {/* Hidden File Input */}
-      <input
-        type="file"
-        id="fileInput"
-        onChange={handleFileChange}
-        style={{ display: "none" }} // Hide the input field
-      />
-
-      {/* Upload Button */}
-      <button
-        type="button"
-        onClick={handleButtonClick}
-        className="flex items-center text-nowrap whitespace-nowrap justify-center px-12 py-3 font-medium text-white bg-[#53B6C9] hover:bg-secondary-dark rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary"
-      >
-        Attached File
-      </button>
-    </div>
-  );
-};

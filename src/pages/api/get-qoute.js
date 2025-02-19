@@ -1,51 +1,53 @@
-export default function (req, res) {
-     // require('dotenv').config()
-     let nodemailer = require('nodemailer')
+import nodemailer from "nodemailer";
 
-     const EMAIL = "softsgens@gmail.com"
-     const GMAIL_PASSWORD = "bczjxzfatgxsebrz"
+export default async function handler(req, res) {
+    if (req.method !== "POST") {
+        return res.status(405).json({ error: "Method Not Allowed" });
+    }
 
-     // step-1 
-     const transporter = nodemailer.createTransport({
-          port: 465,
-          host: "smtp.gmail.com",
-          auth: {
-               user: EMAIL,
-               pass: GMAIL_PASSWORD
-          },
-          secure: true,
-     })
+    const { name, email, pname, pcode, quantity, phone, width, depth, length, dimension, file_input, message } = req.body;
 
-     // step-2
-     const mailData = {
-          from: EMAIL,
-          to: `mufaqar@gmail.com, ${req.body.email}`,
-          subject: `Message From ${req.body.name}`,
-          text: req.body.message + " | Sent from: " + req.body.email,
-          html: `
-          <p><strong>Your Name: </strong> ${req.body.name}</p>
-          <p><strong>Email: </strong> ${req.body.email}</p>
-          <p><strong>Product Name: </strong> ${req.body.pname}</p>
-          <p><strong>Product Code: </strong> ${req.body.pcode}</p>
-          <p><strong>Quantity: </strong> ${req.body.quantity}</p>
-          <p><strong>Your Phone: </strong> ${req.body.phone}</p>
-          <p><strong>Width: </strong> ${req.body.width}</p>
-          <p><strong>Depth: </strong> ${req.body.depth}</p>
-          <p><strong>Length: </strong> ${req.body.length}</p>
-          <p><strong>Dimension: </strong> ${req.body.dimension}</p>
-          <p><strong>File: </strong> ${req.body.file_input}</p>
-          <p><strong>Your Message: </strong> ${req.body.message}</p>
-          `,
-     }
+    if (!name || !email || !pname || !pcode || !quantity || !phone || !message) {
+        return res.status(400).json({ error: "Required fields are missing." });
+    }
 
-     // step-3
-     transporter.sendMail(mailData, function (err, info) {
-          if (err)
-               console.log(err)
-          else {
-               res.status(200).json({ message: "email sended!", info })
-          }
-     })
+    try {
+        const transporter = nodemailer.createTransport({
+            host: process.env.EMAIL_HOST, // Set this in `.env.local`
+            port: 465,
+            secure: true,
+            auth: {
+                user: process.env.EMAIL,
+                pass: process.env.EMAIL_PASSWORD,
+            },
+        });
 
+        const mailData = {
+            from: process.env.EMAIL,
+            to: `mufaqar@gmail.com, ${email}`,
+            subject: `Message From ${name}`,
+            text: `Sent from: ${email}\n\n${message}`,
+            html: `
+                <p><strong>Your Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Product Name:</strong> ${pname}</p>
+                <p><strong>Product Code:</strong> ${pcode}</p>
+                <p><strong>Quantity:</strong> ${quantity}</p>
+                <p><strong>Your Phone:</strong> ${phone}</p>
+                <p><strong>Width:</strong> ${width}</p>
+                <p><strong>Depth:</strong> ${depth}</p>
+                <p><strong>Length:</strong> ${length}</p>
+                <p><strong>Dimension:</strong> ${dimension}</p>
+                <p><strong>File:</strong> ${file_input}</p>
+                <p><strong>Your Message:</strong> ${message}</p>
+            `,
+        };
 
+        const info = await transporter.sendMail(mailData);
+        return res.status(200).json({ success: true, message: "Email sent successfully!", info });
+
+    } catch (error) {
+        console.error("Email sending failed:", error);
+        return res.status(500).json({ error: "Failed to send email" });
+    }
 }

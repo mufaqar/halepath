@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { RiArrowDownSLine } from "react-icons/ri";
+import { client } from "../../../sanity/lib/client";
+import { Qproducts } from "../../../sanity/queries";
 
 function Qoute_Form() {
   const [loading, setLoading] = useState(false);
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    (async () => {
+      const productsRes = await client.fetch(Qproducts);
+      setProducts(productsRes);
+    })();
+  }, []);
 
   const {
     register,
     handleSubmit,
-    control,
     reset,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -26,10 +33,8 @@ function Qoute_Form() {
         },
         body: JSON.stringify(data),
       }).then((res) => {
-        console.log("Response received");
         if (res.status === 200) {
           console.log("Response succeeded!");
-          alert("Message Successfully send.!");
           reset();
           setLoading(false);
         }
@@ -102,14 +107,17 @@ function Qoute_Form() {
               Select Product
             </label>
             <select
-              className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr cursor-pointer bg-white p-4 border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full w-full"
-              id="Unit"
-              {...register("Unit", { required: true })}
+              className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr cursor-pointer bg-white p-[16px] border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full w-full"
+              id="Product"
+              placeholder="Select Product"
+              {...register("Product", { required: true })}
             >
-              <option value="Select Unit">Select Unit </option>
-              <option value="Cosmetics Box">Inches</option>
-              <option value="Cosmetics Box">CM</option>
-              <option value="Cosmetics Box">MM</option>
+              <option value="Select Product" disabled>
+                Select Product{" "}
+              </option>
+              {products?.map((item: any) => (
+                <option value={item?.title}>{item?.title}</option>
+              ))}
             </select>
             <RiArrowDownSLine className="absolute right-4 top-1/2 text-xl text-gray-500 -translate-y-1/2" />
           </div>
@@ -221,6 +229,7 @@ function Qoute_Form() {
           <div className="w-full">
             <button
               type="submit"
+              disabled={loading ? true : false}
               className="text-base max-w-[600px] font-semibold text-white bg-[#1C2E42] hover:bg-secondary px-4 py-3 rounded-full w-full"
             >
               {loading ? "SENDING..." : "SUBMIT"}
