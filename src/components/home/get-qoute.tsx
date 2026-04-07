@@ -3,14 +3,14 @@ import Steps from "./steps";
 
 function Get_Qoute() {
   const [loading, setLoading] = useState(false);
-  
+
   const onSubmit = async (e: any) => {
     e.preventDefault(); // Prevent page refresh
 
     const form = e.target; // Get the form element
     const formData = new FormData(form); // Create FormData object
     const data = Object.fromEntries(formData.entries());
-    
+
     setLoading(true);
     SendMail();
     function SendMail() {
@@ -34,25 +34,24 @@ function Get_Qoute() {
 
   return (
     <section
-      className='md:py-14 py-10 relative bg-center bg-no-repeat bg-cover before:content-[""] before:absolute before:w-full before:bg-[url("/images/qoute-overlay.png")]  before:h-full before:top-0'
+      className='md:py-14 py-10 relative bg-center bg-no-repeat bg-cover before:content-[""] before:absolute before:w-full before:bg-[#191919]  before:h-full before:top-0'
       style={{ backgroundImage: `url("/images/qoute-bg.png")` }}
     >
-      <div className="container mx-auto px-4 relative z-10 flex md:flex-row flex-col gap-7">
+      <div className="hale_container relative z-10 flex md:flex-row flex-col gap-7">
         <div className="md:w-1/2 w-full">
           <Steps />
         </div>
         <div className="md:w-1/2 w-full">
-          <h4 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
-            <span>Contact Us </span>
+          <h4 className="text-xl font-semibold text-white mb-4 flex items-center gap-3 sm:justify-start justify-center">
+            <span>Stronger Protection. </span>
             <span className="block border-b-2 border-white max-w-[61px] w-full"></span>
           </h4>
-          <h2 className="md:text-4xl text-3xl font-bold text-white mb-8">
-            Request Your Any Query Now!
+          <h2 className="md:text-4xl text-2xl font-bold text-white mb-8 sm:text-left text-center">
+            Smarter Branding. Guaranteed Impact.
           </h2>
           <form
             onSubmit={onSubmit}
-            className="grid w-full gap-4 items-center mt-5 bg-primary md:p-8 p-6 rounded-[19px]"
-          >
+            className="grid w-full gap-4 items-center mt-5 bg-white/5 backdrop-blur-[10px] md:p-8 p-6 rounded-[19px]">
             <div className="w-full flex md:flex-row flex-col gap-4">
               <div className="w-full flex flex-col">
                 <label
@@ -62,7 +61,7 @@ function Get_Qoute() {
                   Full Name
                 </label>
                 <input
-                  className="text-lg md:leading-[56px] font-normal text-[#7C7C7C] placeholder:text-[#7C7C7C] bg-white px-7  border border-transparent focus:border-secondary outline-none rounded-full w-full"
+                  className="hale_input"
                   type="text"
                   name="fullname"
                   id="fullname"
@@ -78,7 +77,7 @@ function Get_Qoute() {
                   Your Contact
                 </label>
                 <input
-                  className="text-lg md:leading-[56px] font-normal text-[#7C7C7C] placeholder:text-[#7C7C7C] bg-white px-7  border border-transparent focus:border-secondary outline-none rounded-full w-full"
+                  className="hale_input"
                   type="tel"
                   name="phone"
                   id="phone"
@@ -96,7 +95,7 @@ function Get_Qoute() {
                   Email Address
                 </label>
                 <input
-                  className="text-lg md:leading-[56px] font-normal text-[#7C7C7C] placeholder:text-[#7C7C7C] bg-white px-7  border border-transparent focus:border-secondary outline-none rounded-full w-full"
+                  className="hale_input"
                   type="email"
                   name="email"
                   id="email"
@@ -112,7 +111,7 @@ function Get_Qoute() {
                   Cosmetics Packaging
                 </label>
                 <select
-                  className="text-lg md:leading-[56px] font-normal text-[#7C7C7C] placeholder:text-[#7C7C7C] bg-white px-7  border border-transparent focus:border-secondary outline-none rounded-full w-full md:min-h-[58px] h-[36px]"
+                  className="hale_input md:min-h-[58px] h-[36px]"
                   name="product"
                   id="product"
                 >
@@ -130,7 +129,7 @@ function Get_Qoute() {
                 Your Message
               </label>
               <textarea
-                className="text-lg pt-2 font-normal text-[#7C7C7C] placeholder:text-[#7C7C7C] bg-white px-7  border border-transparent focus:border-secondary outline-none rounded-[19px] w-full"
+                className="hale_input !rounded-[19px] !min-h-[170px] md:pt-2"
                 id="message"
                 name="message"
                 rows={3}
@@ -157,7 +156,7 @@ function Get_Qoute() {
               <button
                 type="submit"
                 disabled={loading ? true : false}
-                className="text-lg md:leading-[56px] font-normal text-white bg-secondary px-7  border border-transparent focus:border-secondary outline-none rounded-full w-full"
+                className="form_btn"
               >
                 {loading ? "SENDING..." : "SUBMIT"}
               </button>

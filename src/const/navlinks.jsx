@@ -13,12 +13,12 @@ export const NavLinks = [
         id: 3,
         name: "Product By Industry",
         link: "/category/product-by-industry",
-        // submenu: [
-        //     {
-        //         name: "Product By Industry",
-        //         link: "/categories",
-        //     },
-        // ]
+        submenu: [
+            {
+                name: "Product By Industry",
+                link: "/categories",
+            },
+        ]
     },
     {
         id: 4,

@@ -3,45 +3,47 @@ import React from 'react'
 
 function HowIt_work() {
     return (
-        <section className='pb-12 md:px-4 px-4'>
-            <div className='container mx-auto md:p-14 p-8 bg-secondary flex md:flex-row flex-col gap-7 justify-between items-center rounded-[19px]'>
-                <div>
-                    <p className='md:text-4xl text-2xl font-normal text-white mb-10'>
+        <section className="pb-12 md:px-4 px-4">
+            <div
+                className="hale_container md:p-14 p-5 bg-secondary flex md:flex-row flex-col gap-7 justify-between items-center rounded-[19px]">
+                <div className="md:w-1/2 w-full">
+                    <p className="md:text-4xl text-xl font-normal text-white sm:mb-5 mb-3 sm:text-left text-center">
                         Globally Expertise Delivered Locally
                     </p>
-                    <Link href="/products" className='bg-primary hover:bg-white px-9 py-3 text-lg font-medium text-white hover:text-primary rounded-full border-2 border-primary flex items-center gap-2 w-fit'>
+                    <p className="font-medium text-white sm:text-xl text-sm leading-normal sm:mb-10 mb-5 sm:text-left text-center">
+                        Trusted by Leading Brands Worldwide for Precision, Quality & Reliability.
+                    </p>
+                    <a href="<?php echo site_url('/products'); ?>" className="btn_primary sm:ml-0 ml-auto mr-auto">
                         See All Products
-                    </Link>
+                    </a>
                 </div>
-                <div className='flex md:flex-row flex-col gap-7 justify-between'>
-                    <div>
-                        <span className="block border-b-2 border-primary max-w-[61px] w-full"></span>
-                        <h3 className='md:text-5xl text-3xl font-bold text-white my-6'>
-                            35
+
+                <div className="md:w-1/2 w-full flex md:flex-row flex-col sm:gap-7 gap-3 justify-between">
+                    <div className="count_box">
+                        <span></span>
+                        <h3>
+                            35+
                         </h3>
-                        <p className='text-lg font-normal text-white'>
-                            Lorem Ipsum
-                            Lorem Ipsum
+                        <p>
+                            Years of Experience
                         </p>
                     </div>
-                    <div>
-                        <span className="block border-b-2 border-primary max-w-[61px] w-full"></span>
-                        <h3 className='md:text-5xl text-3xl font-bold text-white my-6'>
-                            35,000
+                    <div className="count_box">
+                        <span></span>
+                        <h3>
+                            35,000+
                         </h3>
-                        <p className='text-lg font-normal text-white'>
-                            Lorem Ipsum
-                            Lorem Ipsum
+                        <p>
+                            Projects Delivered
                         </p>
                     </div>
-                    <div>
-                        <span className="block border-b-2 border-primary max-w-[61px] w-full"></span>
-                        <h3 className='md:text-5xl text-3xl font-bold text-white my-6'>
-                            350
+                    <div className="count_box">
+                        <span></span>
+                        <h3>
+                            350+
                         </h3>
-                        <p className='text-lg font-normal text-white'>
-                            Lorem Ipsum
-                            Lorem Ipsum
+                        <p>
+                            Active Brand Partners
                         </p>
                     </div>
                 </div>

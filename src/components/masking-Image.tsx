@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const MaskingImage = ({data}:any) => {
+const MaskingImage = ({ data }: any) => {
   const link = data?._type === "products" ? `/${data?.slug.current}` : `/category/${data?.slug.current}`
   return (
     <div className="w-fit p-2">
@@ -12,7 +12,7 @@ const MaskingImage = ({data}:any) => {
           alt="category1"
           width={363}
           height={375}
-          className="maskimage w-full object-cover"
+          className="maskimage img-full"
         />
       </Link>
       <Link

@@ -6,18 +6,18 @@ const WhatWeDo = ({featureproductsRes}:any) => {
     console.log("🚀 ~ WhatWeDo ~ featureproductsRes:", featureproductsRes)
     return (
         <section className='py-16'>
-            <div className='container mx-auto px-4'>
-                <h2 className='md:text-[51px] md:leading-normal text-3xl font-semibold text-title_Clr text-center mb-7'>
-                    The work we do and <span className='text-primary'>love doing</span>
+            <div className='hale_container'>
+                <h2 className='h2 md:!mb-5'>
+                   The work we do and <span className='text-primary'>love doing</span>
                 </h2>
-                <p className='md:text-xl text-base font-normal text-title_Clr text-center max-w-[640px] mx-auto'>
-                    Lorem Ipsum is simply dummy to text of the printing and  Lorem a typesetting industry. Lorem and Ipsum has been the industry's a standard.
+                <p className='md:text-xl text-base font-normal text-title_Clr text-center max-w-[880px] mx-auto'>
+                   We thrive on turning ideas into standout packaging. Our R&D department boosts branding with innovative research, creating strategies that elevate your market presence. Dive into graphic designing and custom manufacturing where our experts build tailored boxes from scratch. Rely on top-tier commercial printing for crisp, vibrant finishes. Plus, our logistics solutions handle seamless shipping and supply chain needs worldwide.
                 </p>
-                <Link href="/products" className='bg-secondary hover:bg-white px-9 py-3 text-lg font-medium text-white hover:text-secondary rounded-full border-2 border-secondary flex items-center gap-2 mt-12 w-fit mx-auto'>
+                <Link href="/products" className='btn_secondry flex items-center gap-2 sm:mt-12 mt-6 w-fit mx-auto'>
                     See All Products
                 </Link>
             </div>
-            <div className='container mx-auto px-4 flex md:flex-row flex-col md:gap-40 gap-7 mt-10'>
+            <div className='hale_container flex md:flex-row flex-col lg:gap-40 gap-7 mt-10'>
                 <div className='md:w-1/2 w-full flex md:flex-row flex-col items-start gap-7 [&>*:nth-child(1)]:md:-mt-40'>
                     <ImgBox img={featureproductsRes[0]?.gallery?.[0]?.asset?.url} title={featureproductsRes[0].title} content={featureproductsRes[0].excerpt} slug={featureproductsRes[0].slug.current}  />
                     <ImgBox img={featureproductsRes[1]?.gallery?.[0]?.asset?.url} title={featureproductsRes[1].title} content={featureproductsRes[1].excerpt} slug={featureproductsRes[1].slug.current}  />

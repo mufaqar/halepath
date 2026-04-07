@@ -42,45 +42,71 @@ function Header() {
 
   return (
     <>
-      {/* Top bar */}
-      <div className="bg-secondary py-[18px] md:block hidden">
-        <div className="container mx-auto px-4 flex items-center justify-between">
-          <p className="text-base font-medium text-white">
-            Welcome To Hale Path Packaging
-          </p>
-          <ul className="flex items-center justify-between divide-x-2 divide-white">
+      <div className="bg-secondary py-2.5 hidden md:block">
+        <div className="hale_container flex items-center justify-between">
+          <ul className="flex items-center divide-x-2 divide-white">
             <li>
-              <Link
-                href="tel:+9212312312345"
-                target="_blank"
-                className="text-base font-medium text-white flex items-center gap-1 px-5"
-              >
-                <FaPhoneAlt />
-                +92 123 123 12345
+              <Link href="tel:+4401213186768"
+                className="text-sm font-normal text-white flex items-center gap-1 px-2 cursor-pointer">
+                <i className="fas fa-phone-alt"></i>
+                01213186768
               </Link>
             </li>
             <li>
-              <Link
-                href="mailto:loremipsum@gmail.com"
-                target="_blank"
-                className="text-base font-medium text-white flex items-center gap-1 px-5"
-              >
-                <FaEnvelope />
-                loremipsum@gmail.com
+              <Link href="mailto:sales@halepathpackaging.co.uk"
+                className="text-sm font-normal text-white flex items-center gap-1 px-2 cursor-pointer">
+                <i className="fas fa-envelope"></i>
+                sales@halepathpackaging.co.uk
               </Link>
             </li>
+          </ul>
+          <ul className="flex items-center divide-x-2 divide-white">
             <li>
-              <span className="text-base font-medium text-white flex items-center gap-1 px-5">
-                <FaMapMarkerAlt />
-                City, Country, Code-12345
-              </span>
+              <Link href="https://halepathpackaging.co.uk/products/"
+                className="text-sm font-normal text-white flex items-center gap-1 px-2 cursor-pointer">
+
+                All Products
+              </Link>
+            </li>
+            <li className="px-2">
+              {/* <?php echo do_shortcode('[gtranslate]'); ?> */}
             </li>
           </ul>
         </div>
       </div>
-      <header className=" bg-white z-50 sticky top-0 " style={{ boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px' }}>
+      <div className="bg-white py-1.5 hidden lg:block">
+        <div className="hale_container flex items-center justify-between">
+          {/* Logo  */}
+          <div className="lg:block hidden sm:w-[25%] w-1/2">
+            <Link href="/" className='inline-flex'>
+              <Image src="/images/logo.png" alt='logo' width={93} height={98} />
+            </Link>
+          </div>
+          <div className="lg:block hidden w-1/2">
+            <div className="relative w-full">
+              <input type="text" id="live-search" placeholder="Search products..." autoComplete="off"
+                className="text-sm md:leading-[40px] font-normal text-[#7C7C7C] placeholder:text-[#7C7C7C] bg-white px-7  border border-secondary focus:border-primary outline-none rounded-full w-full" />
+
+              <div id="live-search-results" className="absolute z-60 w-full mt-1 bg-white rounded-lg shadow-lg hidden">
+              </div>
+            </div>
+          </div>
+          {/* Buttons  */}
+          <div className="xl:w-1/4 sm:w-1/3 hidden lg:flex gap-5 justify-end">
+            <Link href="<?php echo home_url('/contact-us'); ?>"
+              className="border-2 border-secondary px-5 py-2 text-[13px] uppercase font-medium text-secondary rounded-full hover:bg-secondary hover:text-white">
+              Contact Us
+            </Link>
+            <Link href="<?php echo home_url('/get-quote-now'); ?>"
+              className="border-2 border-secondary bg-secondary px-5 py-2 text-[13px] uppercase font-medium text-white rounded-full hover:bg-transparent hover:text-secondary">
+              Get Quote Now
+            </Link>
+          </div>
+        </div>
+      </div>
+      <header className="bg-[#f5f5f5] sticky top-0 z-50 sm:py-[15px]">
         <div className="container mx-auto px-4 py-1 flex gap-5 items-center justify-between">
-          <div className="lg:w-[8%] w-1/2">
+          <div className="lg:hidden w-1/2">
             <Link href="/" className="inline-flex">
               <Image
                 src="/images/logo.png"
@@ -90,7 +116,7 @@ function Header() {
               />
             </Link>
           </div>
-          <nav className="lg:w-[68%] w-1/2 flex items-center justify-end">
+          <nav className="lg:w-full w-1/2 flex lg:justify-center justify-end items-center">
             <div
               className="menu_icon text-3xl lg:hidden block w-fit ml-auto"
               onClick={() => setOpenNav(!openNav)}
@@ -98,11 +124,7 @@ function Header() {
               {openNav ? <IoMdClose /> : <FaBars />}
             </div>
             <ul
-              className={`lg:gap-3 gap-5 lg:items-center lg:justify-between lg:static lg:flex-row flex-col lg:px-0 lg:py-0 px-4 py-8 lg:bg-transparent ${openNav === true
-                ? "flex absolute left-0 right-0 top-16 bg-white"
-                : "lg:flex hidden"
-                }`}
-            >
+              className="hidden lg:flex gap-1.5 justify-between w-full">
               {NavLinks?.map((item, idx) => {
                 return (
                   <li
@@ -110,40 +132,26 @@ function Header() {
                     ref={menuRef}
                     onMouseEnter={() => setMegaMenu(item?.id)}
                     onClick={() => setMegaMenu(null)}
-                    className="cursor-pointer group flex items-center"
+                    className="cursor-pointer flex items-center"
                   >
                     <Link
                       href={`${item?.link}`}
                       className="text-[15px] font-medium uppercase text-title_Clr group-hover:text-primary">
                       {item?.name}
                     </Link>
-                    {/* {item?.submenu && (
+                    {item?.submenu && (
                       <span className="leading-[0]">
                         <FaCaretDown className="ml-1 inline-block text-sm font-normal text-title_Clr group-hover:text-primary" />
                       </span>
-                    )} */}
-                    {/* {item?.submenu && <div onMouseLeave={() => setMegaMenu(null)} className={`${megaMenu === item?.id ? "block container md:px-10 left-1/2 md:-translate-x-1/2 md:absolute top-40 static z-50 " : "hidden"}`}>
-                    <MegaMenu setMegaMenu={setMegaMenu} categories={categories} />
-                  </div>} */}
+                    )}
+                    {item?.submenu && <div onMouseLeave={() => setMegaMenu(null)} className={`${megaMenu === item?.id ? "block left-1/2 md:-translate-x-1/2 md:absolute 2xl:top-[74px]  top-[94px] hale_container static z-50 " : "hidden"}`}>
+                      <MegaMenu setMegaMenu={setMegaMenu} categories={categories} />
+                    </div>}
                   </li>
                 );
               })}
             </ul>
           </nav>
-          <div className="lg:w-[27%] lg:flex gap-5 justify-end hidden">
-            <Link
-              href="/contact-us"
-              className="bg-transparent hover:bg-primary px-5 py-2.5 text-[15px] uppercase font-medium text-primary hover:text-white rounded-full border-2 border-primary"
-            >
-              Contact Us
-            </Link>
-            <Link
-              href="/get-qoute"
-              className="bg-primary hover:bg-transparent px-5 py-2.5 text-[15px] uppercase font-medium text-white hover:text-primary rounded-full border-2 border-primary"
-            >
-              Get Quote Now
-            </Link>
-          </div>
         </div>
       </header>
     </>

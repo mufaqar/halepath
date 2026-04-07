@@ -42,38 +42,25 @@ export default function Home({ testimonialsRes, faqRes, categoriesRes, productsR
       <main className={``} >
         <MainSlider />
         <MainContent />
-
         <CategorySlider categoriesRes={categoriesRes} />
-
         <CTA />
-
-        <ProductSlider productsRes={productsRes} title="Our Latest Products" settings={settings} />
+        <ProductSlider productsRes={productsRes} title="Offset Printing" settings={settings} />
         <HowIt_work />
         <Brands />
         <BannerPageMiddel />
-
-        <section className='my-10'>
-          <div className="slider-container mb-10">
-            <Slider {...settingDotsFalse}>
-              {productsRes?.map((item, idx) => {
-                return <MaskingImage key={idx} data={item} />
-              })}
-            </Slider>
-          </div>
-          <CTA />
-          <div className="slider-container mt-10">
-            <Slider {...settingRtl}>
-              {productsRes?.map((item, idx) => {
-                return <MaskingImage key={idx} data={item} />
-              })}
-            </Slider>
-          </div>
-        </section>
-
+        <ProductSlider productsRes={productsRes} title="Corrugated Packaging" settings={settings} />
         <Get_Qoute />
         <WhatWeOffer />
+        <Packaging_Style title="Flexible Packaging / Maylar bags"
+          subtitle="Flexible Solutions, Unmatched Quality – Packaging That Sells Your Brand."
+          data={categoriesRes} />
+        <CTA />
         <SliderFull />
-        <Packaging_Style data={categoriesRes} />
+        <section className="bg-[#EAF6F9]">
+          <Packaging_Style title="Print & Advertising & Office Supplies"
+            subtitle="Start designing unique boxes with different styles, sizes, and choices. Custom rigid boxes or Kraft boxes for retail products and many more?We can help, Custom printing and packaging services ideas abound."
+            data={categoriesRes} />
+        </section>
         <WhatWeDo featureproductsRes={featureproductsRes} />
         <TestimonialAndFaq testimonialsRes={testimonialsRes} faqRes={faqRes} />
         <Career />
@@ -102,7 +89,7 @@ export async function getServerSideProps() {
 
 
 const settings = {
-  dots: true,
+  dots: false,
   arrows: false,
   className: "center",
   // centerMode: true,

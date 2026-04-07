@@ -3,8 +3,9 @@ import PackingBox from "./packingBox";
 import { urlForImage } from "../../../sanity/lib/image";
 import Slider from "react-slick";
 import MaskingImage from "../masking-Image";
+import Link from "next/link";
 
-function Packaging_Style({ data }: any) {
+function Packaging_Style({ data, title, subtitle }: any) {
   const settings = {
     dots: false,
     arrows: false,
@@ -44,17 +45,14 @@ function Packaging_Style({ data }: any) {
     ],
   };
   return (
-    <section id="box-by-material" className="py-16 bg-[#EAF6F9]">
+    <section id="box-by-material" className="py-16">
       <div className="px-0">
-        <div className="mb-16">
-          <h2 className="md:text-[51px] md:leading-normal text-3xl font-semibold text-title_Clr text-center">
-            Explore Our Custom Printing and Packaging Design
+        <div className="hale_container flex flex-col justify-center items-center">
+          <h2 className="h2">
+            {title}
           </h2>
-          <p className="text-lg font-normal text-txt_Clr text-center md:w-5/6 mx-auto mt-5">
-            Start designing unique boxes with different styles, sizes, and
-            choices. Custom rigid boxes or Kraft boxes for retail products and
-            many more?We can help, Custom printing and packaging services ideas
-            abound.
+          <p className="sm:text-lg text-sm font-normal text-txt_Clr text-center md:w-5/6 mx-auto">
+            {subtitle}
           </p>
         </div>
         <Slider {...settings}>
@@ -63,6 +61,9 @@ function Packaging_Style({ data }: any) {
           ))}
         </Slider>
       </div>
+      <Link href="/all-offset-printing" className="btn_secondry flex items-center gap-2 sm:mt-12 mt-6 w-fit mx-auto">
+        See All {title}
+      </Link>
     </section>
   );
 }

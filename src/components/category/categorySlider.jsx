@@ -49,14 +49,39 @@ export default function CategorySlider({ categoriesRes }) {
     ]
   };
   return (
-    <section className="bg-[#F5F5F5] py-10">
-      <h2 className="md:text-[43px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-14">
+    <section class="bg-[#F5F5F5] py-10">
+      <h2 class="h2">
         Our Latest Category
       </h2>
       <div className="slider-container">
         <Slider {...settings}>
-          {categoriesRes?.map((_item, idx) => {
-            return <MaskingImage key={idx} data={_item} />
+          {categoriesRes.map((item, idx) => {
+            const link =
+              item?._type === "products"
+                ? `/${item?.slug?.current}`
+                : `/category/${item?.slug?.current}`;
+
+            return (
+              <div key={idx} className="w-full p-2">
+                <Link href={link}>
+                  <Image
+                    src={
+                      item?.feature_image?.asset?.url ||
+                      item?.image?.asset?.url ||
+                      "/placeholder.png"
+                    }
+                    alt={item?.name || item?.title || "category"}
+                    width={363}
+                    height={375}
+                    className="cat_image img-full"
+                  />
+                </Link>
+
+                <Link href={link} className="box_link">
+                  {item?.name || item?.title}
+                </Link>
+              </div>
+            );
           })}
         </Slider>
       </div>
