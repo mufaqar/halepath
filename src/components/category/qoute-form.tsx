@@ -116,7 +116,7 @@ function Qoute_Form() {
                 Select Product{" "}
               </option>
               {products?.map((item: any) => (
-                <option value={item?.title}>{item?.title}</option>
+                <option key={item.index} value={item?.title}>{item?.title}</option>
               ))}
             </select>
             <RiArrowDownSLine className="absolute right-4 top-1/2 text-xl text-gray-500 -translate-y-1/2" />

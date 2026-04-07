@@ -119,7 +119,7 @@ function QouteFormForProduct() {
                 <option value="Select Product" disabled>Select Product </option>
                 {
                   products?.map((item:any)=>(
-                    <option value={item?.title}>{item?.title}</option>
+                    <option key={item.index} value={item?.title}>{item?.title}</option>
                   ))
                 }                
               </select>
