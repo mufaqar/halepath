@@ -8,7 +8,6 @@ import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 
 const ImageCarousel = ({ data }) => {
   const sliderRef = useRef(null);
-
   // ✅ LIGHTBOX STATE
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
