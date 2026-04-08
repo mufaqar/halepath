@@ -51,59 +51,11 @@ export default function Category({ categoryRes, productsRes }: any) {
               {categoryRes?.name}
             </h4>
             <p className="xl:text-[19px] mt-4">{categoryRes?.excerpt}</p>
-            <FormTabs productName={categoryRes?.name} productPrice={0} />
+            <FormTabs productName={categoryRes?.name} productPrice={650} />
           </div>
         </div>
       </main>
-
       <CategoriesProducts productsRes={productsRes} />
-
-      {categoryRes?.grid?.map((item: any, idx: number) => (
-        <section className="my-20" key={idx}>
-          <div
-            className={`container md:flex items-center gap-5 md:gap-0 mx-auto px-3 ${idx % 2 === 0 && "flex-row-reverse"
-              }`}
-          >
-            <figure className="md:w-1/2">
-              <Image
-                src={item?.image?.asset?.url}
-                alt=""
-                width={678}
-                height={424}
-              />
-            </figure>
-            <div className="flex md:w-1/2 justify-center md:justify-start items-center md:items-start flex-col">
-              <h4 className="text-[#111827] mt-5 md:mt-0 font-bold text-3xl text-center md:text-left mb-4">
-                {item.title}
-              </h4>
-              <p className="mb-7 text-center md:text-left">{item?.Info}</p>
-              <Link
-                href={item?.button_link || "#"}
-                className="py-[9px] px-[41px] text-white bg-[#1C2E42] rounded-md"
-              >
-                Get Custom Quote
-              </Link>
-            </div>
-          </div>
-        </section>
-      ))}
-
-      <section className="pt-16">
-        <h2 className="font-extrabold md:text-4xl text-2xl text-center text-title_Clr mb-5">
-          Learn More About Custom Retail Boxes
-        </h2>
-        <div className="container px-3 desc_content mx-auto mt-5 overflow-y-scroll max_content max-h-[712px]">
-          <PortableText value={categoryRes?.content} />
-        </div>
-      </section>
-
-      <OurCapabilities data={categoryRes?.Our_capabilities} />
-
-      <section className="bg-[#F5F5F5] py-20 mt-28">
-        <div className="container mx-auto px-3 text-center">
-          <Faqs col={2} data={categoryRes?.faqs} />
-        </div>
-      </section>
     </>
   );
 }

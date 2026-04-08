@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { client } from "../../../sanity/lib/client";
 import { Qproducts, QSingleProducts } from "../../../sanity/queries";
+import ProductTabs from "@/components/products/productTabs";
 
 export default function Product({ productRes, productsRes }: any) {
   return (
@@ -27,55 +28,13 @@ export default function Product({ productRes, productsRes }: any) {
 
       <main>
         <Banner data={productRes} />
-        <section className="mt-20 max-w-[2200px] mx-auto px-3 lg:px-0">
+        <section className="mt-20 w-full mx-auto px-3 lg:px-0 overflow-hidden">
           <h2 className="text-2xl text-center mb-8 sm:text-3xl md:text-5xl font-bold">
-            Custom Retail Boxes Gallery
+            {productRes?.title} Gallery
           </h2>
           <ImageCarousel data={productRes?.gallery} />
         </section>
-
-        {productRes?.grid?.map((item: any, idx: number) => (
-          <section className="my-20" key={idx}>
-            <div
-              className={`container md:flex items-center gap-5 md:gap-0 mx-auto px-3 ${
-                idx % 2 === 0 && "flex-row-reverse"
-              }`}
-            >
-              <figure className="md:w-1/2">
-                <Image
-                  src={item?.image?.asset?.url}
-                  alt=""
-                  width={678}
-                  height={424}
-                />
-              </figure>
-              <div className="flex md:w-1/2 justify-center md:justify-start items-center md:items-start flex-col">
-                <h4 className="text-[#111827] mt-5 md:mt-0 font-bold text-3xl text-center md:text-left mb-4">
-                  {item.title}
-                </h4>
-                <p className="mb-7 text-center md:text-left">{item.info}</p>
-                <Link
-                  href={item?.button_link}
-                  className="py-[9px] px-[41px] text-white bg-[#1C2E42] rounded-md"
-                >
-                  Get Custom Quote
-                </Link>
-              </div>
-            </div>
-          </section>
-        ))}
-
-        <section className="pt-16">
-          <h2 className="font-extrabold md:text-4xl text-2xl text-center text-title_Clr mb-5">
-            Learn More About Custom Retail Boxes
-          </h2>
-          <div className="container px-3 desc_content mx-auto mt-5 overflow-y-auto max_content max-h-[812px]">
-            <PortableText value={productRes?.content} />
-          </div>
-        </section>
-
-        <OurCapabilities data={productRes?.Our_capabilities} />
-
+        <ProductTabs />
         <section className="bg-[#F5F5F5] py-20 mt-28">
           <div className="container mx-auto px-3 text-center">
             <Faqs col={2} data={productRes?.faqs} />
@@ -87,7 +46,7 @@ export default function Product({ productRes, productsRes }: any) {
               Related Products
             </span>
           </div>
-          <CenterSlider data={productsRes}/>
+          <CenterSlider data={productsRes} />
         </section>
       </main>
     </>
@@ -100,8 +59,8 @@ export async function getServerSideProps(pageContext: any) {
   const productRes = await client.fetch(QSingleProducts, { slug });
   const productsRes = await client.fetch(Qproducts);
 
-  const relatedProducts = productsRes?.filter((item:any)=>(
-    item?.categories?.some((c:any) => c.name === productRes?.categories?.[0]?.name)
+  const relatedProducts = productsRes?.filter((item: any) => (
+    item?.categories?.some((c: any) => c.name === productRes?.categories?.[0]?.name)
   ))
 
   if (!productRes) {
@@ -113,7 +72,7 @@ export async function getServerSideProps(pageContext: any) {
   return {
     props: {
       productRes,
-      productsRes : relatedProducts,
+      productsRes: relatedProducts,
       preview: true,
     },
   };

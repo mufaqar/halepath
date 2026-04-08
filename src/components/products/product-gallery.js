@@ -3,11 +3,12 @@ import Slider from "react-slick";
 import Image from 'next/image'
 import { urlForImage } from "../../../sanity/lib/image";
 
-const Product_Gallery = ({data}) => {
+const Product_Gallery = ({ data }) => {
 
   const [nav1, setNav1] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0)
   const [slider1, setSlider1] = useState(null);
+  const [slider2, setSlider2] = useState(null);
 
   useEffect(() => {
     setNav1(slider1);
@@ -23,9 +24,20 @@ const Product_Gallery = ({data}) => {
     autoplaySpeed: 1000,
     onReInit: () => setCurrentSlide(slider1?.innerSlider.state.currentSlide),
     lazyLoad: true,
-    asNavFor: ".slider-nav",
+    asNavFor: slider2,
+    ref: (slider) => setSlider1(slider),
     focusOnSelect: true,
-    arrows:false,
+    arrows: false,
+  };
+
+  const thumbSettings = {
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: true,   // ✅ THIS IS LOOP
+    asNavFor: nav1,
+    focusOnSelect: true,
+    arrows: false,
+    variableWidth: true,
   };
 
   return (
@@ -38,26 +50,37 @@ const Product_Gallery = ({data}) => {
           {data?.gallery?.map((item, idx) => (
             <div
               key={idx}
-              className={`${currentSlide === idx ? "active" : null} rounded-[21px] h-[435px]`}
+              className={`${currentSlide === idx ? "active" : null} w-full h-full object-contain rounded-[12px]`}
               onClick={() => {
                 slider1?.slickGoTo(idx)
               }}>
-              <Image src={urlForImage(item?.asset?._ref).width(534)?.url()} alt={item?.alt} width={435} height={365} className='w-full h-full object-cover rounded-[21px]' />
+              <Image src={urlForImage(item?.asset?._ref)?.url()} alt={item?.alt} width={435} height={365} className='w-full h-full object-cover rounded-[12px] max-h-[605px]' />
             </div>
           ))}
         </Slider>
-        <div className="thumb-wrapper flex overflow-x-auto !justify-start singleproducts">
+        <Slider
+          {...thumbSettings}
+          ref={(slider) => setSlider2(slider)}
+          asNavFor={slider1}
+          className="thumb-wrapper flex overflow-x-auto !justify-start singleproducts"
+        >
           {data?.gallery?.map((item, idx) => (
             <div
               key={idx}
-              className={`${currentSlide === idx ? "active" : null} group h-[131px] min-w-[167px] p-3`}
-              onClick={() => {
-                slider1?.slickGoTo(idx)
-              }}>
-              <Image src={urlForImage(item?.asset?._ref).width(154)?.url()} alt={item?.alt} width={154} height={131} className='w-full group-hover:scale-110 rounded-md transition-all duration-200 ease-linear object-cover' />
+              className={`group h-[150px] min-w-[150px] p-1 rounded-[10px] ${currentSlide === idx ? "active" : ""
+                }`}
+              onClick={() => slider1?.slickGoTo(idx)}
+            >
+              <Image
+                src={urlForImage(item?.asset?._ref).url()}
+                alt={item?.alt}
+                width={154}
+                height={131}
+                className="w-full group-hover:scale-105 rounded-[10px] transition-all duration-100 ease-linear object-cover"
+              />
             </div>
           ))}
-        </div>
+        </Slider>
       </div>
     </div>
   );

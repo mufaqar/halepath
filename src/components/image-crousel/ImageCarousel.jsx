@@ -1,77 +1,142 @@
-// components/ImageCarousel.js
-'use client'; // If using Next.js App Router
+"use client";
 
-import React, { useRef } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/navigation';
+import React, { useRef, useState } from 'react';
 import { urlForImage } from '../../../sanity/lib/image';
-import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import Slider from 'react-slick';
+import Image from 'next/image';
+import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 
 const ImageCarousel = ({ data }) => {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const sliderRef = useRef(null);
+
+  // ✅ LIGHTBOX STATE
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // ✅ CREATE IMAGE ARRAY
+  const images = data?.map(
+    (img) => urlForImage(img?.asset?._ref)?.url()
+  );
+
+  const settings = {
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    infinite: true,
+    adaptiveHeight: false,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 3 } },
+      { breakpoint: 768, settings: { slidesToShow: 2 } },
+      { breakpoint: 480, settings: { slidesToShow: 1 } },
+    ],
+  };
+
+  const goNext = () => sliderRef.current?.slickNext();
+  const goPrev = () => sliderRef.current?.slickPrev();
+
+  // ✅ LIGHTBOX FUNCTIONS
+  const openLightbox = (index) => {
+    setCurrentIndex(index);
+    setIsOpen(true);
+  };
+
+  const closeLightbox = () => setIsOpen(false);
+
+  const nextImage = () => {
+    setCurrentIndex((prev) =>
+      prev === images.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    );
+  };
+
+  if (!data?.length) return null;
 
   return (
-    <div style={{ width: '100%', padding: '2rem 0', position: 'relative' }}>
-      {/* Custom Navigation Buttons */}
-      <button
-        ref={prevRef}
-        className="absolute left-1 top-1/2 transform -translate-y-1/2 z-10 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-900"
-      >
-        <MdOutlineKeyboardArrowLeft/>
-      </button>
-      <button
-        ref={nextRef}
-        className="absolute right-1 top-1/2 transform -translate-y-1/2 z-10 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-900"
-      >
-        <MdOutlineKeyboardArrowRight/>
-      </button>
+    <div className="relative w-full py-8">
 
-      <Swiper
-        effect="coverflow"
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={4}
-        loop={true}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 200,
-          modifier: 1,
-          slideShadows: false,
-        }}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
-        onBeforeInit={(swiper) => {
-          swiper.params.navigation.prevEl = prevRef.current;
-          swiper.params.navigation.nextEl = nextRef.current;
-        }}
-        modules={[EffectCoverflow, Navigation]}
-        style={{ width: '100%', height: '480px' }}
-      >
-        {data?.map((src, index) => (
-          <SwiperSlide key={index}>
-            <figure className='rounded-[32px] overflow-hidden'>
-              <img
-                src={urlForImage(src?.asset?._ref)?.url()}
+      {/* SLIDER */}
+      <Slider ref={sliderRef} {...settings} className="full_gallery">
+        {data.map((image, index) => (
+          <div key={index} className="px-2">
+            <figure className="rounded-2xl h-[450px]">
+              <Image
+                src={images[index]}
                 alt={`Slide ${index + 1}`}
-                style={{
-                  width: '100%',
-                  objectFit: 'cover',
-                  borderRadius: '32px',
-                }}
-                className="h-[460px] scale-105"
+                width={350}
+                height={450}
+                onClick={() => openLightbox(index)} // ✅ OPEN LIGHTBOX
+                className="gallery-img cursor-pointer !h-full w-full object-cover rounded-2xl"
               />
             </figure>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </Slider>
+
+      {/* LIGHTBOX */}
+      <div
+        id="lightbox"
+        className={`fixed inset-0 bg-black/90 ${
+          isOpen ? "flex" : "hidden"
+        } items-center justify-center z-[9999]`}
+      >
+        {/* Close */}
+        <button
+          id="lightbox-close"
+          onClick={closeLightbox}
+          className="absolute top-5 right-5 text-white text-3xl"
+        >
+          &times;
+        </button>
+
+        {/* Prev */}
+        <button
+          id="lightbox-prev"
+          onClick={prevImage}
+          className="absolute left-5 text-white text-3xl"
+        >
+          &#10094;
+        </button>
+
+        {/* Image */}
+        <Image
+          id="lightbox-img"
+          src={images[currentIndex]}
+          alt="lightbox"
+          width={1000}
+          height={800}
+          className="max-h-[90%] max-w-[90%] object-contain rounded-xl"
+        />
+
+        {/* Next */}
+        <button
+          id="lightbox-next"
+          onClick={nextImage}
+          className="absolute right-5 text-white text-3xl"
+        >
+          &#10095;
+        </button>
+      </div>
+
+      {/* ARROWS */}
+      <button
+        onClick={goPrev}
+        className="gallery-prev text-white text-2xl leading-[0] h-[60px] w-[60px] rounded-full bg-primary hover:bg-secondary flex items-center justify-center cursor-pointer scale-100 hover:scale-110 transition-all ease-in-out absolute left-5 top-1/2 -translate-y-1/2 z-10"
+      >
+        <FaArrowLeftLong />
+      </button>
+
+      <button
+        onClick={goNext}
+        className="gallery-next text-white text-2xl leading-[0] h-[60px] w-[60px] rounded-full bg-primary hover:bg-secondary flex items-center justify-center cursor-pointer scale-100 hover:scale-110 transition-all ease-in-out absolute right-5 top-1/2 -translate-y-1/2 z-10"
+      >
+        <FaArrowRightLong />
+      </button>
     </div>
   );
 };

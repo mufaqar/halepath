@@ -22,7 +22,7 @@ const CategoriesProducts = ({ productsRes }: any) => {
       <div className="hale_container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {productsRes?.slice(0, visibleCount).map((item: any, idx: number) => (
           <div key={idx} className="p-3">
-            <Link href={`/${item?.slug.current}`}>
+            <Link href={`/${item?.slug.current}`} className="inline-flex h-fit">
               <Image
                 src={item?.gallery[0]?.asset?.url}
                 alt={item?.title || "Product Image"}
@@ -39,7 +39,7 @@ const CategoriesProducts = ({ productsRes }: any) => {
           </div>
         ))}
       </div>
-      {visibleCount < productsRes?.length && (
+      {/* {visibleCount < productsRes?.length && (
         <div className="text-center mt-6">
           <button
             onClick={loadMore}
@@ -48,7 +48,7 @@ const CategoriesProducts = ({ productsRes }: any) => {
             Load More
           </button>
         </div>
-      )}
+      )} */}
     </section>
   );
 };
