@@ -1,203 +1,205 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaTiktok, FaTwitter } from 'react-icons/fa'
 
 function Footer() {
   return (
-    <footer className='pt-14 pb-4 relative'>
-      <div className='container mx-auto px-4 grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 justify-between gap-7'>
+    <footer className='pt-14 relative bg-[#f5f5f5]'>
+      <div className='hale_container grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 justify-between 2xl:gap-5 md:gap-4 gap-5'>
         <div>
-          <h6 className='text-2xl font-semibold text-title_Clr mb-6 PoppinsMedium'>
+          <h6 className='footer_title'>
             Company
-            <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
+            <span className=''></span>
           </h6>
-          <ul className='flex flex-col gap-2.5'>
-            <li>
-              <Link href="/" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Home
+          <ul id="menu-company" className="flex flex-col gap-2.5">
+            <li className="">
+              <Link href="https://halepathpackaging.co.uk/about-us/" className='footer_link'>
+                <span className="marker"></span>About Us
               </Link>
             </li>
-            <li>
-              <Link href="/about-us" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                About Us
+            <li className="">
+              <Link href="https://halepathpackaging.co.uk/terms-conditions/" className='footer_link'>
+                <span className="marker"></span>Terms &amp; Conditions
               </Link>
             </li>
-            <li>
-              <Link href="/categories" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Product By Industry
+            <li className="">
+              <Link href="https://halepathpackaging.co.uk/return-and-refund-policy/" className='footer_link'>
+                <span className="marker"></span>Return and Refund Policy
               </Link>
             </li>
-            <li>
-              <Link href="/products" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Products
+            <li className="">
+              <Link href="https://halepathpackaging.co.uk/shipping-policy/" className='footer_link'>
+                <span className="marker"></span>Shipping Policy
               </Link>
             </li>
-            <li>
-              <Link href="/about-us#testimonials" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Testimonials
+            <li className="">
+              <Link rel="privacy-policy" href="https://halepathpackaging.co.uk/privacy-policy/" className='footer_link'>
+                <span className="marker"></span>Privacy Policy
               </Link>
             </li>
-            <li>
-              <Link href="/about-us#faqs" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                FAQ's
+            <li className="">
+              <Link href="#" className='footer_link'>
+                <span className="marker"></span>Bulk Order
               </Link>
             </li>
-            <li>
-              <Link href="/contact-us" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Contact
+            <li className="">
+              <Link href="https://halepathpackaging.co.uk/contact-us/" className='footer_link'>
+                <span className="marker"></span>Contact Us
+              </Link>
+            </li>
+            <li className="">
+              <Link href="https://halepathpackaging.co.uk/blog/" className='footer_link'>
+                <span className="marker"></span>Blog
               </Link>
             </li>
           </ul>
         </div>
         <div>
-          <h6 className='text-2xl font-semibold text-title_Clr mb-6 PoppinsMedium'>
-            Products Packaging
-            <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
+          <h6 className='footer_title'>
+            Innovation
+            <span className=''></span>
           </h6>
-          <ul className='flex flex-col gap-2.5'>
-            <li>
-              <Link href="/category/cosmetic-boxes" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Cosmetic Boxes
+          <ul id="menu-innovation" className="flex flex-col gap-2.5">
+            <li className="">
+              <Link href="#" className="footer_link">
+                <span className="marker"></span>Approch to innovation
               </Link>
             </li>
-            <li>
-              <Link href="/category/cardboard-boxes" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Cardboard Boxes
+            <li className="">
+              <Link href="#" className="footer_link">
+                <span className="marker"></span>UV Printing Technology
               </Link>
             </li>
-            <li>
-              <Link href="/category/cbd-boxes" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                CBD Boxes
+            <li className="">
+              <Link href="#" className="footer_link">
+                <span className="marker"></span>Foil Printing Solutions
               </Link>
             </li>
-            <li>
-              <Link href="/category/display-boxes" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Display Boxes
+            <li className="">
+              <Link href="#" className="footer_link">
+                <span className="marker"></span>Privacy Printing
               </Link>
             </li>
-            <li>
-              <Link href="/category/bottle-boxes" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Bottle Boxes
+            <li className="">
+              <Link href="#" className="footer_link">
+                <span className="marker"></span>Color Management Systems
               </Link>
             </li>
-            <li>
-              <Link href="/category/retail-boxes" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Retail Boxes
+            <li className="">
+              <Link href="#" className="footer_link">
+                <span className="marker"></span>R&amp;D areas
               </Link>
             </li>
-            <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Sustainable Packaging
+            <li className="">
+              <Link href="#" className="footer_link">
+                <span className="marker"></span>Experience Centers
+              </Link>
+            </li>
+            <li className="">
+              <Link href="#" className="footer_link">
+                <span className="marker"></span>Client Success Stories
               </Link>
             </li>
           </ul>
         </div>
         <div>
-          <h6 className='text-2xl font-semibold text-title_Clr mb-6 PoppinsMedium'>
-            Packaging Style
-            <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
+          <h6 className='footer_title'>
+            Packaging Products
+            <span className=''></span>
           </h6>
-          <ul className='flex flex-col gap-2.5'>
-            <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Sleeve & Tray
+          <ul id="menu-packaging-products" className="flex flex-col gap-2.5">
+            <li className="">
+              <Link href="https://halepathpackaging.co.uk/custom-rigid-boxes/" className='footer_link'>
+                <span className="marker"></span>Rigid Boxes
               </Link>
             </li>
-            <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Die Cut Boxes
+            <li className="">
+              <Link href="https://halepathpackaging.co.uk/kraft-boxes/" className='footer_link'>
+                <span className="marker"></span>Kraft Boxes
               </Link>
             </li>
-            <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Cigerate Boxes
+            <li className="">
+              <Link href="https://halepathpackaging.co.uk/cardboard-boxes/" className='footer_link'>
+                <span className="marker"></span>Cardboard Boxes
               </Link>
             </li>
-            <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Child Resistance Boxes
+            <li className="">
+              <Link href="https://halepathpackaging.co.uk/corrugated-boxes/" className='footer_link'>
+                <span className="marker"></span>Corrugated Boxes
               </Link>
             </li>
-            <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Window Boxes
+            <li className="">
+              <Link href="#"><span className="marker"></span>Product Boxes
               </Link>
             </li>
-            <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Gable Boxes
+            <li className="">
+              <Link href="#"><span className="marker"></span>Sustainable Packaging
               </Link>
             </li>
           </ul>
         </div>
         <div>
-          <h6 className='text-2xl font-semibold text-title_Clr mb-6 PoppinsMedium'>
-            Inspiration
-            <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
+          <h6 className='footer_title'>
+            Services
+            <span className=''></span>
           </h6>
-          <ul className='flex flex-col gap-2.5'>
-            <li>
-              <Link href="/blog" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Blog
+          <ul id="menu-services" className="flex flex-col gap-2.5">
+            <li className="">
+              <Link href="#" className='footer_link'>
+                <span className="marker"></span>Commercial Printing
               </Link>
             </li>
-            <li>
-              <Link href="#" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                Client Success Stories
+            <li className="">
+              <Link href="#" className='footer_link'>
+                <span className="marker"></span>Bulk Production
+              </Link>
+            </li>
+            <li className="">
+              <Link href="#" className='footer_link'>
+                <span className="marker"></span>Custom Printing Solutions
+              </Link>
+            </li>
+            <li className="">
+              <Link href="#" className='footer_link'>
+                <span className="marker"></span>Structural Design Support
+              </Link>
+            </li>
+            <li className="">
+              <Link href="https://halepathpackaging.co.uk/get-quote-now/" className='footer_link'>
+                <span className="marker"></span>Request a Quote
               </Link>
             </li>
           </ul>
         </div>
         <div>
-          <h6 className='text-2xl font-semibold text-title_Clr mb-6 PoppinsMedium'>
-            Contact
-            <span className='block border-b-2 border-title_Clr max-w-[61px] mt-3'></span>
+          <h6 className='footer_title'>
+            Connect With Us
+            <span className=''></span>
           </h6>
-          <ul className='flex flex-col gap-2.5'>
+          <ul className="flex flex-col gap-2.5">
             <li>
-              <Link href="tel:866-225-2112" className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                866-225-2112
+              Unit 229, 32A Birmingham Road Bromsgrove B61 0DD
+            </li>
+            <li>
+              <Link href="tel:+4401213186768" className="footer_link">
+                +44 01213186768
               </Link>
             </li>
             <li>
-              <Link href="mailto:info@halepathpack.com" target='_blank' className='text-base font-normal text-title_Clr flex items-center gap-2 PoppinsRegular'>
-                <span className='w-[3px] bg-title_Clr h-[11px] block'></span>
-                info@halepathpack.com
+              <Link href="mailto:sales@halepathpackaging.co.uk" target="_blank" className="footer_link">
+                sales@halepathpackaging.co.uk
               </Link>
             </li>
           </ul>
         </div>
       </div>
-      <div className='container mx-auto px-4 flex md:flex-row flex-col md:items-center justify-between gap-7 mt-7'>
+      <div className='hale_container flex md:flex-row flex-col md:items-center justify-between 2xl:gap-7 md:gap-4 gap-7 mt-7'>
         <div>
           <h6 className='text-base font-semibold text-title_Clr mb-6'>
             Where We’re Trusted
           </h6>
-          <div className='flex flex-wrap sm:flex-nowrap gap-5 items-center'>
+          <div className='flex flex-wrap sm:flex-nowrap sm:gap-5 gap-2 items-center'>
             <Image src="/images/google-reviws.png" alt='google-reviws' width={117} height={46} className='md:w-full w-1/3' />
             <Image src="/images/trustpilot.png" alt='trustpilot' width={117} height={59} className='md:w-full w-1/3' />
             <Image src="/images/bbb.png" alt='bbb' width={163} height={34} className='md:w-full w-1/3' />
@@ -213,32 +215,36 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className='container mx-auto px-4 flex md:flex-row flex-col md:items-center justify-between gap-7 mt-7'>
-        <div className='flex gap-5 items-center'>
+      <div className='hale_container flex md:flex-row flex-col md:items-center justify-between 2xl:gap-7 md:gap-4 gap-7 mt-7 py-2.5'>
+        <div className='flex gap-3 items-center'>
           <Link href="/" className='inline-flex'>
             <Image src="/images/logo.png" alt='logo' width={93} height={98} />
           </Link>
-          <ul className='flex items-center gap-5'>
+          <ul className='flex items-center gap-3'>
             <li>
-              <Link href="#" className='text-2xl inline-flex text-[#9C9C9C] hover:text-primary'>
-                <FaFacebookF />
+              <Link href="https://www.facebook.com/profile.php?id=61586916928562" target="_blank" className='text-base inline-flex'>
+                <FaFacebookF className='text-title_Clr hover:text-primary' />
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-2xl inline-flex text-[#9C9C9C] hover:text-primary'>
-                <FaInstagram />
+              <Link href="https://www.instagram.com/halepathpackaging.uk?igsh=MW1tY3pyczV2emdzNw%3D%3D" target="_blank" className='text-base inline-flex'>
+                <FaInstagram className='text-title_Clr hover:text-primary' />
               </Link>
             </li>
             <li>
-              <Link href="#" className='text-2xl inline-flex text-[#9C9C9C] hover:text-primary'>
-                <FaTwitter />
+              <Link href="https://www.tiktok.com/@halepathpackaging?_r=1&_t=ZS-957Rlv6JhMV" target="_blank" className='text-base inline-flex'>
+                <FaTiktok className='text-title_Clr hover:text-primary' />
               </Link>
             </li>
           </ul>
         </div>
-        <div className='flex justify-end items-end'>
-          <p className='md:text-lg text-sm font-normal text-title_Clr'>
-            Copyright 2024 Hale Path Packaging © All Rights Reserved
+        <div className="">
+          <p className="md:text-base text-sm font-normal text-title_Clr md:text-end">
+            © 2026 Hale Path Packaging. All Rights Reserved.
+          </p>
+          <p className="md:text-base text-sm font-normal text-title_Clr md:text-end">
+            <Link href="/privacy-policy">Privacy Policy</Link> | <Link
+              href="/terms-conditions">Terms & Conditions</Link>
           </p>
         </div>
       </div>

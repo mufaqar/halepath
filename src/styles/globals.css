@@ -291,7 +291,7 @@
 }
 
 footer ul li a {
-  @apply sm:text-base text-sm font-normal text-title_Clr flex items-center gap-2 w-fit cursor-pointer break-all leading-none;
+  @apply sm:text-base text-sm font-normal text-title_Clr flex items-center gap-2 w-fit cursor-pointer break-all md:leading-none;
 }
 
 .cat_image {

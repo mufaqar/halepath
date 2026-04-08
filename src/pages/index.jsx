@@ -62,8 +62,13 @@ export default function Home({ testimonialsRes, faqRes, categoriesRes, productsR
             data={categoriesRes} />
         </section>
         <WhatWeDo featureproductsRes={featureproductsRes} />
-        <TestimonialAndFaq testimonialsRes={testimonialsRes} faqRes={faqRes} />
-        <Career />
+        <TestimonialAndFaq testimonialsRes={testimonialsRes} />
+        <Faqs faqRes={faqRes} />
+        <section class="px-4">
+          {/* <Image src="/images/cta-ban.png" alt="about us"
+            className="w-full"> */}
+          <Image src="/images/cta-ban.png" alt="about us" width={1920} height={1080} className='w-full' />
+        </section>
         <Instagram />
       </main>
     </>

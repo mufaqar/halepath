@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import { FaStar, FaRegStar, FaStarHalfAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { FaCircleCheck } from "react-icons/fa6";
 
-const TestimonialAndFaq = ({ faqRes, testimonialsRes }: any) => {
+const TestimonialAndFaq = ({ testimonialsRes }: any) => {
   const settings = {
     slidesToShow: 2,
     slidesToScroll: 1,
@@ -20,7 +20,7 @@ const TestimonialAndFaq = ({ faqRes, testimonialsRes }: any) => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 3,
         }
       },
@@ -74,10 +74,8 @@ const TestimonialAndFaq = ({ faqRes, testimonialsRes }: any) => {
 
               return (
                 <div key={idx} className="px-2 w-full h-full">
-                  <div className="w-full bg-white p-4 border shadow border-black/15 h-full flex flex-col justify-between">
-
+                  <div className="w-full bg-white p-4 border shadow border-black/15 h-full flex flex-col justify-between min-h-[242px] sm:max-h-[242px]">
                     <div className="w-full">
-
                       <div className="flex items-center gap-2 mb-1">
                         <h3 className="text-base font-normal text-title_Clr">
                           {item.title}
@@ -102,28 +100,22 @@ const TestimonialAndFaq = ({ faqRes, testimonialsRes }: any) => {
                             </li>
                           ))}
                         </ul>
-                      </div>
-
-                      <p className="text-base font-normal text-title_Clr mb-1">
+                    </div>
+                      <p className="text-base font-normal text-title_Clr mb-1 flex items-center gap-1.5">
                         <FaCircleCheck className="text-sm text-[#FFAE00]" />
                         {item.customer_type}
                       </p>
-
                       <p className="text-base font-normal text-title_Clr italic mb-5">
                         {item.content}
                       </p>
-
-                      <p className="text-base font-normal text-title_Clr mb-5">
-                       <FaCircleCheck className="text-sm text-[#FFAE00]" />
+                      <p className="text-base font-normal text-title_Clr mb-5 flex items-center gap-1.5">
+                        <FaCircleCheck className="text-sm text-[#FFAE00]" />
                         {item.incentivized}
                       </p>
-
                       <p className="text-sm font-normal text-title_Clr">
                         {item.address}
                       </p>
-
                     </div>
-
                   </div>
                 </div>
               );
