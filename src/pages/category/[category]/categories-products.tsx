@@ -15,20 +15,23 @@ const CategoriesProducts = ({ productsRes }: any) => {
         <h2 className="font-extrabold text-4xl text-center">
           Explore Packaging Solutions
         </h2>
+        <p>
+          Display boxes in the UK are manufactured using high-quality cardboard, Kraft paper, and rigid materials. Provided employing eco-friendly, biodegradable, and sustainable materials to meet the green standard
+        </p>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 mt-16 gap-x-4">
+      <div className="hale_container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {productsRes?.slice(0, visibleCount).map((item: any, idx: number) => (
-          <div key={idx} className="">
+          <div key={idx} className="p-3">
             <Link href={`/${item?.slug.current}`}>
               <Image
                 src={item?.gallery[0]?.asset?.url}
                 alt={item?.title || "Product Image"}
                 width={363}
-                height={369}
-                className="w-full"
+                height={375}
+                className="maskimage img-full"
               />
             </Link>
-            <h4 className="text-xl text-center my-4">
+            <h4 className="text-xl font-normal text-title_Clr text-center flex w-fit mx-auto mt-8">
               <Link href={`/${item?.slug.current}`}>
                 {item?.title}
               </Link>

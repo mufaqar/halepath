@@ -14,6 +14,7 @@ import {
 } from "../../../../sanity/queries";
 import { PortableText } from "@portabletext/react";
 import CategoriesProducts from "./categories-products";
+import FormTabs from "@/components/formTabs";
 
 export default function Category({ categoryRes, productsRes }: any) {
   const slider = React.useRef<any>(null);
@@ -32,7 +33,7 @@ export default function Category({ categoryRes, productsRes }: any) {
       </Head>
 
       <main className="py-10 lg:py-20">
-        <div className="container mx-auto px-3 grid items-center md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 xl:gap-[70px]">
+        <div className="hale_container grid items-center md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 xl:gap-[70px]">
           <div className="h-full">
             <Image
               src={
@@ -42,7 +43,7 @@ export default function Category({ categoryRes, productsRes }: any) {
               alt=""
               width={651}
               height={375}
-              className="w-full rounded-[22px] h-full object-cover"
+              className="img-full rounded-[22px]"
             />
           </div>
           <div>
@@ -50,27 +51,18 @@ export default function Category({ categoryRes, productsRes }: any) {
               {categoryRes?.name}
             </h4>
             <p className="xl:text-[19px] mt-4">{categoryRes?.excerpt}</p>
+            <FormTabs productName={categoryRes?.name} productPrice={0} />
           </div>
         </div>
       </main>
 
-      <section>
-        <div className="container mx-auto px-3 ">
-          <p className="font-extrabold text-4xl text-center">
-            { categoryRes?.product_title ? categoryRes?.product_title : "Get Custom Quote" }
-          </p>
-        </div>
-        <Qoute_Form />
-      </section>
-
-      <CategoriesProducts productsRes={productsRes}/>
+      <CategoriesProducts productsRes={productsRes} />
 
       {categoryRes?.grid?.map((item: any, idx: number) => (
         <section className="my-20" key={idx}>
           <div
-            className={`container md:flex items-center gap-5 md:gap-0 mx-auto px-3 ${
-              idx % 2 === 0 && "flex-row-reverse"
-            }`}
+            className={`container md:flex items-center gap-5 md:gap-0 mx-auto px-3 ${idx % 2 === 0 && "flex-row-reverse"
+              }`}
           >
             <figure className="md:w-1/2">
               <Image
