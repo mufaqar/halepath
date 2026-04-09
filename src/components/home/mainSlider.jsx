@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import Link from 'next/link'
 import React from 'react'
+import { FaChevronRight } from "react-icons/fa";
 
 export default function MainSlider() {
   return (
@@ -24,7 +25,7 @@ export default function MainSlider() {
                 </p>
 
                 <Link href="/about-us" className="btn_primary">
-                  Enquire Now <i className="fa fa-chevron-right"></i>
+                  Enquire Now <FaChevronRight />
                 </Link>
               </div>
             </div>

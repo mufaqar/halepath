@@ -56,6 +56,11 @@ export default function Category({ categoryRes, productsRes }: any) {
         </div>
       </main>
       <CategoriesProducts productsRes={productsRes} />
+      <section className="bg-[#F5F5F5] py-20 mt-28">
+        <div className="container mx-auto px-3 text-center">
+          <Faqs col={2} data={categoryRes.faqs} />
+        </div>
+      </section>
     </>
   );
 }

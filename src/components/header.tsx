@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { NavLinks } from "@/const/navlinks";
 import { BsChevronDown } from "react-icons/bs";
-import { FaBars, FaCaretDown, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaBars, FaCaretDown, FaChevronDown, FaEnvelope, FaMapMarkerAlt, FaPhone, FaPhoneAlt } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import MegaMenu from "./mega-menu";
 import { client } from "../../sanity/lib/client";
@@ -48,14 +48,14 @@ function Header() {
             <li>
               <Link href="tel:+4401213186768"
                 className="text-sm font-normal text-white flex items-center gap-1 px-2 cursor-pointer">
-                <i className="fas fa-phone-alt"></i>
+                <FaPhone />
                 01213186768
               </Link>
             </li>
             <li>
               <Link href="mailto:sales@halepathpackaging.co.uk"
                 className="text-sm font-normal text-white flex items-center gap-1 px-2 cursor-pointer">
-                <i className="fas fa-envelope"></i>
+                <FaEnvelope />
                 sales@halepathpackaging.co.uk
               </Link>
             </li>
@@ -93,11 +93,11 @@ function Header() {
           </div>
           {/* Buttons  */}
           <div className="xl:w-1/4 sm:w-1/3 hidden lg:flex gap-5 justify-end">
-            <Link href="<?php echo home_url('/contact-us'); ?>"
+            <Link href="/contact-us"
               className="border-2 border-secondary px-5 py-2 text-[13px] uppercase font-medium text-secondary rounded-full hover:bg-secondary hover:text-white">
               Contact Us
             </Link>
-            <Link href="<?php echo home_url('/get-quote-now'); ?>"
+            <Link href="/get-quote-now"
               className="border-2 border-secondary bg-secondary px-5 py-2 text-[13px] uppercase font-medium text-white rounded-full hover:bg-transparent hover:text-secondary">
               Get Quote Now
             </Link>
@@ -136,16 +136,17 @@ function Header() {
                   >
                     <Link
                       href={`${item?.link}`}
-                      className="text-[15px] font-medium uppercase text-title_Clr group-hover:text-primary">
+                      className={` ${megaMenu === item?.id && "main_active"} group text-sm font-normal capitalize text-title_Clr hover:text-white hover:bg-secondary px-2 py-2 rounded-[30px] flex items-center`}>
                       {item?.name}
+
+                      {item?.submenu && (
+                        <span className="leading-[0]">
+                          <FaChevronDown className="ml-1 inline-block text-sm font-normal text-title_Clr group-hover:text-white" />
+                        </span>
+                      )}
                     </Link>
-                    {item?.submenu && (
-                      <span className="leading-[0]">
-                        <FaCaretDown className="ml-1 inline-block text-sm font-normal text-title_Clr group-hover:text-primary" />
-                      </span>
-                    )}
                     {item?.submenu && <div onMouseLeave={() => setMegaMenu(null)} className={`${megaMenu === item?.id ? "block left-1/2 md:-translate-x-1/2 md:absolute 2xl:top-[74px]  top-[94px] hale_container static z-50 " : "hidden"}`}>
-                      <MegaMenu setMegaMenu={setMegaMenu} categories={categories} />
+                      <MegaMenu setMegaMenu={setMegaMenu} subMenu={item?.submenu} />
                     </div>}
                   </li>
                 );
