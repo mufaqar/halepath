@@ -28,27 +28,27 @@
 
 @font-face {
   font-family: 'PoppinsBold';
-  src: url('/public/fonts/Poppins-Bold.ttf');
+  src: url('/fonts/Poppins-Bold.ttf');
 }
 
 @font-face {
   font-family: 'PoppinsMedium';
-  src: url('/public/fonts/Poppins-Medium.ttf');
+  src: url('/fonts/Poppins-Medium.ttf');
 }
 
 @font-face {
   font-family: 'PoppinsRegular';
-  src: url('/public/fonts/Poppins-Regular.ttf');
+  src: url('/fonts/Poppins-Regular.ttf');
 }
 
 @font-face {
   font-family: 'EffraMedium';
-  src: url('/public/fonts/Effra_Trial_Rg.ttf');
+  src: url('/fonts/Effra_Trial_Rg.ttf');
 }
 
 @font-face {
   font-family: 'SourceSansProRegular';
-  src: url('/public/fonts/SourceSansPro-Regular.ttf');
+  src: url('/fonts/SourceSansPro-Regular.ttf');
 }
 
 
@@ -443,8 +443,8 @@ footer ul li a span.marker {
 }
 
 .maskimage {
-  mask-image: url('/public/masking.png');
-  -webkit-mask-image: url('/public/masking.png');
+  mask-image: url('/images/masking.png');
+  -webkit-mask-image: url('/images/masking.png');
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
 }

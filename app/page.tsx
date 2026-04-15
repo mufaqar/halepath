@@ -1,6 +1,7 @@
 import BannerPageMiddel from "@/components/banner/banner";
 import CategorySlider from "@/components/category/categorySlider";
 import Cta from "@/components/category/cta";
+import CTASECTION from "@/components/CTA";
 import Brands from "@/components/home/brands";
 import Get_Qoute from "@/components/home/get-qoute";
 import HowIt_work from "@/components/home/howit-work";
@@ -34,7 +35,7 @@ export default async function Home() {
         <MainSlider />
         <MainContent />
         {/* <CategorySlider categoriesRes={categoriesRes} /> */}
-        <Cta />
+        <CTASECTION />
 
         <ProductSlider
           productsRes={productsRes}
@@ -56,7 +57,7 @@ export default async function Home() {
           subtitle="Flexible Solutions, Unmatched Quality – Packaging That Sells Your Brand."
           data={productsRes}
         />
-        <Cta />
+        <CTASECTION />
         <SliderFull />
         <section className="bg-[#EAF6F9]">
           <Packaging_Style

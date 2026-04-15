@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const CAT = () => {
+const CTASECTION = () => {
   return (
     <>
       <section className="bg-secondary py-7 mb-6">
@@ -28,4 +28,4 @@ const CAT = () => {
   );
 };
 
-export default CAT;
+export default CTASECTION;

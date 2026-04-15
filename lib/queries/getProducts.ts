@@ -24,7 +24,7 @@ export const GET_PRODUCT_BY_SLUG = gql`
 ---------------------------- */
 export const GET_PRODUCTS = gql`
   query GetProducts {
-    products(first: 1000) {
+    products(first: 10) {
       nodes {
         name
         slug
