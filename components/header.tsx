@@ -1,10 +1,9 @@
 'use client';
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLinks } from "@/const/navlinks";
-import { BsChevronDown } from "react-icons/bs";
-import { FaBars, FaCaretDown, FaChevronDown, FaEnvelope, FaMapMarkerAlt, FaPhone, FaPhoneAlt } from "react-icons/fa";
+import { FaBars, FaChevronDown, FaEnvelope, FaPhone, } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import MegaMenu from "./mega-menu";
 
@@ -33,13 +32,11 @@ function Header() {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
-
-  useEffect(() => {
-    (async () => {
-      const categories = await client.fetch(QNavcategories);
-      setCategories(categories);
-    })();
-  }, []);
+  //   (async () => {
+  //     const categories = await client.fetch(QNavcategories);
+  //     setCategories(categories);
+  //   })();
+  // }, []);
 
   return (
     <>
@@ -154,11 +151,11 @@ function Header() {
                 );
               })}
             </ul>
-          </nav> 
+          </nav>
         </div>
         {openNav && (
-              <MobileMenu megaMenus={NavLinks} />
-            )}
+          <MobileMenu megaMenus={NavLinks} />
+        )}
       </header>
     </>
   );
