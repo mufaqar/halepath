@@ -1,0 +1,60 @@
+'use client';
+
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+
+const CategoriesProducts = ({ productsRes }: any) => {
+  const [visibleCount, setVisibleCount] = useState(15);
+
+  console.log("Products in Category:", productsRes);
+
+  const loadMore = () => {
+    setVisibleCount((prevCount) => prevCount + 10);
+  };
+
+  return (
+    <section className="mt-20 container mx-auto px-3">
+      <div>
+        <h2 className="font-extrabold text-4xl text-center">
+          Explore Packaging Solutions
+        </h2>
+        <p>
+          Display boxes in the UK are manufactured using high-quality cardboard, Kraft paper, and rigid materials. Provided employing eco-friendly, biodegradable, and sustainable materials to meet the green standard
+        </p>
+      </div>
+      <div className="hale_container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {productsRes?.map((item: any, idx: number) => (
+          <div key={idx} className="p-3">
+            <Link href={`/product/${item?.slug}`} className="inline-flex h-fit">
+              <Image
+                src={item?.image.sourceUrl || "https://via.placeholder.com/363x375?text=No+Image"}
+                alt={item?.name || "Product Image"}
+                width={363}
+                height={375}
+                className="maskimage img-full"
+              />
+            </Link>
+            <h4 className="text-xl font-normal text-title_Clr text-center flex w-fit mx-auto mt-8">
+              <Link href={`/product/${item?.slug}`}>
+                {item?.name}
+              </Link>
+            </h4>
+          </div>
+        ))}
+      </div>
+      {/* {visibleCount < productsRes?.length && (
+        <div className="text-center mt-6">
+          <button
+            onClick={loadMore}
+            className="bg-primary hover:bg-transparent px-5 py-2.5 text-[15px] uppercase font-medium text-white hover:text-primary rounded-full border-2 border-primary"
+          >
+            Load More
+          </button>
+        </div>
+      )} */}
+    </section>
+  );
+};
+
+export default CategoriesProducts;

@@ -1,5 +1,5 @@
 import client from "@/lib/apollo-client";
-import { GET_CATEGORIES, GET_PRODUCT_BY_SLUG, GET_PRODUCTS, GET_PRODUCTS_BY_CATEGORY } from "../queries/getProducts";
+import { GET_CATEGORIES, GET_CATEGORY_BY_SLUG, GET_PRODUCT_BY_SLUG, GET_PRODUCTS, GET_PRODUCTS_BY_CATEGORY } from "../queries/getProducts";
 
 export async function getProductBySlug(slug: string) {
   const { data } = await client.query<any>({ query: GET_PRODUCT_BY_SLUG, variables: { slug } });
@@ -20,6 +20,14 @@ export async function getCategoriesData() {
   return data?.productCategories?.nodes || [];
 }
 export async function getCategoryBySlug(slug: string) {
-  const { data } = await client.query<any>({ query: GET_CATEGORIES });
-  return data?.productCategories?.nodes?.find((cat: any) => cat.slug === slug) || null;
+  try {
+    const { data } = await client.query<any>({
+      query: GET_CATEGORY_BY_SLUG,
+      variables: { slug }
+    });
+    return data?.productCategory || null;
+  } catch (error) {
+    console.error("Error fetching category:", error);
+    return null;
+  }
 }

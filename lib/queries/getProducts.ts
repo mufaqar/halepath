@@ -64,8 +64,8 @@ export const GET_PRODUCTS = gql`
    PRODUCTS BY CATEGORY
 ---------------------------- */
 export const GET_PRODUCTS_BY_CATEGORY = gql`
-  query GetProductsByCategory($slug: String!) {
-    products(first: 20, where: { category: $slug }) {
+  query GetProductsByCategory($category: String = "branded-finishes") {
+    products(first: 20, where: { category: $category }) {
       nodes {
         id
         name
@@ -103,8 +103,8 @@ export const GET_CATEGORIES = gql`
    ⭐ SINGLE CATEGORY BY SLUG (FIXED)
 ---------------------------- */
 export const GET_CATEGORY_BY_SLUG = gql`
-  query GetCategoryBySlug($slug: ID!) {
-    productCategory(id: $slug, idType: SLUG) {
+  query GetCategoryBySlug($slug: ID = "branded-finishes") {
+    productCategory(idType: SLUG, id: $slug) {
       id
       name
       slug

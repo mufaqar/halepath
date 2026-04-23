@@ -15,7 +15,7 @@ function Footer() {
           <ul id="menu-company" className="flex flex-col gap-2.5">
             <li className="">
               <Link
-                href="https://halepathpackaging.co.uk/about-us/"
+                href="/about-us/"
                 className="footer_link"
               >
                 <span className="marker"></span>About Us
@@ -23,7 +23,7 @@ function Footer() {
             </li>
             <li className="">
               <Link
-                href="https://halepathpackaging.co.uk/terms-conditions/"
+                href="/terms-conditions/"
                 className="footer_link"
               >
                 <span className="marker"></span>Terms &amp; Conditions
@@ -31,7 +31,7 @@ function Footer() {
             </li>
             <li className="">
               <Link
-                href="https://halepathpackaging.co.uk/return-and-refund-policy/"
+                href="/return-and-refund-policy/"
                 className="footer_link"
               >
                 <span className="marker"></span>Return and Refund Policy
@@ -39,7 +39,7 @@ function Footer() {
             </li>
             <li className="">
               <Link
-                href="https://halepathpackaging.co.uk/shipping-policy/"
+                href="/shipping-policy/"
                 className="footer_link"
               >
                 <span className="marker"></span>Shipping Policy
@@ -48,7 +48,7 @@ function Footer() {
             <li className="">
               <Link
                 rel="privacy-policy"
-                href="https://halepathpackaging.co.uk/privacy-policy/"
+                href="/privacy-policy/"
                 className="footer_link"
               >
                 <span className="marker"></span>Privacy Policy
@@ -61,7 +61,7 @@ function Footer() {
             </li>
             <li className="">
               <Link
-                href="https://halepathpackaging.co.uk/contact-us/"
+                href="/contact-us/"
                 className="footer_link"
               >
                 <span className="marker"></span>Contact Us
@@ -69,7 +69,7 @@ function Footer() {
             </li>
             <li className="">
               <Link
-                href="https://halepathpackaging.co.uk/blog/"
+                href="/blog/"
                 className="footer_link"
               >
                 <span className="marker"></span>Blog
@@ -133,7 +133,7 @@ function Footer() {
           <ul id="menu-packaging-products" className="flex flex-col gap-2.5">
             <li className="">
               <Link
-                href="https://halepathpackaging.co.uk/custom-rigid-boxes/"
+                href="/custom-rigid-boxes/"
                 className="footer_link"
               >
                 <span className="marker"></span>Rigid Boxes
@@ -141,7 +141,7 @@ function Footer() {
             </li>
             <li className="">
               <Link
-                href="https://halepathpackaging.co.uk/kraft-boxes/"
+                href="/kraft-boxes/"
                 className="footer_link"
               >
                 <span className="marker"></span>Kraft Boxes
@@ -149,7 +149,7 @@ function Footer() {
             </li>
             <li className="">
               <Link
-                href="https://halepathpackaging.co.uk/cardboard-boxes/"
+                href="/cardboard-boxes/"
                 className="footer_link"
               >
                 <span className="marker"></span>Cardboard Boxes
@@ -157,7 +157,7 @@ function Footer() {
             </li>
             <li className="">
               <Link
-                href="https://halepathpackaging.co.uk/corrugated-boxes/"
+                href="/corrugated-boxes/"
                 className="footer_link"
               >
                 <span className="marker"></span>Corrugated Boxes
@@ -203,7 +203,7 @@ function Footer() {
             </li>
             <li className="">
               <Link
-                href="https://halepathpackaging.co.uk/get-quote-now/"
+                href="/get-quote-now/"
                 className="footer_link"
               >
                 <span className="marker"></span>Request a Quote

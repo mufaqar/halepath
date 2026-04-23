@@ -57,21 +57,17 @@ export default function CategorySlider({ categoriesRes }:any) {
       <div className="slider-container">
         <Slider {...settings}>
           {categoriesRes.map((item:any, idx:number) => {
-            const link =
-              item?._type === "products"
-                ? `/${item?.slug?.current}`
-                : `/category/${item?.slug?.current}`;
+            const link = `/category/${item?.slug}`;
 
             return (
               <div key={idx} className="w-full p-2">
                 <Link href={link}>
                   <Image
                     src={
-                      item?.feature_image?.asset?.url ||
-                      item?.image?.asset?.url ||
+                      item?.image?.sourceUrl ||
                       "/placeholder.png"
                     }
-                    alt={item?.name || item?.title || "category"}
+                    alt={item?.name || "category"}
                     width={363}
                     height={375}
                     className="cat_image img-full"
@@ -79,7 +75,7 @@ export default function CategorySlider({ categoriesRes }:any) {
                 </Link>
 
                 <Link href={link} className="box_link">
-                  {item?.name || item?.title}
+                  {item?.name}
                 </Link>
               </div>
             );

@@ -1,0 +1,74 @@
+import {
+  getCategoryBySlug,
+  getProductsByCategory,
+} from "@/lib/data/getProductsData";
+import Image from "next/image";
+import Link from "next/link";
+import ProductCard from "@/components/products/ProductCard";
+import CategoriesProducts from "@/components/category/Category-Products";
+import FormTabs from "@/components/formTabs";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const category = await getCategoryBySlug(params.slug);
+
+  return {
+    title: category?.name ? `${category.name} - Products` : "Category Page",
+    description: `Browse products in the ${category?.name || "category"} category`,
+  };
+}
+
+export default async function CategoryPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const category = await getCategoryBySlug(params.slug);
+  const products = await getProductsByCategory(params.slug);
+
+  console.log("Category Data:", products);
+
+  if (!category) {
+    return (
+      <div className="container mx-auto px-4 py-16 text-center">
+        <h1 className="text-3xl font-bold mb-4">Category Not Found</h1>
+        <p className="text-gray-600 mb-8">
+          The requested category could not be found.
+        </p>
+        <Link href="/" className="text-blue-600 hover:underline">
+          Return to Home
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <main className="py-10 lg:py-20">
+        <div className="hale_container grid items-center md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 xl:gap-[70px]">
+          <div className="h-full">
+            <Image
+              src={
+                category?.image?.sourceUrl ||
+                "https://via.placeholder.com/651x375?text=No+Image"
+              }
+              alt=""
+              width={651}
+              height={375}
+              className="img-full rounded-[22px]"
+            />
+          </div>
+          <div>
+            <h4 className="font-bold text-3xl lg:text-5xl">{category?.name}</h4>
+            <p className="xl:text-[19px] mt-4">{category?.excerpt}</p>
+            <FormTabs productName={category?.name} productPrice={650} />
+          </div>
+        </div>
+      </main>
+      <CategoriesProducts productsRes={products} />
+    </>
+  );
+}

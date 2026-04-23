@@ -34,7 +34,7 @@ export default async function Home() {
       <main className={``}>
         <MainSlider />
         <MainContent />
-        {/* <CategorySlider categoriesRes={categoriesRes} /> */}
+        <CategorySlider categoriesRes={categoriesRes} />
         <CTASECTION />
 
         <ProductSlider

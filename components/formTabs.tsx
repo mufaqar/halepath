@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaClock, FaPencilAlt, FaTruck } from "react-icons/fa";
@@ -77,7 +76,7 @@ export default function FormTabs({
                         }`}
                     onClick={() => setActiveTab("tab1")}
                 >
-                    Request a Quote
+                    Standard Sizes
                 </button>
                 <button
                     type="button"
@@ -85,87 +84,13 @@ export default function FormTabs({
                         }`}
                     onClick={() => setActiveTab("tab2")}
                 >
-                    Standard Sizes
+                    Request a Quote
                 </button>
             </div>
 
             <div className="tab-content mt-6">
                 {/* TAB 1 */}
                 <div className={`${activeTab === "tab1" ? "block" : "hidden"}`}>
-                    <div className={quoteFormClass}>
-                        <form
-                            onSubmit={handleSubmit(onSubmit)}
-                            className="grid w-full gap-2 items-center px-3 sm:px-5 py-6 md:py-10"
-                        >
-                            <div className="w-full gap-2.5">
-
-                                <div className="grid grid-cols-2 gap-2.5">
-                                    <input {...register("name")} className="hale_input" placeholder="Your Name" required />
-                                    <input {...register("phone")} className="hale_input" placeholder="Phone Number" />
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-2.5 mt-2.5">
-                                    <input {...register("email")} className="hale_input" placeholder="Email Address" required />
-                                    <input value={productName} {...register("product")} className="hale_input" readOnly />
-                                </div>
-
-                                <div className="grid grid-cols-3 gap-2 mt-2.5">
-                                    <input {...register("length")} type="nummber" className="hale_input" placeholder="Length" required />
-                                    <input {...register("width")} type="nummber" className="hale_input" placeholder="Width" required />
-                                    <input {...register("depth")} type="nummber" className="hale_input" placeholder="Depth" required />
-                                </div>
-
-                                <div className="grid grid-cols-3 gap-2 mt-2.5">
-                                    <div className="relative">
-                                        <select {...register("colors")} className="hale_input h-full appearance-none" required>
-                                            <option value="">Colors</option>
-                                            <option value="1">1 color</option>
-                                        </select>
-                                        <RiArrowDownSLine className="text-xl absolute right-4 top-1/2 -translate-y-1/2" />
-                                    </div>
-
-                                    <div className="relative">
-                                        <select {...register("unit")} className="hale_input h-full appearance-none" required>
-                                            <option value="">Select Unit</option>
-                                            <option value="inches">Inches</option>
-                                        </select>
-                                        <RiArrowDownSLine className="text-xl absolute right-4 top-1/2 -translate-y-1/2" />
-                                    </div>
-
-                                    <div className="relative">
-                                        <select {...register("stock")} className="hale_input h-full appearance-none" required>
-                                            <option value="">Select Stock</option>
-                                            <option value="1">1</option>
-                                        </select>
-                                        <RiArrowDownSLine className="text-xl absolute right-4 top-1/2 -translate-y-1/2" />
-                                    </div>
-                                </div>
-
-                                <textarea {...register("message")} className="hale_input !rounded-[20px] h-[141px] mt-2.5" placeholder="Write Your Message..." required />
-
-                                <div className="flex gap-2 mt-3 items-center">
-                                    <input type="checkbox" {...register("agree")} required />
-                                    <label className="cursor-pointer text-sm">I Agree that my data is <strong>collected and Stored.</strong></label>
-                                </div>
-
-                            </div>
-
-                            <p style={{ marginTop: "20px", fontSize: "16px" }}>
-                                <strong>Estimated Price:</strong> £{productPrice}
-                            </p>
-
-                            <button type="submit" className="btn_secondry w-full">
-                                {loading ? "Sending..." : "SUBMIT"}
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-                {/* TAB 2 */}
-                <div className={`${activeTab === "tab2" ? "block" : "hidden"}`}>
-                    <h2 className="md:text-[28px] text-2xl font-bold text-title_Clr">
-                        Get Custom Quote
-                    </h2>
                     <div className={quoteFormClass}>
                         <form
                             onSubmit={handleSubmit(onSubmit)}
@@ -259,7 +184,81 @@ export default function FormTabs({
                             </div>
                         </form>
                     </div>
+                </div>
 
+                {/* TAB 2 */}
+                <div className={`${activeTab === "tab2" ? "block" : "hidden"}`}>
+                    <h2 className="md:text-[28px] text-2xl font-bold text-title_Clr">
+                        Get Custom Quote
+                    </h2>
+
+                    <div className={quoteFormClass}>
+                        <form
+                            onSubmit={handleSubmit(onSubmit)}
+                            className="grid w-full gap-2 items-center px-3 sm:px-5 py-6 md:py-10"
+                        >
+                            <div className="w-full gap-2.5">
+
+                                <div className="grid grid-cols-2 gap-2.5">
+                                    <input {...register("name")} className="hale_input" placeholder="Your Name" required />
+                                    <input {...register("phone")} className="hale_input" placeholder="Phone Number" />
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-2.5 mt-2.5">
+                                    <input {...register("email")} className="hale_input" placeholder="Email Address" required />
+                                    <input value={productName} {...register("product")} className="hale_input" readOnly />
+                                </div>
+
+                                <div className="grid grid-cols-3 gap-2 mt-2.5">
+                                    <input {...register("length")} type="nummber" className="hale_input" placeholder="Length" required />
+                                    <input {...register("width")} type="nummber" className="hale_input" placeholder="Width" required />
+                                    <input {...register("depth")} type="nummber" className="hale_input" placeholder="Depth" required />
+                                </div>
+
+                                <div className="grid grid-cols-3 gap-2 mt-2.5">
+                                    <div className="relative">
+                                        <select {...register("colors")} className="hale_input h-full appearance-none" required>
+                                            <option value="">Colors</option>
+                                            <option value="1">1 color</option>
+                                        </select>
+                                        <RiArrowDownSLine className="text-xl absolute right-4 top-1/2 -translate-y-1/2" />
+                                    </div>
+
+                                    <div className="relative">
+                                        <select {...register("unit")} className="hale_input h-full appearance-none" required>
+                                            <option value="">Select Unit</option>
+                                            <option value="inches">Inches</option>
+                                        </select>
+                                        <RiArrowDownSLine className="text-xl absolute right-4 top-1/2 -translate-y-1/2" />
+                                    </div>
+
+                                    <div className="relative">
+                                        <select {...register("stock")} className="hale_input h-full appearance-none" required>
+                                            <option value="">Select Stock</option>
+                                            <option value="1">1</option>
+                                        </select>
+                                        <RiArrowDownSLine className="text-xl absolute right-4 top-1/2 -translate-y-1/2" />
+                                    </div>
+                                </div>
+
+                                <textarea {...register("message")} className="hale_input !rounded-[20px] h-[141px] mt-2.5" placeholder="Write Your Message..." required />
+
+                                <div className="flex gap-2 mt-3 items-center">
+                                    <input type="checkbox" {...register("agree")} required />
+                                    <label className="cursor-pointer text-sm">I Agree that my data is <strong>collected and Stored.</strong></label>
+                                </div>
+
+                            </div>
+
+                            <p style={{ marginTop: "20px", fontSize: "16px" }}>
+                                <strong>Estimated Price:</strong> £{productPrice}
+                            </p>
+
+                            <button type="submit" className="btn_secondry w-full">
+                                {loading ? "Sending..." : "SUBMIT"}
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
