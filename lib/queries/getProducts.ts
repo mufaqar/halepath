@@ -4,19 +4,19 @@ import { gql } from "@apollo/client";
    PRODUCT BY SLUG
 ---------------------------- */
 export const GET_PRODUCT_BY_SLUG = gql`
-  query GetProductBySlug($slug: ID!) {
-    product(id: $slug, idType: SLUG) {
-      id
-      name
-      slug
-      image {
-        sourceUrl
-      }
-      ... on SimpleProduct {
-        price
-      }
+ query GetProductBySlug($id: ID = "standing-banner-printing") {
+  product(id: $id, idType: SLUG) {
+    id
+    name
+    slug
+    image {
+      sourceUrl
+    }
+    ... on SimpleProduct {
+      price
     }
   }
+}
 `;
 
 /* ---------------------------

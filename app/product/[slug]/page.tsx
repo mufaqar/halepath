@@ -1,3 +1,8 @@
+import Faqs from "@/components/faqs/faqs";
+import ImageCarousel from "@/components/image-crousel/ImageCarousel";
+import Banner from "@/components/products/banner";
+import ProductTabs from "@/components/products/productTabs";
+import CenterSlider from "@/components/slider/center-slider";
 import { getProductBySlug } from "@/lib/data/getProductsData";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,11 +32,35 @@ export default async function ProductPage({ params }: { params: { slug: string }
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Breadcrumbs */}
-      <nav className="mb-6 text-sm text-gray-600">
-        <Link href="/" className="hover:underline">Home</Link> / <Link href={`/category/sample-category`} className="hover:underline">Category</Link> / <span>{product.name}</span>
-      </nav>
+    <>
+      
+
+       <main>
+        <Banner data={product} />
+        <section className="mt-20 w-full mx-auto px-3 lg:px-0 overflow-hidden">
+          <h2 className="text-2xl text-center mb-8 sm:text-3xl md:text-5xl font-bold">
+            {product?.title} Gallery
+          </h2>
+          {/* <ImageCarousel data={product?.gallery} /> */}
+        </section>
+        <ProductTabs />
+        <section className="bg-[#F5F5F5] py-20 mt-28">
+          <div className="container mx-auto px-3 text-center">
+            <Faqs col={2} data={product?.faqs} />
+          </div>
+        </section>
+        <section className="mt-20">
+          <div className="container mx-auto px-4">
+            <span className="md:text-[51px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-4">
+              Related Products
+            </span>
+          </div>
+          <CenterSlider data={product} />
+        </section>
+      </main>
+
+
+
 
       <div className="flex flex-col md:flex-row gap-8">
         {/* Product Image */}
@@ -84,6 +113,6 @@ export default async function ProductPage({ params }: { params: { slug: string }
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

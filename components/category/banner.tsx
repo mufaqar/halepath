@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
 import Qoute_Form from './qoute-form'
-import { urlForImage } from '../../../sanity/lib/image'
 
 function Banner({ data }: any) {
     return (

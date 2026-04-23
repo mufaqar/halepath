@@ -3,7 +3,9 @@ import Link from "next/link";
 import React from "react";
 
 const MaskingImage = ({ data }: any) => {
-  const link = data?._type === "products" ? `/${data?.slug.current}` : `/category/${data?.slug.current}`;
+
+  console.log("data", data);
+  const link = data?._type === "products" ? `/${data?.slug}` : `/product/${data?.slug}`;
 
   console.log("data", data);
 

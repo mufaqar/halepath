@@ -1,22 +1,17 @@
 "use client";
 
 import React, { useRef, useState } from 'react';
-import { urlForImage } from '../../../sanity/lib/image';
 import Slider from 'react-slick';
 import Image from 'next/image';
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 
-const ImageCarousel = ({ data }) => {
+const ImageCarousel = ({ data }:any) => {
   const sliderRef = useRef(null);
   // ✅ LIGHTBOX STATE
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // ✅ CREATE IMAGE ARRAY
-  const images = data?.map(
-    (img) => urlForImage(img?.asset?._ref)?.url()
-  );
-
+  
   const settings = {
     slidesToShow: 5,
     slidesToScroll: 1,

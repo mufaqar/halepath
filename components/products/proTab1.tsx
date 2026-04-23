@@ -1,10 +1,7 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import CenterSlider from "../slider/center-slider";
-import { client } from "../../../sanity/lib/client";
-import { Qproducts } from "../../../sanity/queries";
 import Faqs from "../faqs/faqs";
 import ProReviews from "./proReviews";
 
@@ -107,18 +104,8 @@ const ProTab1
                         <Faqs col={2} data={faqs} />
                     </div>
                 </section>
-                <section className="mt-20">
-                    <div className="hale_container">
-                        <h2 className="md:text-[51px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-4">
-                            Related Products
-                        </h2>
-                    </div>
-                    <CenterSlider data={relatedProducts} />
-                </section>
-            </>
+                        </>
         );
     };
 
 export default ProTab1;
-
-const productsRes = await client.fetch(Qproducts);

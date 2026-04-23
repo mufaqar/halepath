@@ -7,6 +7,7 @@ import Link from "next/link";
 import ProductCard from "@/components/products/ProductCard";
 import CategoriesProducts from "@/components/category/Category-Products";
 import FormTabs from "@/components/formTabs";
+import Faqs from "@/components/faqs/faqs";
 
 export async function generateMetadata({
   params,
@@ -69,6 +70,7 @@ export default async function CategoryPage({
         </div>
       </main>
       <CategoriesProducts productsRes={products} />
+      <Faqs data={category?.faqs} col={2} />
     </>
   );
 }

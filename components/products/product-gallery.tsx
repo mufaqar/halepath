@@ -1,9 +1,11 @@
+'use client'
+
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Image from 'next/image'
-import { urlForImage } from "../../../sanity/lib/image";
 
-const Product_Gallery = ({ data }) => {
+
+const Product_Gallery = ({ data }:any) => {
 
   const [nav1, setNav1] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -47,7 +49,7 @@ const Product_Gallery = ({ data }) => {
           asNavFor={nav1}
           ref={(slider) => setSlider1(slider)}
         >
-          {data?.gallery?.map((item, idx) => (
+          {data?.gallery?.map((item:any, idx:any) => (
             <div
               key={idx}
               className={`${currentSlide === idx ? "active" : null} w-full h-full object-contain rounded-[12px]`}
