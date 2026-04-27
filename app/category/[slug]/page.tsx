@@ -12,9 +12,10 @@ import Faqs from "@/components/faqs/faqs";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const category = await getCategoryBySlug(params.slug);
+  const { slug } = await params;
+  const category = await getCategoryBySlug(slug);
 
   return {
     title: category?.name ? `${category.name} - Products` : "Category Page",
@@ -25,12 +26,17 @@ export async function generateMetadata({
 export default async function CategoryPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const category = await getCategoryBySlug(params.slug);
-  const products = await getProductsByCategory(params.slug);
+  const { slug } = await params; // ✅ FIX
 
-  console.log("Category Data:", products);
+
+  const category = await getCategoryBySlug(slug);
+  const products = await getProductsByCategory(slug);
+
+  console.log("Category Data:", category);
+
+
 
   if (!category) {
     return (
@@ -70,7 +76,7 @@ export default async function CategoryPage({
         </div>
       </main>
       <CategoriesProducts productsRes={products} />
-      <Faqs data={category?.faqs} col={2} />
+      <Faqs data={category?.fAQs} col={2} />
     </>
   );
 }

@@ -4,19 +4,19 @@ import { gql } from "@apollo/client";
    PRODUCT BY SLUG
 ---------------------------- */
 export const GET_PRODUCT_BY_SLUG = gql`
- query GetProductBySlug($id: ID = "standing-banner-printing") {
-  product(id: $id, idType: SLUG) {
-    id
-    name
-    slug
-    image {
-      sourceUrl
-    }
-    ... on SimpleProduct {
-      price
+  query GetProductBySlug($id: ID = "standing-banner-printing") {
+    product(id: $id, idType: SLUG) {
+      id
+      name
+      slug
+      image {
+        sourceUrl
+      }
+      ... on SimpleProduct {
+        price
+      }
     }
   }
-}
 `;
 
 /* ---------------------------
@@ -65,7 +65,7 @@ export const GET_PRODUCTS = gql`
 ---------------------------- */
 export const GET_PRODUCTS_BY_CATEGORY = gql`
   query GetProductsByCategory($category: String = "branded-finishes") {
-    products(first: 20, where: { category: $category }) {
+    products(first: 100, where: { category: $category }) {
       nodes {
         id
         name
@@ -110,6 +110,12 @@ export const GET_CATEGORY_BY_SLUG = gql`
       slug
       image {
         sourceUrl
+      }
+      fAQs {
+        faqsSections {
+          title
+          description
+        }
       }
     }
   }

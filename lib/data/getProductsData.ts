@@ -10,8 +10,8 @@ export async function getProductsData() {
   return data?.products?.nodes || [];
 }
 
-export async function getProductsByCategory(slug: string) {
-  const { data } = await client.query<any>({ query: GET_PRODUCTS_BY_CATEGORY, variables: { slug } });
+export async function getProductsByCategory(category: string) {
+  const { data } = await client.query<any>({ query: GET_PRODUCTS_BY_CATEGORY, variables: { category } });
   return data?.products?.nodes || [];
 }
 
