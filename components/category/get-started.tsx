@@ -1,8 +1,7 @@
 import React from 'react'
-import BlockContent from "@sanity/block-content-to-react";
 import Image from 'next/image';
 
-function Get_Started({ data }) {
+function Get_Started({ data }:any) {
     return (
         <section className='py-16'>
 

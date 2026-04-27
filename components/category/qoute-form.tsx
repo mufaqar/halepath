@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { RiArrowDownSLine } from "react-icons/ri";
-import { client } from "../../../sanity/lib/client";
-import { Qproducts } from "../../../sanity/queries";
+
 
 function Qoute_Form() {
   const [loading, setLoading] = useState(false);
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    (async () => {
-      const productsRes = await client.fetch(Qproducts);
-      setProducts(productsRes);
-    })();
-  }, []);
+
 
   const {
     register,
@@ -106,20 +99,7 @@ function Qoute_Form() {
             >
               Select Product
             </label>
-            <select
-              className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr cursor-pointer bg-white p-[16px] border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full w-full"
-              id="Product"
-              placeholder="Select Product"
-              {...register("Product", { required: true })}
-            >
-              <option value="Select Product" disabled>
-                Select Product{" "}
-              </option>
-              {products?.map((item: any) => (
-                <option key={item.index} value={item?.title}>{item?.title}</option>
-              ))}
-            </select>
-            <RiArrowDownSLine className="absolute right-4 top-1/2 text-xl text-gray-500 -translate-y-1/2" />
+            
           </div>
           <div className="relative">
             <label

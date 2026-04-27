@@ -1,15 +1,15 @@
+import { getProductsData } from "@/lib/data/getProductsData";
 import React, { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { RiArrowDownSLine } from "react-icons/ri";
-import { client } from "../../../sanity/lib/client";
-import { Qproducts } from "../../../sanity/queries";
 
 function QouteFormForProduct() {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([])
+  
   useEffect(()=>{
     (async()=>{
-      const productsRes = await client.fetch(Qproducts); 
+      const productsRes = await getProductsData(); // Using the GraphQL function
       setProducts(productsRes)
     })()
   },[])
@@ -41,10 +41,6 @@ function QouteFormForProduct() {
       });
     }
   };
-
-
-  
-
 
   return (
     <div className="container mx-auto mt-10 rounded-[19px] bg-[#CCCCCCB5]/70">
@@ -110,20 +106,8 @@ function QouteFormForProduct() {
               >
                 Select Product
               </label>
-              <select
-                className="text-sm font-medium text-txt_Clr placeholder:text-txt_Clr cursor-pointer bg-white p-[16px] border border-[#CACACA] focus:border-secondary appearance-none outline-none rounded-full w-full"
-                id="Product"
-                placeholder="Select Product"
-                {...register("Product", { required: true })}
-              >
-                <option value="Select Product" disabled>Select Product </option>
-                {
-                  products?.map((item:any)=>(
-                    <option key={item.index} value={item?.title}>{item?.title}</option>
-                  ))
-                }                
-              </select>
-              <RiArrowDownSLine className="absolute right-4 top-1/2 text-xl text-gray-500 -translate-y-1/2" />
+             
+             
             </div>
           </section>
         </div>
@@ -214,9 +198,9 @@ function QouteFormForProduct() {
                 {...register("Unit", { required: true })}
               >
                 <option value="Select Unit">Select Unit </option>
-                <option value="Cosmetics Box">Inches</option>
-                <option value="Cosmetics Box">CM</option>
-                <option value="Cosmetics Box">MM</option>
+                <option value="Inches">Inches</option>
+                <option value="CM">CM</option>
+                <option value="MM">MM</option>
               </select>
               <RiArrowDownSLine className="absolute right-4 top-1/2 text-xl text-gray-500 -translate-y-1/2" />
             </div>
