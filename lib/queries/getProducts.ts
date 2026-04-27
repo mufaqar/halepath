@@ -4,16 +4,75 @@ import { gql } from "@apollo/client";
    PRODUCT BY SLUG
 ---------------------------- */
 export const GET_PRODUCT_BY_SLUG = gql`
-  query GetProductBySlug($id: ID = "standing-banner-printing") {
-    product(id: $id, idType: SLUG) {
+  query GetProductBySlug($slug: ID!) {
+    product(id: $slug, idType: SLUG) {
       id
       name
       slug
-      image {
-        sourceUrl
+      featuredImage {
+        node {
+          mediaItemUrl
+        }
+      }
+
+      related(first: 4) {
+        nodes {
+          name
+          slug
+          ... on SimpleProduct {
+            id
+            name
+            featuredImage {
+              node {
+                mediaItemUrl
+                sourceUrl 
+              }
+            }
+          }
+        }
+      }
+      galleryImages {
+        nodes {
+          mediaItemUrl
+        }
       }
       ... on SimpleProduct {
         price
+        fAQs {
+          faqsSections {
+            title
+            description
+          }
+        }
+        productSpecifications {
+          productGallery {
+            nodes {
+              mediaItemUrl
+              altText
+            }
+          }
+
+          productExtraInfo {
+            infoBox {
+              description
+              title
+              image {
+                node {
+                  mediaItemUrl
+                }
+              }
+            }
+            infoBox2 {
+              description
+              title
+              image {
+                node {
+                  mediaItemUrl
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

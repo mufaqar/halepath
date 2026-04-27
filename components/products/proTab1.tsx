@@ -5,107 +5,87 @@ import CenterSlider from "../slider/center-slider";
 import Faqs from "../faqs/faqs";
 import ProReviews from "./proReviews";
 
-type InfoBox = {
-    title: string;
-    description: string;
-    image: string;
-};
 
-type Product = {
-    id: number;
-    title: string;
-    image: string;
-    link: string;
-};
 
 type Props = {
-    product_info_box1: InfoBox;
-    product_info_box2: InfoBox;
-    relatedProducts: any;
-    faqs: any;
+  data: any;
 };
 
-const ProTab1
-    = ({
-        product_info_box1,
-        product_info_box2,
-        relatedProducts, faqs
-    }: Props) => {
+const ProTab1 = ({ data }: Props) => {
+  const infoBox1 = data.productSpecifications.productExtraInfo.infoBox;
+  const infoBox2 = data.productSpecifications.productExtraInfo.infoBox2;
+  return (
+    <>
+      <section className="my-10">
+        <div className="hale_container md:flex items-center gap-5 md:gap-10 flex-row-reverse">
+          <figure className="md:w-1/2">
+            <Image
+              alt="Why Us Image"
+              src={infoBox1?.image?.node?.mediaItemUrl}
+              width={800}
+              height={600}
+              className="rounded-2xl"
+            />
+          </figure>
 
-        return (
-            <>
-                {/* Section 1 */}
-                <section className="my-10">
-                    <div className="hale_container md:flex items-center gap-5 md:gap-10 flex-row-reverse">
-                        <figure className="md:w-1/2">
-                            <Image
-                                alt="Why Us Image"
-                                src={product_info_box1.image}
-                                width={800}
-                                height={600}
-                                className="rounded-2xl"
-                            />
-                        </figure>
+          <div className="flex md:w-1/2 justify-center md:justify-start items-center md:items-start flex-col">
+            <h4 className="text-[#111827] mt-5 md:mt-0 font-bold text-3xl text-center md:text-left mb-4">
+              {infoBox1.title}
+            </h4>
 
-                        <div className="flex md:w-1/2 justify-center md:justify-start items-center md:items-start flex-col">
-                            <h4 className="text-[#111827] mt-5 md:mt-0 font-bold text-3xl text-center md:text-left mb-4">
-                                {product_info_box1.title}
-                            </h4>
+            <p className="mb-7 text-center md:text-left">
+              {infoBox1.description}
+            </p>
 
-                            <p className="mb-7 text-center md:text-left">
-                                {product_info_box1.description}
-                            </p>
+            <Link
+              href="/get-quote-now"
+              className="py-[9px] px-[41px] text-white bg-[#1C2E42] rounded-md"
+            >
+              Get Custom Quote
+            </Link>
+          </div>
+        </div>
+      </section>
 
-                            <Link
-                                href="/get-quote-now"
-                                className="py-[9px] px-[41px] text-white bg-[#1C2E42] rounded-md"
-                            >
-                                Get Custom Quote
-                            </Link>
-                        </div>
-                    </div>
-                </section>
+      <section className="my-10">
+        <div className="hale_container md:flex items-center gap-5 md:gap-10 flex-row">
+          <figure className="md:w-1/2">
+              <Image
+              alt="Why Us Image"
+              src={infoBox2?.image?.node?.mediaItemUrl}
+              width={800}
+              height={600}
+              className="rounded-2xl"
+            />
+          </figure>
 
-                {/* Section 2 */}
-                <section className="my-10">
-                    <div className="hale_container md:flex items-center gap-5 md:gap-10 flex-row">
-                        <figure className="md:w-1/2">
-                            <Image
-                                alt="Why Us Image"
-                                src={product_info_box2.image}
-                                width={800}
-                                height={600}
-                                className="rounded-2xl"
-                            />
-                        </figure>
+          <div className="flex md:w-1/2 justify-center md:justify-start items-center md:items-start flex-col">
+            <h4 className="text-[#111827] mt-5 md:mt-0 font-bold text-3xl text-center md:text-left mb-4">
+              {infoBox2.title}
+            </h4>
 
-                        <div className="flex md:w-1/2 justify-center md:justify-start items-center md:items-start flex-col">
-                            <h4 className="text-[#111827] mt-5 md:mt-0 font-bold text-3xl text-center md:text-left mb-4">
-                                {product_info_box2.title}
-                            </h4>
+            <p className="mb-7 text-center md:text-left">
+              {infoBox2.description}
+            </p>
 
-                            <p className="mb-7 text-center md:text-left">
-                                {product_info_box2.description}
-                            </p>
-
-                            <Link
-                                href="/get-quote-now"
-                                className="py-[9px] px-[41px] text-white bg-[#1C2E42] rounded-md"
-                            >
-                                Get Custom Quote
-                            </Link>
-                        </div>
-                    </div>
-                </section>
-                <ProReviews />
-                {/* Related Products */}
-                <section className="bg-[#F5F5F5] py-20 mt-28">
-                    <div className="container mx-auto px-3 text-center">
-                        <Faqs col={2} data={faqs} />
-                    </div>
-                </section>
-                        </>
-        );
-    };
+            <Link
+              href="/get-quote-now"
+              className="py-[9px] px-[41px] text-white bg-[#1C2E42] rounded-md"
+            >
+              Get Custom Quote
+            </Link>
+          </div>
+        </div>
+      </section>
+      <ProReviews />
+      {/* Related Products */}
+      <section className="bg-[#F5F5F5] py-20 mt-28">
+        <div className="container mx-auto px-3 text-center">
+          <Faqs col={2} data={data.fAQs} />
+        </div>
+      </section>
+    </>
+  );
+};
 
 export default ProTab1;

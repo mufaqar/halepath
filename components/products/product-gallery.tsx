@@ -1,16 +1,33 @@
-'use client'
+"use client";
 
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import Image from 'next/image'
+import Image from "next/image";
 
+type GalleryNode = {
+  mediaItemUrl: string;
+  altText?: string;
+};
 
-const Product_Gallery = ({ data }:any) => {
+type ProductData = {
+  galleryImages?: {
+    nodes: GalleryNode[];
+  };
+};
 
-  const [nav1, setNav1] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [slider1, setSlider1] = useState(null);
-  const [slider2, setSlider2] = useState(null);
+type Props = {
+  data: ProductData;
+};
+
+const Product_Gallery = ({ data }: Props) => {
+  const GalleryImages = data?.galleryImages?.nodes || [];
+
+  const FeatureImage = GalleryImages[0]?.mediaItemUrl || "/images/product.png";
+
+  const [nav1, setNav1] = useState<Slider | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [slider1, setSlider1] = useState<Slider | null>(null);
+  const [slider2, setSlider2] = useState<Slider | null>(null);
 
   useEffect(() => {
     setNav1(slider1);
@@ -21,21 +38,16 @@ const Product_Gallery = ({ data }:any) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    infinite: false,
-    autoplay: false,
-    autoplaySpeed: 1000,
-    onReInit: () => setCurrentSlide(slider1?.innerSlider.state.currentSlide),
-    lazyLoad: true,
-    asNavFor: slider2,
-    ref: (slider) => setSlider1(slider),
-    focusOnSelect: true,
+    infinite: true,
     arrows: false,
+    asNavFor: slider2,
+    afterChange: (index: number) => setCurrentSlide(index),
   };
 
   const thumbSettings = {
     slidesToShow: 4,
     slidesToScroll: 1,
-    infinite: true,   // ✅ THIS IS LOOP
+    infinite: true,
     asNavFor: nav1,
     focusOnSelect: true,
     arrows: false,
@@ -45,37 +57,38 @@ const Product_Gallery = ({ data }:any) => {
   return (
     <div className="content single">
       <div className="container">
-        <Slider {...settings}
-          asNavFor={nav1}
-          ref={(slider) => setSlider1(slider)}
-        >
-          {data?.gallery?.map((item:any, idx:any) => (
-            <div
-              key={idx}
-              className={`${currentSlide === idx ? "active" : null} w-full h-full object-contain rounded-[12px]`}
-              onClick={() => {
-                slider1?.slickGoTo(idx)
-              }}>
-              <Image src={urlForImage(item?.asset?._ref)?.url()} alt={item?.alt} width={435} height={365} className='w-full h-full object-cover rounded-[12px] max-h-[605px]' />
+        {/* MAIN SLIDER */}
+        <Slider {...settings} ref={setSlider1}>
+          {GalleryImages.map((item, idx) => (
+            <div key={idx}>
+              <Image
+                src={item.mediaItemUrl}
+                alt={item.altText || "product"}
+                width={435}
+                height={365}
+                className="w-full h-full object-cover rounded-[12px] max-h-[605px]"
+              />
             </div>
           ))}
         </Slider>
+
+        {/* THUMBNAILS */}
         <Slider
           {...thumbSettings}
-          ref={(slider) => setSlider2(slider)}
-          asNavFor={slider1}
+          ref={setSlider2}
           className="thumb-wrapper flex overflow-x-auto !justify-start singleproducts"
         >
-          {data?.gallery?.map((item, idx) => (
+          {GalleryImages.map((item, idx) => (
             <div
               key={idx}
-              className={`group h-[150px] min-w-[150px] p-1 rounded-[10px] ${currentSlide === idx ? "active" : ""
-                }`}
+              className={`group h-[150px] min-w-[150px] p-1 rounded-[10px] ${
+                currentSlide === idx ? "active" : ""
+              }`}
               onClick={() => slider1?.slickGoTo(idx)}
             >
               <Image
-                src={urlForImage(item?.asset?._ref).url()}
-                alt={item?.alt}
+                src={item.mediaItemUrl}
+                alt={item.altText || "thumb"}
                 width={154}
                 height={131}
                 className="w-full group-hover:scale-105 rounded-[10px] transition-all duration-100 ease-linear object-cover"
@@ -89,32 +102,3 @@ const Product_Gallery = ({ data }:any) => {
 };
 
 export default Product_Gallery;
-
-
-const AfroStyles = [
-  {
-    id: 1,
-    alt: "product",
-    src: "/images/product.png",
-  },
-  {
-    id: 2,
-    alt: "product1",
-    src: "/images/product1.png",
-  },
-  {
-    id: 3,
-    alt: "product2",
-    src: "/images/product2.png",
-  },
-  {
-    id: 4,
-    alt: "product3",
-    src: "/images/product3.png",
-  },
-  {
-    id: 5,
-    alt: "product4",
-    src: "/images/product4.png",
-  },
-]

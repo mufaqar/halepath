@@ -46,21 +46,7 @@ const ProductTabs = ({ prodata, faqs }: any) => {
         };
     }, []);
 
-    // ✅ STATIC DATA
-    const data = {
-        product_info_box1: {
-            title: "Premium Candle Accessories Boxes for the Packaging Industry",
-            description: "In today’s evolving packaging industry, candle accessories boxes play a vital role in brand presentation. Hale Path Packaging crafts elegant, eco-friendly boxes for tools like wick trimmers, snuffers, and matches. Designed for protection and beauty, our packaging enhances unboxing experiences while aligning with sustainability trends. We offer customizable shapes, inserts, and luxury finishes to match your brand style. With Hale Path Packaging, elevate every element of your candle offering—from scent to storage—with premium, detail-focused packaging solutions.",
-            image: "/images/design/1.png",
-        },
-        product_info_box2: {
-            title: "Premium Candle Accessories Boxes for the Packaging Industry",
-            description: "In today’s evolving packaging industry, candle accessories boxes play a vital role in brand presentation. Hale Path Packaging crafts elegant, eco-friendly boxes for tools like wick trimmers, snuffers, and matches. Designed for protection and beauty, our packaging enhances unboxing experiences while aligning with sustainability trends. We offer customizable shapes, inserts, and luxury finishes to match your brand style. With Hale Path Packaging, elevate every element of your candle offering—from scent to storage—with premium, detail-focused packaging solutions.",
-            image: "/images/design/2.png",
-        },
-        relatedProducts: prodata || [],
-        faqs: faqs || [],
-    };
+   
 
     return (
         <section id="product-tabs" className="mt-10">
@@ -96,7 +82,7 @@ const ProductTabs = ({ prodata, faqs }: any) => {
 
                 {/* TAB 1 */}
                 <div className={`${activeTab === "tab1" ? "" : "hidden"}`}>
-                    <ProTab1 {...data} />
+                    <ProTab1 data={prodata} />
                 </div>
 
                 {/* TAB 2 */}
