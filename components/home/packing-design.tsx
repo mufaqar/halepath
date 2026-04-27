@@ -1,6 +1,6 @@
 import React from 'react'
 import DesignBox from './designBox'
-import { urlForImage } from '../../../sanity/lib/image'
+
 
 function Packing_Design({ data, title, content }: any) {
     return (
@@ -21,7 +21,7 @@ function Packing_Design({ data, title, content }: any) {
                                 key={i}
                                 title={product.title}
                                 slug={product.slug}
-                                img={urlForImage(product?.image.asset._ref).width(306).url()}
+                                img={product.image?.node?.mediaItemUrl}
                             />
                         ))
                     }
