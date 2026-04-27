@@ -25,7 +25,7 @@ export const GET_PRODUCT_BY_SLUG = gql`
             featuredImage {
               node {
                 mediaItemUrl
-                sourceUrl 
+                sourceUrl
               }
             }
           }
@@ -88,12 +88,15 @@ export const GET_PRODUCTS = gql`
         name
         slug
         description
-        image {
-          ...MediaItemFragment
-        }
+
         ... on SimpleProduct {
           id
           name
+          featuredImage {
+            node {
+              mediaItemUrl
+            }
+          }
           galleryImages {
             nodes {
               ...MediaItemFragment
@@ -107,7 +110,7 @@ export const GET_PRODUCTS = gql`
     }
   }
   fragment MediaItemFragment on MediaItem {
-    sourceUrl
+    mediaItemUrl
   }
 
   fragment ProductToProductCategoryConnectionFragment on ProductToProductCategoryConnection {

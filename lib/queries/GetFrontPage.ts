@@ -46,15 +46,15 @@ export const GET_HOME = gql`
           }
         }
       }
-        homePage {
-      flexiblePackaging {
-        edges {
-          node {
-            date
+      homePage {
+        flexiblePackaging {
+          edges {
+            node {
+              date
+            }
           }
         }
       }
-    }
     }
   }
 `;
