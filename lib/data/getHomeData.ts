@@ -1,13 +1,26 @@
 import client from "@/lib/apollo-client";
 import { GET_HOME } from "../queries/GetFrontPage";
-
-
+import { GET_TESTIMONAILS } from "../queries/gql-query";
 
 export async function getHomeData() {
   const { data } = await client.query<any>({ query: GET_HOME });
-  return data || {};
+  return data.page.homeInfo || {};
 }
 
+export async function getTestimonails(): Promise<any[]> {
+  try {
+    const { data } = await client.query<any>({
+      query: GET_TESTIMONAILS,
+      variables: { first: 20 }, // optional
+    });
+
+    // Ensure only valid posts are returned
+    return (data?.testimonials?.nodes ?? []).filter((t:any): t is any => !!t);
+  } catch (error) {
+    console.error("Error fetching blog posts:", error);
+    return [];
+  }
+}
 
 // export async function getBlogData(): Promise<Post[]> {
 //   try {
@@ -46,11 +59,9 @@ export async function getHomeData() {
 //   try {
 //     const { data } = await client.query<GetFaqByCatQuery>({
 //       query: GET_FAQ_BY_CAT,
-//       variables: { id: categorySlug }, 
-    
-//     });
+//       variables: { id: categorySlug },
 
-   
+//     });
 
 //     // ✅ Make sure to access the actual FAQs array correctly
 //     const faqs = data?.faqType?.faqs?.nodes ?? [];
@@ -63,7 +74,6 @@ export async function getHomeData() {
 //   }
 // }
 
-
 // export async function getDomiciliaryPageData() {
 //   const { data } = await client.query<GetDomiciliaryQuery>({
 //     query: GET_DOMICILIARY,
@@ -72,7 +82,6 @@ export async function getHomeData() {
 //   return data?.page?.domiciliaryInfo || {};
 // }
 
-
 // export async function getServicesData(): Promise<Service[]> {
 //   try {
 //     const { data } = await client.query<ServicesTypes>({
@@ -80,7 +89,6 @@ export async function getHomeData() {
 //       variables: { first: 6 }, // optional
 //     });
 
-   
 //      // ✅ safely return the nodes array
 //     return data?.services?.nodes ?? [];
 //   } catch (error) {
@@ -88,7 +96,6 @@ export async function getHomeData() {
 //     return [];
 //   }
 // }
-
 
 // export async function getReviewsData(): Promise<Review[]> {
 //   try {
@@ -104,7 +111,6 @@ export async function getHomeData() {
 //   }
 // }
 
-
 // export async function getSupportedLivingData() {
 //   const { data } = await client.query<GetSupportedQuery>({
 //     query: GET_SUPPORTED,
@@ -113,7 +119,6 @@ export async function getHomeData() {
 //   return data?.page?.supportedInfo || {};
 // }
 
-
 // export async function getPostCategories(): Promise<ICategoryNode[]> {
 //   const { data } = await client.query<ICategoriesResponse>({
 //     query: Query_Post_Categories,
@@ -121,7 +126,6 @@ export async function getHomeData() {
 
 //   return data?.categories?.nodes || [];
 // }
-
 
 // export async function getPostByCateSlug(
 //   slug: string
@@ -133,7 +137,3 @@ export async function getHomeData() {
 
 //   return data?.category?.posts?.nodes || [];
 // }
-
-
-
-

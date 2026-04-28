@@ -1,8 +1,8 @@
 import BannerPageMiddel from "@/components/banner/banner";
 import CategorySlider from "@/components/category/categorySlider";
-import Cta from "@/components/category/cta";
 import CTASECTION from "@/components/CTA";
 import Brands from "@/components/home/brands";
+import Faqs from "@/components/home/faqs";
 import Get_Qoute from "@/components/home/get-qoute";
 import HowIt_work from "@/components/home/howit-work";
 import MainSlider from "@/components/home/mainSlider";
@@ -12,22 +12,27 @@ import WhatWeDo from "@/components/home/what-we-do";
 import Instagram from "@/components/instagram/instagram";
 import MainContent from "@/components/main/main-content";
 import SliderFull from "@/components/slider/slider-full";
+import Testimonials from "@/components/testimonial/testimonials";
 import WhatWeOffer from "@/components/what-we-offer/what-we-offer";
-import { getHomeData } from "@/lib/data/getHomeData";
+import { getHomeData, getTestimonails } from "@/lib/data/getHomeData";
 import {
   getCategoriesData,
   getProductsByCategory,
   getProductsData,
 } from "@/lib/data/getProductsData";
-
 import Image from "next/image";
-
 export default async function Home() {
   const homeInfo = await getHomeData();
+  const OffsetProducts = await getProductsByCategory("commercial-printing");
   const Flexible = await getProductsByCategory("flexible-packaging");
   const Corrugated = await getProductsByCategory("corrugated-packaging");
+  const Printadverstising = await getProductsByCategory("print-advertising");
   const productsRes = await getProductsData();
   const categoriesRes = await getCategoriesData();
+  const testimonialsRes = await getTestimonails();
+  const WhatweDo = homeInfo?.workWeDo;
+  const FAQS = homeInfo?.faqsSections;
+  console.log("homeInfo", testimonialsRes);
 
   return (
     <>
@@ -36,39 +41,34 @@ export default async function Home() {
         <MainContent />
         <CategorySlider categoriesRes={categoriesRes} />
         <CTASECTION />
-
-        <ProductSlider
-          productsRes={productsRes}
-          title="Offset Printing"
-          settings={settings}
-        />
+        {/* Off Set Printing  */}
+        <ProductSlider productsRes={OffsetProducts} title="Offset Printing" />
         <HowIt_work />
         <Brands />
         <BannerPageMiddel />
-        <ProductSlider
-          productsRes={productsRes}
-          title="Corrugated Packaging"
-          settings={settings}
-        />
+        {/* Corrugated Packaging  */}
+        <ProductSlider productsRes={Corrugated} title="Corrugated Packaging" />
         <Get_Qoute />
         <WhatWeOffer />
+        {/* Flexible Packaging  */}
         <Packaging_Style
           title="Flexible Packaging / Maylar bags"
           subtitle="Flexible Solutions, Unmatched Quality – Packaging That Sells Your Brand."
-          data={productsRes}
+          data={Flexible}
         />
         <CTASECTION />
         <SliderFull />
         <section className="bg-[#EAF6F9]">
+          {/* Print & Advertising  */}
           <Packaging_Style
             title="Print & Advertising & Office Supplies"
             subtitle="Start designing unique boxes with different styles, sizes, and choices. Custom rigid boxes or Kraft boxes for retail products and many more?We can help, Custom printing and packaging services ideas abound."
-            data={productsRes}
+            data={Printadverstising}
           />
         </section>
-        {/* <WhatWeDo featureproductsRes={featureproductsRes} /> */}
-        {/* <TestimonialAndFaq testimonialsRes={testimonialsRes} /> */}
-        {/* <Faqs faqRes={faqRes} /> */}
+        <WhatWeDo data={WhatweDo} />
+        <Testimonials testimonialsRes={testimonialsRes} />
+        <Faqs faqRes={FAQS} />
         <section className="px-4">
           <Image
             src="/images/cta-ban.png"
@@ -83,44 +83,3 @@ export default async function Home() {
     </>
   );
 }
-
-const settings = {
-  dots: false,
-  arrows: false,
-  className: "center",
-  // centerMode: true,
-  infinite: true,
-  // centerPadding: "60px",
-  slidesToShow: 5,
-  autoplay: true,
-  speed: 12000,
-  cssEase: "linear",
-  pauseOnHover: true,
-  swipeToSlide: true,
-  draggable: true,
-
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-      },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2,
-      },
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-};

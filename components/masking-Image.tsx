@@ -4,9 +4,7 @@ import React from "react";
 
 const MaskingImage = ({ data }: any) => {
   const link =
-    data?._type === "products" ? `/${data?.slug}` : `/product/${data?.slug}`;
-
-  console.log("data", data);
+    data?._type === "products" ? `/${data?.slug}` : `/product/${data?.slug}`; 
 
   return (
     <div className="w-fit p-2">

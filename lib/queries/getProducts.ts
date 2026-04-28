@@ -132,11 +132,13 @@ export const GET_PRODUCTS_BY_CATEGORY = gql`
         id
         name
         slug
-        image {
-          sourceUrl
-        }
         ... on SimpleProduct {
           price
+          featuredImage {
+            node {
+              mediaItemUrl
+            }
+          }
         }
       }
     }
@@ -155,6 +157,7 @@ export const GET_CATEGORIES = gql`
         slug
         image {
           sourceUrl
+          mediaItemUrl
         }
       }
     }

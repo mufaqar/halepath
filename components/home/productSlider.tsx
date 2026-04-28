@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import MaskingImage from "../masking-Image";
 
-export default function ProductSlider({ title, settings, productsRes }:any) {
+export default function ProductSlider({ title, productsRes }:any) {
 
   return (
     <section className="py-12">
@@ -32,3 +32,45 @@ export default function ProductSlider({ title, settings, productsRes }:any) {
     </section>
   );
 }
+
+
+const settings = {
+  dots: false,
+  arrows: false,
+  className: "center",
+  // centerMode: true,
+  infinite: true,
+  // centerPadding: "60px",
+  slidesToShow: 5,
+  autoplay: true,
+  speed: 12000,
+  cssEase: "linear",
+  pauseOnHover: true,
+  swipeToSlide: true,
+  draggable: true,
+
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};

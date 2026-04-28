@@ -140,3 +140,22 @@ export const Query_Post_Categories = gql`
   }
 `;
 
+
+export const GET_TESTIMONAILS = gql`
+ query GetTestimonials {
+  testimonials {
+    nodes {
+      title
+      content
+       testimonialsInfo {
+        address
+        rating
+        incentivized
+        customerType
+        
+      }
+    }
+  }
+}
+`;
+

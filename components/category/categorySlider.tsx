@@ -52,7 +52,7 @@ export default function CategorySlider({ categoriesRes }:any) {
   return (
     <section className="bg-[#F5F5F5] py-10">
       <h2 className="h2">
-        Our Latest Category
+        Our Latest Category
       </h2>
       <div className="slider-container">
         <Slider {...settings}>

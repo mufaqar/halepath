@@ -45,6 +45,12 @@ export const GET_HOME = gql`
             }
           }
         }
+           
+        faqsSections{
+          title
+          description
+        }
+          
       }
       homePage {
         flexiblePackaging {
