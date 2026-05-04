@@ -10,12 +10,12 @@ const CategoriesProducts = ({ productsRes }: any) => {
   };
 
   return (
-    <section className="mt-20 container mx-auto px-3">
+    <section className="mt-16 container mx-auto px-3">
       <div>
         <h2 className="font-extrabold text-4xl text-center">
           Explore Packaging Solutions
         </h2>
-        <p>
+        <p className="text-center max-w-[880px] mx-auto">
           Display boxes in the USA are manufactured using high-quality
           cardboard, Kraft paper, and rigid materials. Provided employing
           eco-friendly, biodegradable, and sustainable materials to meet the

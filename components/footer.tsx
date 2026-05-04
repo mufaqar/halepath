@@ -1,11 +1,14 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { FaFacebookF, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
+import { useState } from "react";
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
+import MainPopup from "./mainPopup";
 
 function Footer() {
+  const [openPopUp, setOpenPopUp] = useState(false);
   return (
-    <footer className="pt-14 relative bg-[#f5f5f5]">
+    <footer className="pt-14  bg-[#f5f5f5]">
       <div className="hale_container grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 justify-between 2xl:gap-5 md:gap-4 gap-5">
         <div>
           <h6 className="footer_title">
@@ -16,6 +19,11 @@ function Footer() {
             <li className="">
               <Link href="/about-us/" className="footer_link">
                 <span className="marker"></span>About Us
+              </Link>
+            </li>
+            <li className="">
+              <Link href="/amazon-fulfilment-fba/" className="footer_link">
+                <span className="marker"></span>Amazon Fulfilment (FBA)
               </Link>
             </li>
             <li className="">
@@ -66,42 +74,32 @@ function Footer() {
           </h6>
           <ul id="menu-innovation" className="flex flex-col gap-2.5">
             <li className="">
-              <Link href="#" className="footer_link">
+              <Link href="/innovation/" className="footer_link">
                 <span className="marker"></span>Approch to innovation
               </Link>
             </li>
             <li className="">
-              <Link href="#" className="footer_link">
+              <Link href="/uv-printing-technology/" className="footer_link">
                 <span className="marker"></span>UV Printing Technology
               </Link>
             </li>
             <li className="">
-              <Link href="#" className="footer_link">
+              <Link href="/foil-printing-solutions/" className="footer_link">
                 <span className="marker"></span>Foil Printing Solutions
               </Link>
             </li>
             <li className="">
-              <Link href="#" className="footer_link">
+              <Link href="/privacy-printing/" className="footer_link">
                 <span className="marker"></span>Privacy Printing
               </Link>
             </li>
             <li className="">
-              <Link href="#" className="footer_link">
-                <span className="marker"></span>Color Management Systems
-              </Link>
-            </li>
-            <li className="">
-              <Link href="#" className="footer_link">
-                <span className="marker"></span>R&amp;D areas
-              </Link>
-            </li>
-            <li className="">
-              <Link href="#" className="footer_link">
+              <Link href="/contact-us/" className="footer_link">
                 <span className="marker"></span>Experience Centers
               </Link>
             </li>
             <li className="">
-              <Link href="#" className="footer_link">
+              <Link href="/" className="footer_link">
                 <span className="marker"></span>Client Success Stories
               </Link>
             </li>
@@ -134,12 +132,12 @@ function Footer() {
               </Link>
             </li>
             <li className="">
-              <Link href="#">
+              <Link href="/cosmetic-boxes">
                 <span className="marker"></span>Product Boxes
               </Link>
             </li>
             <li className="">
-              <Link href="#">
+              <Link href="/#">
                 <span className="marker"></span>Sustainable Packaging
               </Link>
             </li>
@@ -152,22 +150,17 @@ function Footer() {
           </h6>
           <ul id="menu-services" className="flex flex-col gap-2.5">
             <li className="">
-              <Link href="#" className="footer_link">
+              <Link href="/commercial-printing/" className="footer_link">
                 <span className="marker"></span>Commercial Printing
               </Link>
             </li>
             <li className="">
-              <Link href="#" className="footer_link">
-                <span className="marker"></span>Bulk Production
-              </Link>
-            </li>
-            <li className="">
-              <Link href="#" className="footer_link">
+              <Link href="/foil-printing-solutions/" className="footer_link">
                 <span className="marker"></span>Custom Printing Solutions
               </Link>
             </li>
             <li className="">
-              <Link href="#" className="footer_link">
+              <Link href="/structural-innovation/" className="footer_link">
                 <span className="marker"></span>Structural Design Support
               </Link>
             </li>
@@ -296,6 +289,19 @@ function Footer() {
             <Link href="/terms-conditions">Terms & Conditions</Link>
           </p>
         </div>
+      </div>
+      <button onClick={() => setOpenPopUp(true)}
+        className={`${openPopUp ? "right-[850px]" : "right-5"} sm:block hidden fixed top-1/2 -translate-y-1/2 right-5 h-[365px] bg-white/30 backdrop-blur-[10px] text-2xl text-title_Clr py-5 rounded-[19px] z-[999] [writing-mode:vertical-rl] transition-all duration-500 ease-in-out`}>
+        <span>Get a Quote</span>
+      </button>
+      <div
+        onClick={() => setOpenPopUp(false)}
+        className={`fixed inset-0 w-full flex flex-col items-end justify-center z-50 transition-all duration-500 ease-in-out ${openPopUp
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+          }`}
+      >
+        <MainPopup onClose={() => setOpenPopUp(false)} />
       </div>
     </footer>
   );

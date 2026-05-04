@@ -35,32 +35,19 @@ function SearchForm() {
     };
 
     return (
-        <div className="bg-black/20 h-screen w-full flex flex-col justify-center items-center">
-            <form action="" className="max-w-[480px] w-full px-4">
-                <div className="relative">
-                    <input
-                        type="text"
-                        id="search"
-                        placeholder="Search"
-                        name="search"
-                        value={searchTerm}
-                        onChange={handleSearch}
-                        className="w-full border h-12 shadow p-4 rounded-full focus:border focus:border-[#2B4FB9] outline-0 ring-0 placeholder:text-[#2B4FB9] text-lg"
-                    />
-                    <button type="button" onClick={handleAlert}>
-                        <AiOutlineSearch className="text-2xl text-[#12577E] h-5 w-5 absolute top-3.5 right-3 fill-current" />
-                    </button>
-                </div>
-            </form>
-            <ul>
-                {searchResults.length > 0 ? (
-                    searchResults.map((stock) => (
-                        <li key={stock.id}>{stock.name}</li>
-                    ))
-                ) : (
-                    <li>{searchTerm !== "" ? "Term not found" : ""}</li>
-                )}
-            </ul>
+        <div className="relative w-full">
+            <input
+                type="text"
+                id="live-search"
+                placeholder="Search products..."
+                autoComplete="off"
+                className="text-sm md:leading-[40px] font-normal text-[#7C7C7C] placeholder:text-[#7C7C7C] bg-white px-7  border border-secondary focus:border-primary outline-none rounded-full w-full"
+            />
+
+            <div
+                id="live-search-results"
+                className="absolute z-60 w-full mt-1 bg-white rounded-lg shadow-lg hidden"
+            ></div>
         </div>
     );
 }

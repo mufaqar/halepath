@@ -33,7 +33,7 @@ export default async function Page({
    */
   if (page) {
     return (
-      <main className="py-10 lg:py-20">
+      <main className="py-10 lg:pb-16">
         <div className="hale_container">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">
             {page.title}
@@ -66,7 +66,7 @@ export default async function Page({
    */
   return (
     <>
-      <main className="py-10 lg:py-20">
+      <main className="py-10 lg:py-16">
         <div className="hale_container grid items-center md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 xl:gap-[70px]">
           <div className="h-full">
             <Image

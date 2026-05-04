@@ -8,6 +8,7 @@ import { IoMdClose } from "react-icons/io";
 import MegaMenu from "./mega-menu";
 
 import MobileMenu from "./mobileMenu";
+import SearchForm from "./searchForm";
 
 function Header() {
   const [openNav, setOpenNav] = useState(false);
@@ -86,20 +87,7 @@ function Header() {
             </Link>
           </div>
           <div className="lg:block hidden w-1/2">
-            <div className="relative w-full">
-              <input
-                type="text"
-                id="live-search"
-                placeholder="Search products..."
-                autoComplete="off"
-                className="text-sm md:leading-[40px] font-normal text-[#7C7C7C] placeholder:text-[#7C7C7C] bg-white px-7  border border-secondary focus:border-primary outline-none rounded-full w-full"
-              />
-
-              <div
-                id="live-search-results"
-                className="absolute z-60 w-full mt-1 bg-white rounded-lg shadow-lg hidden"
-              ></div>
-            </div>
+            <SearchForm />
           </div>
           {/* Buttons  */}
           <div className="xl:w-1/4 sm:w-1/3 hidden lg:flex gap-5 justify-end">

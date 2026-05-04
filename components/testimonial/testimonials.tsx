@@ -21,18 +21,8 @@ const Testimonials = ({ testimonialsRes }: any) => {
     dots: false,
     infinite: true,
     adaptiveHeight: true,
-    prevArrow: (
-      <button className="prev hover:text-[#47AFC3] absolute top-1/2 -translate-y-1/2 left-0">
-        {" "}
-        <FaChevronLeft />
-      </button>
-    ),
-    nextArrow: (
-      <button className="next hover:text-[#47AFC3] absolute top-1/2 -translate-y-1/2 right-0">
-        {" "}
-        <FaChevronRight />
-      </button>
-    ),
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -146,3 +136,27 @@ const Testimonials = ({ testimonialsRes }: any) => {
 };
 
 export default Testimonials;
+
+const PrevArrow = (props: any) => {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute top-1/2 -translate-y-1/2 left-0 z-10"
+    >
+      <FaChevronLeft />
+    </button>
+  );
+};
+
+const NextArrow = (props: any) => {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute top-1/2 -translate-y-1/2 right-0 z-10"
+    >
+      <FaChevronRight />
+    </button>
+  );
+};
