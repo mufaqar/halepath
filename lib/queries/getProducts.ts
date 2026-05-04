@@ -159,6 +159,17 @@ export const GET_CATEGORIES = gql`
           sourceUrl
           mediaItemUrl
         }
+        seo {
+          title
+          description
+          canonicalUrl
+          focusKeywords
+          openGraph {
+            image {
+              secureUrl
+            }
+          }
+        }
       }
     }
   }
@@ -182,6 +193,17 @@ export const GET_CATEGORY_BY_SLUG = gql`
         faqsSections {
           title
           description
+        }
+      }
+      seo {
+        title
+        description
+        canonicalUrl
+        focusKeywords
+        openGraph {
+          image {
+            secureUrl
+          }
         }
       }
     }

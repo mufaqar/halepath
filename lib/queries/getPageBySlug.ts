@@ -7,6 +7,17 @@ export const GET_PAGE_BY_SLUG = gql`
       title
       content
       slug
+      seo {
+  title
+  description
+  canonicalUrl
+  focusKeywords
+  openGraph {
+    image {
+      secureUrl
+    }
+  }
+}
     }
   }
 `;
