@@ -38,7 +38,7 @@ export const GET_PRODUCT_BY_SLUG = gql`
       }
       ... on SimpleProduct {
         price
-        fAQs {
+        faqs {
           faqsSections {
             title
             description

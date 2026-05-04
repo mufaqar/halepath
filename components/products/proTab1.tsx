@@ -14,6 +14,7 @@ type Props = {
 const ProTab1 = ({ data }: Props) => {
   const infoBox1 = data.productSpecifications.productExtraInfo.infoBox;
   const infoBox2 = data.productSpecifications.productExtraInfo.infoBox2;
+
   return (
     <>
       <section className="my-10">
@@ -77,11 +78,11 @@ const ProTab1 = ({ data }: Props) => {
           </div>
         </div>
       </section>
-      <ProReviews />
+      {/* <ProReviews /> */}
       {/* Related Products */}
       <section className="bg-[#F5F5F5] py-20 mt-28">
         <div className="container mx-auto px-3 text-center">
-          <Faqs col={2} data={data.fAQs} />
+          <Faqs col={2} data={data.faqs} />
         </div>
       </section>
     </>
