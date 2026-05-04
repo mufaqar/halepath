@@ -3,10 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import CenterSlider from "../slider/center-slider";
 import Faqs from "../faqs/faqs";
-import ProReviews from "./proReviews";
-
-
-
 type Props = {
   data: any;
 };
@@ -51,7 +47,7 @@ const ProTab1 = ({ data }: Props) => {
       <section className="my-10">
         <div className="hale_container md:flex items-center gap-5 md:gap-10 flex-row">
           <figure className="md:w-1/2">
-              <Image
+            <Image
               alt="Why Us Image"
               src={infoBox2?.image?.node?.mediaItemUrl}
               width={800}
