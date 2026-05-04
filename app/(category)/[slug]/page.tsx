@@ -1,32 +1,36 @@
 import CategoriesProducts from "@/components/category/Category-Products";
 import FormTabs from "@/components/formTabs";
 import Faqs from "@/components/home/faqs";
-import { getPageBySlug } from "@/lib/data/getHomeData";
-
-import {
-  getCategoryBySlug,
-  getProductsByCategory,
-} from "@/lib/data/getProductsData";
-
+import { getProductsByCategory } from "@/lib/data/getProductsData";
+import { resolveSlug } from "@/lib/extra";
+import { buildSeo } from "@/lib/seo/generateSeo";
 
 
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+
+
+export async function generateMetadata({ params }: any) {
   const { slug } = await params;
 
+  const { page, category } = await resolveSlug(slug);
+
+  const data = page || category;
+
+  return await buildSeo(data, slug);
+}
+export default async function Page({ params }: { params: { slug: string } }) {
+  const { slug } = params;
+
+  const { page, category } = await resolveSlug(slug);
+
   /**
-   * Fetch page + category together
+   * NOT FOUND
    */
-  const [page, category] = await Promise.all([
-    getPageBySlug(slug),
-    getCategoryBySlug(slug),
-  ]);
+  if (!page && !category) {
+    notFound();
+  }
 
   /**
    * PAGE TEMPLATE
@@ -35,9 +39,7 @@ export default async function Page({
     return (
       <main className="py-10 lg:pb-16">
         <div className="hale_container">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-            {page.title}
-          </h1>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6">{page.title}</h1>
 
           <div
             dangerouslySetInnerHTML={{
@@ -50,20 +52,10 @@ export default async function Page({
   }
 
   /**
-   * CATEGORY NOT FOUND
-   */
-  if (!category) {
-    notFound();
-  }
-
-  /**
-   * Fetch products only if category exists
+   * CATEGORY TEMPLATE
    */
   const products = await getProductsByCategory(slug);
 
-  /**
-   * CATEGORY TEMPLATE
-   */
   return (
     <>
       <main className="py-10 lg:py-16">
@@ -82,25 +74,18 @@ export default async function Page({
           </div>
 
           <div>
-            <h4 className="font-bold text-3xl lg:text-5xl">
-              {category?.name}
-            </h4>
+            <h4 className="font-bold text-3xl lg:text-5xl">{category.name}</h4>
 
-            <p className="xl:text-[19px] mt-4">
-              {category?.excerpt}
-            </p>
+            <p className="xl:text-[19px] mt-4">{category.excerpt}</p>
 
-            <FormTabs
-              productName={category?.name}
-              productPrice={650}
-            />
+            <FormTabs productName={category.name} productPrice={650} />
           </div>
         </div>
       </main>
 
       <CategoriesProducts productsRes={products} />
 
-      <Faqs data={category?.faqs} col={2} />
+      <Faqs data={category.faqs} col={2} />
     </>
   );
 }
