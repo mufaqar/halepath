@@ -175,8 +175,10 @@ export const GET_CATEGORY_BY_SLUG = gql`
       slug
       image {
         sourceUrl
+        mediaItemUrl
       }
-      fAQs {
+
+      faqs {
         faqsSections {
           title
           description

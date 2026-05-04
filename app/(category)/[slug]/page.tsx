@@ -1,43 +1,27 @@
-import {
-  getCategoryBySlug,
-  getProductsByCategory,
-} from "@/lib/data/getProductsData";
-import Image from "next/image";
-import Link from "next/link";
-import ProductCard from "@/components/products/ProductCard";
 import CategoriesProducts from "@/components/category/Category-Products";
 import FormTabs from "@/components/formTabs";
-import Faqs from "@/components/faqs/faqs";
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const category = await getCategoryBySlug(slug);
-
-  return {
-    title: category?.name ? `${category.name} - Products` : "Category Page",
-    description: `Browse products in the ${category?.name || "category"} category`,
-  };
-}
+import Faqs from "@/components/home/faqs";
+import { getCategoryBySlug, getProductsByCategory } from "@/lib/data/getProductsData";
+import Image from "next/image";
+import Link from "next/link";
 
 export default async function CategoryPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params; // ✅ FIX
+  const { slug } = await params;
 
+   
+    const products = await getProductsByCategory(slug);
+    const category = await getCategoryBySlug(slug);
+  
+    console.log("Category Data:", category);
+     console.log("products:", products);
+  
+    console.log("slug", slug);
 
-  const category = await getCategoryBySlug(slug);
-  const products = await getProductsByCategory(slug);
-
-  console.log("Category Data:", category);
-
-
-
+  
   if (!category) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
@@ -52,7 +36,7 @@ export default async function CategoryPage({
     );
   }
 
-  return (
+   return (
     <>
       <main className="py-10 lg:py-20">
         <div className="hale_container grid items-center md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 xl:gap-[70px]">
@@ -76,7 +60,9 @@ export default async function CategoryPage({
         </div>
       </main>
       <CategoriesProducts productsRes={products} />
-      <Faqs data={category?.fAQs} col={2} />
+      <Faqs data={category?.faqs} col={2} />
     </>
   );
+
 }
+

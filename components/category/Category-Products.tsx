@@ -28,7 +28,7 @@ const CategoriesProducts = ({ productsRes }: any) => {
           <div key={idx} className="p-3">
             <Link href={`/product/${item?.slug}`} className="inline-flex h-fit">
               <Image
-                src={item?.image.sourceUrl || "https://via.placeholder.com/363x375?text=No+Image"}
+                src={item?.featuredImage?.node?.mediaItemUrl || "https://via.placeholder.com/363x375?text=No+Image"}
                 alt={item?.name || "Product Image"}
                 width={363}
                 height={375}

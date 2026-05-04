@@ -60,11 +60,11 @@ export default async function Home() {
         <SliderFull />
         <section className="bg-[#EAF6F9]">
           {/* Print & Advertising  */}
-          <Packaging_Style
+          {/* <Packaging_Style
             title="Print & Advertising & Office Supplies"
             subtitle="Start designing unique boxes with different styles, sizes, and choices. Custom rigid boxes or Kraft boxes for retail products and many more?We can help, Custom printing and packaging services ideas abound."
             data={Printadverstising}
-          />
+          /> */}
         </section>
         <WhatWeDo data={WhatweDo} />
         <Testimonials testimonialsRes={testimonialsRes} />
