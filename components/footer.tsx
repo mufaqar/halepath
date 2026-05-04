@@ -14,34 +14,22 @@ function Footer() {
           </h6>
           <ul id="menu-company" className="flex flex-col gap-2.5">
             <li className="">
-              <Link
-                href="/about-us/"
-                className="footer_link"
-              >
+              <Link href="/about-us/" className="footer_link">
                 <span className="marker"></span>About Us
               </Link>
             </li>
             <li className="">
-              <Link
-                href="/terms-conditions/"
-                className="footer_link"
-              >
+              <Link href="/terms-conditions/" className="footer_link">
                 <span className="marker"></span>Terms &amp; Conditions
               </Link>
             </li>
             <li className="">
-              <Link
-                href="/return-and-refund-policy/"
-                className="footer_link"
-              >
+              <Link href="/return-and-refund-policy/" className="footer_link">
                 <span className="marker"></span>Return and Refund Policy
               </Link>
             </li>
             <li className="">
-              <Link
-                href="/shipping-policy/"
-                className="footer_link"
-              >
+              <Link href="/shipping-policy/" className="footer_link">
                 <span className="marker"></span>Shipping Policy
               </Link>
             </li>
@@ -60,18 +48,12 @@ function Footer() {
               </Link>
             </li>
             <li className="">
-              <Link
-                href="/contact-us/"
-                className="footer_link"
-              >
+              <Link href="/contact-us/" className="footer_link">
                 <span className="marker"></span>Contact Us
               </Link>
             </li>
             <li className="">
-              <Link
-                href="/blog/"
-                className="footer_link"
-              >
+              <Link href="/blog/" className="footer_link">
                 <span className="marker"></span>Blog
               </Link>
             </li>
@@ -132,34 +114,22 @@ function Footer() {
           </h6>
           <ul id="menu-packaging-products" className="flex flex-col gap-2.5">
             <li className="">
-              <Link
-                href="/custom-rigid-boxes/"
-                className="footer_link"
-              >
+              <Link href="/custom-rigid-boxes/" className="footer_link">
                 <span className="marker"></span>Rigid Boxes
               </Link>
             </li>
             <li className="">
-              <Link
-                href="/kraft-boxes/"
-                className="footer_link"
-              >
+              <Link href="/kraft-boxes/" className="footer_link">
                 <span className="marker"></span>Kraft Boxes
               </Link>
             </li>
             <li className="">
-              <Link
-                href="/cardboard-boxes/"
-                className="footer_link"
-              >
+              <Link href="/cardboard-boxes/" className="footer_link">
                 <span className="marker"></span>Cardboard Boxes
               </Link>
             </li>
             <li className="">
-              <Link
-                href="/corrugated-boxes/"
-                className="footer_link"
-              >
+              <Link href="/corrugated-boxes/" className="footer_link">
                 <span className="marker"></span>Corrugated Boxes
               </Link>
             </li>
@@ -202,10 +172,7 @@ function Footer() {
               </Link>
             </li>
             <li className="">
-              <Link
-                href="/get-quote-now/"
-                className="footer_link"
-              >
+              <Link href="/get-quote-now/" className="footer_link">
                 <span className="marker"></span>Request a Quote
               </Link>
             </li>
@@ -217,19 +184,19 @@ function Footer() {
             <span className=""></span>
           </h6>
           <ul className="flex flex-col gap-2.5">
-            <li>Unit 229, 32A Birmingham Road Bromsgrove B61 0DD</li>
+            <li>5955 Alpha Rd Suite 102, Unit 5092 Dallas, TX 75240, United States</li>
             <li>
-              <Link href="tel:+4401213186768" className="footer_link">
-                +44 01213186768
+              <Link href="tel:+18884328748" className="footer_link">
+                +1 888-432-8748
               </Link>
             </li>
             <li>
               <Link
-                href="mailto:sales@halepathpackaging.co.uk"
+                href="mailto:sales@halepathpackaging.com"
                 target="_blank"
                 className="footer_link"
               >
-                sales@halepathpackaging.co.uk
+                sales@halepathpackaging.com
               </Link>
             </li>
           </ul>

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +20,10 @@ const CategoriesProducts = ({ productsRes }: any) => {
           Explore Packaging Solutions
         </h2>
         <p>
-          Display boxes in the UK are manufactured using high-quality cardboard, Kraft paper, and rigid materials. Provided employing eco-friendly, biodegradable, and sustainable materials to meet the green standard
+          Display boxes in the USA are manufactured using high-quality
+          cardboard, Kraft paper, and rigid materials. Provided employing
+          eco-friendly, biodegradable, and sustainable materials to meet the
+          green standard
         </p>
       </div>
       <div className="hale_container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -28,7 +31,10 @@ const CategoriesProducts = ({ productsRes }: any) => {
           <div key={idx} className="p-3">
             <Link href={`/product/${item?.slug}`} className="inline-flex h-fit">
               <Image
-                src={item?.featuredImage?.node?.mediaItemUrl || "https://via.placeholder.com/363x375?text=No+Image"}
+                src={
+                  item?.featuredImage?.node?.mediaItemUrl ||
+                  "/images/product-placeholder.jpg"
+                }
                 alt={item?.name || "Product Image"}
                 width={363}
                 height={375}
@@ -36,9 +42,7 @@ const CategoriesProducts = ({ productsRes }: any) => {
               />
             </Link>
             <h4 className="text-xl font-normal text-title_Clr text-center flex w-fit mx-auto mt-8">
-              <Link href={`/product/${item?.slug}`}>
-                {item?.name}
-              </Link>
+              <Link href={`/product/${item?.slug}`}>{item?.name}</Link>
             </h4>
           </div>
         ))}
