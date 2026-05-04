@@ -57,7 +57,7 @@ export default function CategorySlider({ categoriesRes }:any) {
       <div className="slider-container">
         <Slider {...settings}>
           {categoriesRes.map((item:any, idx:number) => {
-            const link = `/category/${item?.slug}`;
+            const link = `/${item?.slug}`;
 
             return (
               <div key={idx} className="w-full p-2">

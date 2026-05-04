@@ -1,4 +1,4 @@
-import CategoriesProducts from '@/components/category/Category-Products';
+import CategoriesProducts from '@/components/Category-Products';
 import {  getProductsData } from '@/lib/data/getProductsData';
 import React from 'react'
 

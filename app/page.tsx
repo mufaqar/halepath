@@ -1,5 +1,5 @@
 import BannerPageMiddel from "@/components/banner/banner";
-import CategorySlider from "@/components/category/categorySlider";
+import CategorySlider from "@/components/categorySlider";
 import CTASECTION from "@/components/CTA";
 import Brands from "@/components/home/brands";
 import Faqs from "@/components/home/faqs";

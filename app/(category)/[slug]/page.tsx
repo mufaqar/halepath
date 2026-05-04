@@ -1,4 +1,4 @@
-import CategoriesProducts from "@/components/category/Category-Products";
+import CategoriesProducts from "@/components/Category-Products";
 import FormTabs from "@/components/formTabs";
 import Faqs from "@/components/home/faqs";
 import { getProductsByCategory } from "@/lib/data/getProductsData";

@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function CategoryCard({ category }: { category: any }) {
   return (
     <div className="w-full p-2">
-      <Link href={`/category/${category.slug}`}>
+      <Link href={`/${category.slug}`}>
         <div className="relative aspect-square bg-gray-200 rounded-lg overflow-hidden">
           {category.image?.sourceUrl ? (
             <Image
@@ -21,7 +21,7 @@ export default function CategoryCard({ category }: { category: any }) {
         </div>
       </Link>
 
-      <Link href={`/category/${category.slug}`} className="block mt-3 font-medium text-center hover:text-blue-600 transition-colors">
+      <Link href={`/${category.slug}`} className="block mt-3 font-medium text-center hover:text-blue-600 transition-colors">
         {category.name}
       </Link>
     </div>
