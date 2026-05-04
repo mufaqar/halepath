@@ -6,9 +6,6 @@ import React, { useState } from "react";
 
 const CategoriesProducts = ({ productsRes }: any) => {
   const [visibleCount, setVisibleCount] = useState(15);
-
-  console.log("Products in Category:", productsRes);
-
   const loadMore = () => {
     setVisibleCount((prevCount) => prevCount + 10);
   };
@@ -47,7 +44,7 @@ const CategoriesProducts = ({ productsRes }: any) => {
           </div>
         ))}
       </div>
-      {/* {visibleCount < productsRes?.length && (
+      {visibleCount < productsRes?.length && (
         <div className="text-center mt-6">
           <button
             onClick={loadMore}
@@ -56,7 +53,7 @@ const CategoriesProducts = ({ productsRes }: any) => {
             Load More
           </button>
         </div>
-      )} */}
+      )}
     </section>
   );
 };
