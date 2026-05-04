@@ -1,18 +1,12 @@
 import { gql } from "@apollo/client";
 
 export const GET_PAGE_BY_SLUG = gql`
-  query GetPageBySlug($slug: ID!, $idType: PageIdType = URI) {
-    page(id: $slug, idType: $idType) {
+  query GetPageBySlug($slug: ID!) {
+    page(id: $slug, idType: URI) {
       id
-      slug
       title
       content
-      featuredImage {
-        node {
-          sourceUrl
-          altText
-        }
-      }
+      slug
     }
   }
 `;
