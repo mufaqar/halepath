@@ -1,13 +1,19 @@
-import React from 'react'
+import React from "react";
+import PageBanner from "../page-banner";
 
-const PageTemplate = ({data}:any) => {
+const PageTemplate = ({ data }: any) => {
+  const page = data.data;
+  console.log(data);
   return (
-    <div>
+    <>
+      <PageBanner title={page.title} />
+      <section className="py-[60px]">
+        <div className="hale_container flex md:flex-row flex-col gap-6">
+          <div dangerouslySetInnerHTML={{ __html: page.content }} />
+        </div>
+      </section>
+    </>
+  );
+};
 
-        page
-      
-    </div>
-  )
-}
-
-export default PageTemplate
+export default PageTemplate;
