@@ -3,7 +3,6 @@ import PageBanner from "../page-banner";
 
 const PageTemplate = ({ data }: any) => {
   const page = data.data;
-  console.log(data);
   return (
     <>
       <PageBanner title={page.title} />
