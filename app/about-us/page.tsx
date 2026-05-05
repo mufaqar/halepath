@@ -1,5 +1,6 @@
 "use client";
 
+import PageBanner from "@/components/page-banner";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,31 +8,31 @@ const featureproductsRes = [
   {
     title: "R&D Department Helping in Branding",
     excerpt:
-      "Hale Path Packaging works as a modern solution provider for all types of printing and packaging needs...",
+      "Hale Path Packaging works as a modern solution provider for all types of printing and packaging needs. You may already have a strong product. But does your packaging support it properly? Our R&D department studies market trends and customer behaviour carefully. We look at what buyers prefer, what attracts attention, and what encourages a purchase. When your product sits on a shelf beside competitors in retail shops or shopping malls, packaging becomes the first impression. Often, it becomes the first trigger for brand choice. Our R&D team improves artwork to make it clearer and more appealing. They guide clients on selecting the right stock, colour combinations, and branded finishes such as gold foiling, embossing, Spot UV, and fluorescent colours. These adjustments can directly impact sales performance. We push for high standards across customisation, design, service, technology, and materials. We don’t aim for “good enough.” We aim for solid results. That approach allows us to offer wide options in textures, materials, designs, and innovative outlooks.",
     gallery: "/images/design/1.png",
   },
   {
     title: "Customize Packaging",
     excerpt:
-      "We are wholesale manufacturers of customized packaging serving thousands of satisfied clients...",
+      "We are wholesale manufacturers of customized packaging serving thousands of satisfied clients. From small home-based startups to large wholesale businesses — and even individuals planning events — we provide packaging solutions for all. Our pricing stays competitive and often lower than standard market rates. This allows clients to manage packaging costs more comfortably. We focus on long-term, mutually beneficial relationships. Our goal is to help products stand out through packaging that speaks for itself. We work with customers across the USA, UK, Canada, and Europe. Our services include strong pre-sales guidance and dependable after-sales support. With countless styles, sizes, and colour options available, we create packaging for both professional and personal use. Our production, creative design, and customer service teams operate within a modern facility equipped with advanced technology. The result? High-quality packaging delivered at reasonable prices.",
     gallery: "/images/design/2.png",
   },
   {
     title: "Graphic Designing Support",
     excerpt:
-      "Our in-house design team works closely with clients to bring their ideas to life...",
+      "Our in-house design team works closely with clients to bring their ideas to life. We make sure every detail reflects their preferences. If someone feels unsure about their packaging direction, our designers step in with practical advice. We assist with dielines, template styles, artwork setup, branded finish suggestions, and selecting colours that align with brand identity. Clients can share their ideas freely, and we refine them through unlimited revisions until everything feels right. The goal is simple: packaging that looks correct, feels consistent, and represents the brand clearly.",
     gallery: "/images/design/3.png",
   },
   {
     title: "Largest Production Facility",
     excerpt:
-      "Our facility can produce up to 500,000 mixed-category units per day...",
+      "Our facility can produce up to 500,000 mixed-category units per day. Our advanced offset printing machines manage orders ranging from 100,000 to 500,000 units with a lead time of 11–14 business days, even when handling multiple clients. Our skilled team carefully manages colour control, die-cutting plates, and lamination processes. Experience and technology work together to maintain steady output without compromising standards.",
     gallery: "/images/design/4.png",
   },
   {
     title: "Logistics Solutions",
     excerpt:
-      "We offer warehouse storage within our facility for clients...",
+      "We offer warehouse storage within our facility for clients who want to place large annual orders but do not have enough space. Inventory can be stored safely in controlled temperature conditions. We then ship products on a regular schedule — monthly, weekly, or based on your requirement. This system allows businesses to benefit from large production runs and lower costs without worrying about storage management. In simple terms, we handle the packaging supply so you can focus on running your business.",
     gallery: "/images/design/5.png",
   },
 ];
@@ -39,6 +40,7 @@ const featureproductsRes = [
 export default function AboutPage() {
   return (
     <>
+      <PageBanner title="About Us" />
       <section className="my-16">
         <div className="hale_container md:flex items-center gap-5 md:gap-10 flex-row">
           <figure className="md:w-1/2">
