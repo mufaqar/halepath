@@ -21,7 +21,7 @@ export default async function Single
             {post?.title}
           </h1>
         </div>
-        <div className='container mx-auto max-h-[454px] h-full'>
+        <div className='container mx-auto h-full'>
           <Image src={post?.featuredImage?.node?.sourceUrl} alt='featured' width={1000} height={454} className='object-cover object-center rounded-[19px] mx-auto w-full h-full' />
         </div>
       </section>
