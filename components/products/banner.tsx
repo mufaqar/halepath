@@ -2,6 +2,7 @@
 import Product_Gallery from './product-gallery'
 import FormTabs from '../formTabs'
 function Banner({ data }: any) {
+  
     return (
         <section className='pt-14'>
             <div className='container mx-auto px-4 flex md:flex-row flex-col gap-7'>

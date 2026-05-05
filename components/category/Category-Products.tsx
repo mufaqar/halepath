@@ -25,7 +25,7 @@ const CategoriesProducts = ({ productsRes }: any) => {
       <div className="hale_container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {productsRes?.map((item: any, idx: number) => (
           <div key={idx} className="p-3">
-            <Link href={`/product/${item?.slug}`} className="inline-flex h-fit">
+            <Link href={`/${item?.slug}`} className="inline-flex h-fit">
               <Image
                 src={
                   item?.featuredImage?.node?.mediaItemUrl ||
@@ -38,7 +38,7 @@ const CategoriesProducts = ({ productsRes }: any) => {
               />
             </Link>
             <h4 className="text-xl font-normal text-title_Clr text-center flex w-fit mx-auto mt-8">
-              <Link href={`/product/${item?.slug}`}>{item?.name}</Link>
+              <Link href={`/${item?.slug}`}>{item?.name}</Link>
             </h4>
           </div>
         ))}

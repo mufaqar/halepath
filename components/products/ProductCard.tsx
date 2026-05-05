@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function ProductCard({ product }: { product: any }) {
   return (
     <div className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-      <Link href={`/product/${product.slug}`} className="block flex-grow">
+      <Link href={`/${product.slug}`} className="block flex-grow">
         {product.image?.sourceUrl ? (
           <div className="aspect-square relative">
             <Image

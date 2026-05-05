@@ -1,14 +1,18 @@
 import { getPageBySlug } from "./data/getHomeData";
-import { getCategoryBySlug } from "./data/getProductsData";
+import { getProductBySlug } from "./data/getProductsData";
 
 export async function resolveSlug(slug: string) {
-  const [page, category] = await Promise.all([
-    getPageBySlug(slug),
-    getCategoryBySlug(slug),
-  ]);
+  const page = await getPageBySlug(slug).catch(() => null);
 
-  return {
-    page,
-    category,
-  };
+  if (page) {
+    return { type: "page", data: page };
+  }
+
+  const product = await getProductBySlug(slug).catch(() => null);
+
+  if (product) {
+    return { type: "product", data: product };
+  }
+
+  return null;
 }

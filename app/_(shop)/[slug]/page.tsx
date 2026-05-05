@@ -50,42 +50,7 @@ export default async function ProductPage({
 
   return (
     <>
-      <main>
-        <Banner data={product} />
-        <section className="mt-20 w-full mx-auto px-3 lg:px-0 overflow-hidden">
-          <h2 className="text-2xl text-center mb-8 sm:text-3xl md:text-5xl font-bold">
-            {product?.name} Gallery
-          </h2>
-          <ImageCarousel
-            data={product?.productSpecifications?.productGallery}
-          />
-        </section>
-        <ProductTabs prodata={product} />
-        <section className="mt-20">
-          <div className="container mx-auto px-4">
-            <span className="md:text-[51px] md:leading-normal text-3xl font-bold text-title_Clr text-center mb-4">
-              Related Products
-            </span>
-          </div>
-          <CenterSlider data={relatedProducts} />
-        </section>
-      </main>
-
-      <div className="flex flex-col md:flex-row gap-8">
-        {/* Product Image */}
-        <div className="md:w-1/2">
-          {product.image?.sourceUrl && (
-            <div className="aspect-square relative">
-              <Image
-                src={product.image.sourceUrl}
-                alt={product.name}
-                fill
-                className="object-contain"
-              />
-            </div>
-          )}
-        </div>
-      </div>
+      
     </>
   );
 }
