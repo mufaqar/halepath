@@ -7,7 +7,7 @@ const PageTemplate = ({ data }: any) => {
     <>
       <PageBanner title={page.title} />
       <section className="py-[60px]">
-        <div className="hale_container flex md:flex-row flex-col gap-6">
+        <div className="hale_container page_content">
           <div dangerouslySetInnerHTML={{ __html: page.content }} />
         </div>
       </section>

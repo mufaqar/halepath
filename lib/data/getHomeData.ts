@@ -1,7 +1,8 @@
 import client from "@/lib/apollo-client";
 import { GET_HOME } from "../queries/GetFrontPage";
-import { GET_TESTIMONAILS } from "../queries/gql-query";
+import { GET_POSTS, GET_TESTIMONAILS } from "../queries/gql-query";
 import { GET_PAGE_BY_SLUG } from "../queries/getPageBySlug";
+import { GET_POST_BY_SLUG } from "../queries/getPostBySlug";
 
 export async function getHomeData() {
   const { data } = await client.query<any>({ query: GET_HOME });
@@ -23,35 +24,35 @@ export async function getTestimonails(): Promise<any[]> {
   }
 }
 
-// export async function getBlogData(): Promise<Post[]> {
-//   try {
-//     const { data } = await client.query<GetPostsQuery>({
-//       query: GET_POSTS,
-//       variables: { first: 30 }, // optional
-//     });
+export async function getBlogData(): Promise<any[]> {
+  try {
+    const { data } = await client.query<any>({
+      query: GET_POSTS,
+      variables: { first: 30 }, // optional
+    });
 
-//     // Ensure only valid posts are returned
-//     return (data?.posts?.nodes ?? []).filter((p): p is Post => !!p);
-//   } catch (error) {
-//     console.error("Error fetching blog posts:", error);
-//     return [];
-//   }
-// }
+    // Ensure only valid posts are returned
+    return (data?.posts?.nodes ?? []).filter((p:any): p is any => !!p);
+  } catch (error) {
+    console.error("Error fetching blog posts:", error);
+    return [];
+  }
+}
 
-// export async function getBlogPostBySlug(slug: string): Promise<Post | null> {
-//   try {
-//     const { data } = await client.query<{ post: Post }>({
-//       query: GET_POST_BY_SLUG,
-//       variables: { slug },
-//     });
+export async function getBlogPostBySlug(slug: string): Promise<any | null> {
+  try {
+    const { data } = await client.query<{ post: any }>({
+      query: GET_POST_BY_SLUG,
+      variables: { slug },
+    });
 
-//     // Return the post if it exists, otherwise null
-//     return data?.post ?? null;
-//   } catch (error) {
-//     console.error(`Error fetching blog post for slug "${slug}":`, error);
-//     return null;
-//   }
-// }
+    // Return the post if it exists, otherwise null
+    return data?.post ?? null;
+  } catch (error) {
+    console.error(`Error fetching blog post for slug "${slug}":`, error);
+    return null;
+  }
+}
 
 
 export async function getPageBySlug(slug: string) {
