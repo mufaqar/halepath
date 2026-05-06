@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaClock, FaPencilAlt, FaTruck } from "react-icons/fa";
 import { RiArrowDownSLine } from "react-icons/ri";
@@ -31,7 +31,11 @@ export default function FormTabs({
     const handleQuantityChange = (value: number) => {
         setQuantity(value);
 
-        const newPrice = (value / 100) * productPrice;
+        const baseQuantity = 10000; // your base tier
+        const basePrice = productPrice;
+
+        const newPrice = (value / baseQuantity) * basePrice;
+
         setCalculatedPrice(newPrice);
     };
     const handleQuoteSubmit = async (data: any) => {
