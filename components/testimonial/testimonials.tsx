@@ -1,13 +1,7 @@
 "use client";
-import React from "react";
-import Faqs from "../faqs/faqs";
-import { HiMiniArrowLongLeft, HiMiniArrowLongRight } from "react-icons/hi2";
-import Image from "next/image";
 import Slider from "react-slick";
 import {
   FaStar,
-  FaRegStar,
-  FaStarHalfAlt,
   FaChevronLeft,
   FaChevronRight,
 } from "react-icons/fa";
@@ -88,19 +82,19 @@ const Testimonials = ({ testimonialsRes }: any) => {
                         </h3>
 
                         <ul className="flex gap-1 text-xs">
-                          <li key="" className="text-[#FFAE00]">
+                          <li className="text-[#FFAE00]">
                             <FaStar />
                           </li>
-                          <li key="" className="text-[#FFAE00]">
+                          <li className="text-[#FFAE00]">
                             <FaStar />
                           </li>
-                          <li key="" className="text-[#FFAE00]">
+                          <li className="text-[#FFAE00]">
                             <FaStar />
                           </li>
-                          <li key="" className="text-[#FFAE00]">
+                          <li className="text-[#FFAE00]">
                             <FaStar />
                           </li>
-                          <li key="" className="text-[#FFAE00]">
+                          <li className="text-[#FFAE00]">
                             <FaStar />
                           </li>
                         </ul>

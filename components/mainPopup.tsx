@@ -87,8 +87,16 @@ const MainPopup = ({ onClose }: { onClose?: () => void }) => {
 
                     {/* Product */}
                     <div className="relative">
-                        <select className="hale_input h-full appearance-none" name="product" required>
-                            <option value="" disabled selected>Select Product</option>
+                        <select
+                            className="hale_input h-full appearance-none"
+                            name="product"
+                            defaultValue=""
+                            required
+                        >
+                            <option value="" disabled>
+                                Select Product
+                            </option>
+
                             {products.map((p) => (
                                 <option key={p.id} value={p.name}>
                                     {p.name}
