@@ -19,19 +19,18 @@ const MainPopup = ({ onClose }: { onClose?: () => void }) => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
         const form = e.currentTarget;
-
         const data = {
             name: (form.elements.namedItem("name") as HTMLInputElement).value,
             email: (form.elements.namedItem("email") as HTMLInputElement).value,
             pname: (form.elements.namedItem("product") as HTMLSelectElement).value,
             phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+            colors: (form.elements.namedItem("colors") as HTMLSelectElement).value,
+            unit: (form.elements.namedItem("unit") as HTMLSelectElement).value,
             width: (form.elements.namedItem("width") as HTMLInputElement).value,
             depth: (form.elements.namedItem("depth") as HTMLInputElement).value,
             length: (form.elements.namedItem("length") as HTMLInputElement).value,
-            dimension: `${(form.elements.namedItem("length") as HTMLInputElement).value}x${(form.elements.namedItem("width") as HTMLInputElement).value
-                }x${(form.elements.namedItem("depth") as HTMLInputElement).value}`,
+            dimension: `${(form.elements.namedItem("length") as HTMLInputElement).value} x ${(form.elements.namedItem("width") as HTMLInputElement).value} x ${(form.elements.namedItem("depth") as HTMLInputElement).value}`,
             message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
         };
 
@@ -57,8 +56,8 @@ const MainPopup = ({ onClose }: { onClose?: () => void }) => {
     };
     return (
         <div
-        onClick={(e) => e.stopPropagation()}
-         className="sm:max-w-[830px] w-full md:pr-8 rounded-[19px] bg-white/30 backdrop-blur-[10px] px-3 sm:px-5 py-6 md:py-10">
+            onClick={(e) => e.stopPropagation()}
+            className="sm:max-w-[830px] w-full md:pr-8 rounded-[19px] bg-white/30 backdrop-blur-[10px] px-3 sm:px-5 py-6 md:py-10">
 
             {/* HEADER */}
             <div className="pb-5 w-full flex flex-row justify-between items-center">
