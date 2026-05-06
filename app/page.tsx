@@ -32,7 +32,7 @@ export default async function Home() {
   const testimonialsRes = await getTestimonails();
   const WhatweDo = homeInfo?.workWeDo;
   const FAQS = homeInfo?.faqsSections;
-  console.log("homeInfo", testimonialsRes);
+  // console.log("homeInfo", testimonialsRes);
 
   return (
     <>

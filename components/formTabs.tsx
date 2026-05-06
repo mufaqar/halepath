@@ -18,7 +18,7 @@ export default function FormTabs({
 }: Props) {
     const [activeTab, setActiveTab] = useState("tab1");
     const [loading, setLoading] = useState(false);
-    const [quantity, setQuantity] = useState(100);
+    const [quantity, setQuantity] = useState(10000);
     const [calculatedPrice, setCalculatedPrice] = useState(productPrice);
 
     const {
@@ -34,30 +34,69 @@ export default function FormTabs({
         const newPrice = (value / 100) * productPrice;
         setCalculatedPrice(newPrice);
     };
-    const onSubmit = async (data: any) => {
+    const handleQuoteSubmit = async (data: any) => {
         try {
             setLoading(true);
 
             const payload = {
-                ...data,
-                calculatedPrice,
-                quantity,
-                formType: activeTab, // tab1 or tab2
+                name: data.name,
+                phone: data.phone,
+                email: data.email,
+                product: productName,
+                length: data.length,
+                width: data.width,
+                depth: data.depth,
+                colors: data.colors,
+                unit: data.unit,
+                stock: data.stock,
+                message: data.message,
             };
 
-            const res = await fetch("/api/email", {
+            const res = await fetch("/api/quote", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
             });
 
+            const result = await res.json();
+
             if (res.ok) {
-                alert("Form submitted successfully ✅");
+                alert(result.message || "Quote sent successfully ✅");
                 reset();
             } else {
-                alert("Error ❌");
+                alert(result.error || "Failed ❌");
+            }
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
+    };
+    const handleCheckoutSubmit = async (data: any) => {
+        try {
+            setLoading(true);
+
+            const payload = {
+                product: productName,
+                dimension: data.dimension,
+                box_stock: data.box_stock,
+                quantity: quantity,
+                printing: data.printing,
+                calculatedPrice: calculatedPrice,
+            };
+
+            const res = await fetch("/api/checkout", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+
+            const result = await res.json();
+
+            if (res.ok) {
+                alert(result.message || "Order placed successfully ✅");
+            } else {
+                alert(result.error || "Checkout failed ❌");
             }
         } catch (error) {
             console.error(error);
@@ -93,7 +132,7 @@ export default function FormTabs({
                 <div className={`${activeTab === "tab1" ? "block" : "hidden"}`}>
                     <div className={quoteFormClass}>
                         <form
-                            onSubmit={handleSubmit(onSubmit)}
+                            onSubmit={handleSubmit(handleQuoteSubmit)}
                             className="grid w-full gap-2 items-center px-3 sm:px-5 py-6 md:py-10"
                         >
                             <div className="w-full gap-2.5">
@@ -149,10 +188,6 @@ export default function FormTabs({
 
                             </div>
 
-                            <p style={{ marginTop: "20px", fontSize: "16px" }}>
-                                <strong>Estimated Price:</strong> £{productPrice}
-                            </p>
-
                             <button type="submit" className="btn_secondry w-full">
                                 {loading ? "Sending..." : "SUBMIT"}
                             </button>
@@ -164,7 +199,7 @@ export default function FormTabs({
                 <div className={`${activeTab === "tab2" ? "block" : "hidden"}`}>
                     <div className={quoteFormClass}>
                         <form
-                            onSubmit={handleSubmit(onSubmit)}
+                            onSubmit={handleSubmit(handleCheckoutSubmit)}
                             className="grid w-full gap-2 items-center px-3 sm:px-5 py-6 md:py-10"
                         >
                             <h2 className="md:text-[28px] md:leading-normal text-2xl font-bold text-title_Clr">
@@ -207,8 +242,8 @@ export default function FormTabs({
                                             onChange={(e) => handleQuantityChange(Number(e.target.value))}
                                             className="hale_input appearance-none"
                                         >
-                                            <option value="100">100</option>
-                                            <option value="200">200</option>
+                                            <option value="10000">10000</option>
+                                            <option value="20000">20000</option>
                                         </select>
                                         <RiArrowDownSLine className="text-xl absolute right-4 top-1/2 -translate-y-1/2" />
                                     </div>

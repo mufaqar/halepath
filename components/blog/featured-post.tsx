@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FaArrowRightLong } from 'react-icons/fa6';
 
 const Featured_Posts = ({ data }: any) => {
-    console.log("data", data)
+    // console.log("data", data)
     return (
         <div className='shadow-[-1px_3px_10px_0px_rgba(0,0,0,0.06)] border border-[#E5E5E5]'>
             <div className='h-[264px]'>

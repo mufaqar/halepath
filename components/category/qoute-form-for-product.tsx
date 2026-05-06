@@ -34,7 +34,7 @@ function QouteFormForProduct() {
         body: JSON.stringify(data),
       }).then((res) => {
         if (res.status === 200) {
-          console.log("Response succeeded!");
+          // console.log("Response succeeded!");
           reset();
           setLoading(false);
         }

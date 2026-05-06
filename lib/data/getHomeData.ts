@@ -66,7 +66,7 @@ export async function getPageBySlug(slug: string) {
 
     return data?.page || null;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return null;
   }
 }

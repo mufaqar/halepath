@@ -1,35 +1,41 @@
 'use client';
-import React, { useState } from "react";
+import { useState } from "react";
 import Steps from "./steps";
 
 function Get_Qoute() {
-  const [loading, setLoading] = useState(false);
+   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (e: any) => {
-    e.preventDefault(); // Prevent page refresh
+    e.preventDefault();
 
-    const form = e.target; // Get the form element
-    const formData = new FormData(form); // Create FormData object
+    const form = e.target;
+    const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
-    setLoading(true);
-    SendMail();
-    function SendMail() {
-      fetch("/api/contact", {
+    try {
+      setLoading(true);
+
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
-          Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-      }).then((res) => {
-        console.log("Response received");
-        if (res.status === 200) {
-          console.log("Response succeeded!");
-          setLoading(false);
-        }
-        setLoading(false);
       });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        alert("Message sent successfully!");
+        form.reset();
+      } else {
+        alert(result.error || "Something went wrong");
+      }
+    } catch (error) {
+      console.error("FRONTEND ERROR 👉", error);
+      alert("Server error");
+    } finally {
+      setLoading(false);
     }
   };
 
