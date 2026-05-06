@@ -44,11 +44,11 @@ function Get_Qoute() {
         </div>
         <div className="md:w-1/2 w-full">
           <h4 className="text-xl font-semibold text-white mb-4 flex items-center gap-3 sm:justify-start justify-center">
-            <span>Stronger Protection. </span>
+            <span>From Idea to Doorstep — Here's How Simple We Make It</span>
             <span className="block border-b-2 border-white max-w-[61px] w-full"></span>
           </h4>
           <h2 className="md:text-4xl text-2xl font-bold text-white mb-8 sm:text-left text-center">
-            Smarter Branding. Guaranteed Impact.
+          No packaging experience needed. We guide you through every step.
           </h2>
           <form
             onSubmit={onSubmit}

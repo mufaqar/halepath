@@ -11,9 +11,9 @@ function HowIt_work() {
                         Globally Expertise Delivered Locally
                     </p>
                     <p className="font-medium text-white sm:text-xl text-sm leading-normal sm:mb-10 mb-5 sm:text-left text-center">
-                        Trusted by Leading Brands Worldwide for Precision, Quality & Reliability.
+                       Trusted By 1,000+ Brands Across Beauty, Food, Cannabis, E-Commerce & More
                     </p>
-                    <a href="<?php echo site_url('/products'); ?>" className="btn_primary sm:ml-0 ml-auto mr-auto">
+                    <a href="/products" className="btn_primary sm:ml-0 ml-auto mr-auto">
                         See All Products
                     </a>
                 </div>

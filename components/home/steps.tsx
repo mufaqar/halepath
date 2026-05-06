@@ -31,26 +31,26 @@ export default Steps
 const steps = [
     {
       id: 1,
-      title: "Place Your Order",
+      title: "Tell Us About Your Product",
       description:
-        "Place your order online quickly and easily, share your requirements, receive a fast quote, and start your packaging project confidently.",
+        "Submit your quote request with basic details: box type, dimensions, quantity, and any branding ideas you have. Not sure yet? That's fine — our team will help you figure it out.",
     },
     {
       id: 2,
-      title: "Artwork Creation",
+      title: "We Design & Send a Proof",
       description:
-        "Our expert team creates custom packaging designs, provides mockups for approval, and ensures your branding looks professional and impactful.",
+        "Our in-house design team creates a custom dieline and print-ready proof for your approval. We don't move to production until you say it's exactly right.",
     },
     {
       id: 3,
-      title: "Production",
+      title: "We Produce with Precision",
       description:
-        "Review final details, approve artwork and specifications, confirm pricing, and give production approval before we begin manufacturing your packaging.",
+        "Your order goes to production with full quality control at every stage — material selection, printing, finishing, and structural integrity. No surprises when your custom boxes arrive.",
     },
     {
       id: 4,
-      title: "Fast Doorstep Delivery",
+      title: "We Deliver, You Impress",
       description:
-        "Your finished packaging is carefully produced, securely packed, and delivered on time across the UK with reliable tracking.",
+        "Your custom packaging arrives on time, ready to pack. From your first 50 units to your 50,000th reorder, the process stays exactly this smooth.",
     },
 ];

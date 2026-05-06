@@ -1,162 +1,46 @@
 'use client';
-
-import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
-import Slider from "react-slick";
-//import { motion } from "framer-motion";
-
-// const SliderFull = () => {
-//   const [activeIndex, setActiveIndex] = useState(0);
-
-//   const settings = {
-//     dots: true,
-//     infinite: true,
-//     speed: 500,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     arrows: false,
-//     beforeChange: (_: any, next: any) => setActiveIndex(next),
-//   };
-
-//   return (
-//     <section className="about">
-//       <Slider {...settings}>
-//         {data?.map((item, idx) => (
-//           <div className="!grid md:grid-cols-2" key={idx}>
-//             <figure>
-//               <Image
-//                 src={item?.image}
-//                 alt="Packaging Image"
-//                 className="w-full object-cover h-[400px] md:h-[690px]"
-//                 width={1023}
-//                 height={772}
-//               />
-//             </figure>
-//             <div
-//               className={`bg-cover bg-no-repeat flex justify-center md:items-center flex-col px-10 md:px-5 pb-14 md:pb-10 py-10 p-5 
-//               ${idx === 0 && "slider_bg"} 
-//               ${idx === 1 && "slider_bg2"} 
-//               ${idx === 2 && "slider_bg3"}`}
-//             >
-//               <motion.div
-//                 key={activeIndex} // Re-triggers animation on slide change
-//                 className={`${idx !== 0 && "text-white"}`}
-//               >
-//                 <motion.h6
-//                   initial={{ opacity: 0, y: 50 }}
-//                   animate={{ opacity: 1, y: 0 }}
-//                   transition={{ duration: 0.8, ease: "easeOut" }}
-//                   className="font-semibold text-xl relative w-fit"
-//                 >
-//                   Hale Path Packaging
-//                   <motion.div
-//                     initial={{ width: "100%", backgroundColor: '#fff' }}
-//                     animate={{ width: 0, backgroundColor: '#f5f5f5' }}
-//                     transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-//                     className="inset-0 absolute bg-white"
-//                   />
-//                 </motion.h6>
-//                 <motion.h2
-//                   key={`title-${activeIndex}`} // Ensures re-animation on slide change
-//                   initial={{ opacity: 0, y: 50 }}
-//                   animate={{ opacity: 1, y: 0 }}
-//                   transition={{ duration: 0.8, ease: "easeOut" }}
-//                   className="font-semibold relative my-2 xl:text-[100px] max-w-[580px] text-[50px] leading-[60px] lg:text-[70px] lg:leading-[80px] xl:leading-[105px]"
-//                 >
-//                   {item?.title}
-//                   <motion.div
-//                     initial={{ width: "100%", backgroundColor: '#fff' }}
-//                     animate={{ width: 0, backgroundColor: '#f5f5f5' }}
-//                     transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
-//                     className="inset-0 absolute bg-white py-4 -bottom-3"
-//                   />
-//                 </motion.h2>
-//                 <div className="flex mt-5">
-//                   <motion.div
-//                     key={`btn-${activeIndex}`} // Ensures re-animation on slide change
-//                     initial={{ opacity: 0, y: 50 }}
-//                   animate={{ opacity: 1, y: 0 }}
-//                     transition={{ duration: 0.5, delay: 1.5, ease: "easeOut" }}
-//                   >
-//                     <Link
-//                       href={item?.link}
-//                       className="bg-[#1C2E42] text-white px-[35px] rounded-full font-medium text-[17px] py-[14px]"
-//                     >
-//                       Learn more
-//                     </Link>
-//                   </motion.div>
-//                 </div>
-//               </motion.div>
-//             </div>
-//           </div>
-//         ))}
-//       </Slider>
-//     </section>
-//   );
-// };
-
-// export default SliderFull;
-
-// const data = [
-//   {
-//     image: "/images/about-page/slider.png",
-//     title: "Good Quality Packaging",
-//     link: "#",
-//   },
-//   {
-//     image: "/images/about-page/s1.png",
-//     title: "Good Quality Packaging",
-//     link: "#",
-//   },
-//   {
-//     image: "/images/about-page/s2.webp",
-//     title: "Good Quality Packaging",
-//     link: "#",
-//   },
-// ];
-
-
-
-
-
+import  { useEffect, useRef, useState } from "react";
 export default function SliderFull() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const isAnimating = useRef(false);
 
   const slides = [
-    {
-      image: "/images/about-page/offset.jpeg",
-      title: "Offset Printing",
-      link: "/all-offset-printing",
-      bg: "slider_bg",
-      text: "text-white",
-      desc: "Discover top-notch custom offset printing services for your packaging needs right here. We deliver sharp, vibrant colors on boxes and labels that make your products pop on shelves. Ideal for big orders, this method cuts costs while ensuring consistent quality across paperboard and cardstock. Count on us for precise details that boost your brand visibility in retail settings.",
-    },
-    {
+
+     {
       image: "/images/about-page/corrugated.jpeg",
-      title: "Corrugated Packaging",
+      title: "Corrugated Packaging ",
       link: "/all-corrugated-packaging",
       bg: "slider_bg2",
       text: "text-white",
-      desc: "Get durable custom corrugated printing for boxes that protect and promote your goods. Our process adds strong designs to fluted materials, perfect for shipping. Enjoy lightweight options that resist crushing, with eco-friendly inks. Tailor sizes and graphics to fit your business.",
+      desc: "Our corrugated packaging solutions cover everything from standard shipping boxes and crash-lock mailers to retail-ready shelf trays and heavy-duty industrial containers. Single wall, double wall, or tri-wall — built for e-commerce, food, beverage, and wholesale distribution. Amazon-compatible, frustration-free options available.",
     },
     {
       image: "/images/about-page/flexible.jpeg",
-      title: "Flexible Packaging / Mylar Bags",
+      title: "FLEXIBLE PACKAGING",
       link: "/all-flexible-packaging",
       bg: "slider_bg3",
       text: "text-white",
-      desc: "Explore flexible packaging with custom Mylar bags for freshness and style. These pouches block moisture and odors to keep contents safe. Add zippers for easy use, plus bold prints of your logo for standout presence. Great for snacks or cosmetics in various sizes.",
+      desc: "Modern formats for modern brands. Stand-up pouches, flat-bottom pouches, Mylar bags, spout pouches, shrink sleeve labels, child-resistant bags, and biodegradable options — ideal for food, coffee, cannabis, pet food, supplements, and cleaning products. High-barrier printing that keeps freshness in and maintains high shelf appeal.",
     },
     {
+      image: "/images/about-page/offset.jpeg",
+      title: "BRANDED FINISHING & INNOVATION",
+      link: "/all-offset-printing",
+      bg: "slider_bg",
+      text: "text-white",
+      desc: "The details that make customers stop scrolling. Foil stamping, embossing, debossing, spot UV, lamination, holographic finishes, smart packaging with QR codes, and security printing solutions. For brands that want their packaging to be the marketing.",
+    },
+   
+    
+    {
       image: "/images/about-page/print.jpeg",
-      title: "Print & Advertising & Office Supplies",
+      title: "Print Advertising & Office Supplies",
       link: "/all-print-advertising",
       bg: "slider_bg2",
       text: "text-white",
-      desc: "Find print, advertising, and office supplies with our custom services. We handle business cards, banners, and branded stationery to match your packaging. Quick turnaround on high-quality prints helps you market while stocking essentials like envelopes.",
+      desc: "Every touchpoint, perfected. Business cards, brochures, postcards, stickers, labels, banners, and promotional products — all produced with the same quality standards as our packaging. One partner for your boxes and your brand collateral means consistency you can actually see.",
     },
   ];
 

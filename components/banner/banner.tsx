@@ -6,7 +6,7 @@ const BannerPageMiddel = () => {
     <section className="bg-cover mt-10 bg-no-repeat about_bg">
       <div className="hale_container sm:pt-[110px] pt-10">
         <h2 className="text-white font-bold text-2xl md:text-5xl lg:text-[51px]">
-          Corrugated Packaging
+         Custom Corrugated Packaging for Every Product, Every Industry
         </h2>
       </div>
       <div className="bg-secondary/20 backdrop-blur-[10px] py-10 sm:pr-8 md:p-[46px] max-w-full md:max-w-[80%] lg:max-w-[70%] rounded-tr-[140px] sm:mt-[110px] mt-8">
@@ -15,9 +15,7 @@ const BannerPageMiddel = () => {
             Hale Path Provide Best Packaging Services
           </h5>
           <p className="">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's. Lorem Ipsum has
-            been the industry's.
+            From folding cartons to heavy-duty corrugated, from flexible pouches to rigid luxury boxes — browse our full range of custom packaging boxes USA brands rely on. We produce folding carton boxes, tuck-end boxes, auto-lock bottom, rigid premium boxes, window boxes, mailer boxes, gable boxes, pillow boxes, and more — all fully customized to your exact dimensions, materials, and finish. 
           </p>
         </div>
       </div>
