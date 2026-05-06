@@ -73,5 +73,4 @@ const WhatWeOffer = () => {
     </section>
   )
 }
-
 export default WhatWeOffer
